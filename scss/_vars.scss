@@ -1,0 +1,22 @@
+/** @format */
+
+$main-heading-font: "News Cycle", sans-serif;
+$secondary-heading-font: "Roboto Mono", monospace;
+$main-text: "Noto Sans", sans-serif;
+
+:root {
+  --primary-text-color: #cccccc;
+  --secondary-text-color: #aaaaaa;
+
+  --primary-bg-color: #333333;
+  --secondary-bg-color: #212121;
+
+  --wrapper: 100vw;
+  --gutter: 1rem;
+  --no-of-columns: 9;
+  --ratioA: 1;
+  --ratioB: 1;
+  --row-height: calc(
+    (var(--wrapper) - (calc(var(--no-of-columns) + 1) * var(--gutter))) / var(--no-of-columns)
+  ); //  where 4 is the number of columns and 3 is the number of gutters
+}

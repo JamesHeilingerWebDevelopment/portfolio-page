@@ -1,0 +1,28 @@
+/** @format */
+@import "vars";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// $light-color: #aaaaaa;
+$light-color: #ffffff;
+$primary-color: #212121;
+$secondary-color: #ff8700;
+
+// Set text color based on background
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return $primary-color;
+  } @else {
+    @return $light-color;
+  }
+}
+
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
