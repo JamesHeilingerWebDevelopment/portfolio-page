@@ -2,7 +2,7 @@
 @import "vars";
 
 #projects {
-  background-color: var(--secondary-bg-color);
+  background-color: var(--alt-bg-color);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,23 +18,24 @@
     padding: 1rem;
 
     .tile {
-      // background-color: #ff8700;
       display: grid;
       grid-template-columns: auto;
-      @include set-background(#00aa00);
-
-      font-family: $main-text;
-      font-size: 3em;
       justify-content: center;
       align-content: center;
+
+      color: var(--text-dark);
+      background-color: var(--color-1);
+
+      font-family: var(--body-font);
+      font-size: 3em;
     }
 
     .spacer-1 {
-      background-color: #aa0000;
+      background-color: var(--color-3);
     }
 
     .spacer-2 {
-      background-color: #aa00aa;
+      background-color: var(--color-4);
     }
 
     .lg-grid-item {
@@ -53,8 +54,9 @@
     }
 
     #title {
-      @include set-background(#00aaaa);
-      font-family: $main-heading-font;
+      background-color: var(--color-2);
+      color: var(--text-light);
+      font-family: var(--main-heading-font);
       font-weight: 700;
       font-size: 6em;
       line-height: 0;
@@ -65,7 +67,6 @@
     #python {
       grid-column-end: -1;
       grid-row-end: 5;
-      @include set-background(#00aaaa);
     }
 
     #jeopardy {

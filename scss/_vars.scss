@@ -1,15 +1,47 @@
 /** @format */
 
-$main-heading-font: "News Cycle", sans-serif;
-$secondary-heading-font: "Roboto Mono", monospace;
-$main-text: "Noto Sans", sans-serif;
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+// Text colors
+$text-color-light: #dddddd;
+$alt-text-color-light: #aaaaaa;
+$text-color-dark: #212121;
+$alt-text-color-dark: #333333;
+
+$bg-color: #333333;
+$alt-bg-color: #212121;
+
+$color-1: #00b300;
+$color-2: #0000b3;
+$color-3: #c6c640;
+// $color-3: #b3b300;
+$color-4: #9a409a;
+// $color-4: #b300b3;
+
+// $color-1: #00aa00;
+// $color-2: #00aaaa;
+// $color-3: #aa0000;
+// $color-4: #aa00aa;
 
 :root {
-  --primary-text-color: #cccccc;
-  --secondary-text-color: #aaaaaa;
+  --main-heading-font: "News Cycle", sans-serif;
+  --sub-heading-font: "Roboto Mono", monospace;
+  --body-font: "Noto Sans", sans-serif;
 
-  --primary-bg-color: #333333;
-  --secondary-bg-color: #212121;
+  --text-light: #dddddd;
+  --alt-text-light: #aaaaaa;
+  --text-color-dark: #212121;
+  --alt-text-color-dark: #333333;
+
+  --bg-color: #333333;
+  --alt-bg-color: #212121;
+
+  --color-1: #00b300;
+  --color-2: #0000b3;
+  --color-3: #c6c640;
+  --color-4: #9a409a;
 
   --wrapper: 100vw;
   --gutter: 1rem;

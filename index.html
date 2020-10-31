@@ -19,15 +19,15 @@
       </div>
     </div>
     <div class="nav-links">
-      <div class="nav-link" id="nav-home"><a href="#"><i class="fas fa-home"></i></a></div>
+      <div class="nav-link" id="nav-home"><a href="#showcase"><i class="fas fa-home"></i></a></div>
       <div class="nav-link" id="nav-projects"><a href="#projects"><i class="fas fa-hammer"></i></a></div>
-      <div class="nav-link" id="nav-projects"><a href="#"><i class="fas fa-gamepad"></i></a></div>
-      <div class="nav-link" id="nav-about-me"><a href="#"><i class="fas fa-user-astronaut"></i></a></div>
-      <div class="nav-link" id="nav-contact"><a href="#"><i class="fas fa-envelope"></i></a></div>
+      <div class="nav-link" id="nav-games"><a href="#games"><i class="fas fa-gamepad"></i></a></div>
+      <div class="nav-link" id="nav-about-me"><a href="#about-me"><i class="fas fa-user-astronaut"></i></a></div>
+      <div class="nav-link" id="nav-contact"><a href="#contact"><i class="fas fa-envelope"></i></a></div>
     </div>
   </nav>
 
-  <header class="showcase">
+  <header id="showcase">
     <div class="container">
       <div class="showcase-content">
         <h1><span style="font-weight: 700;">James</span> <em>|-|</em></h1>
@@ -44,24 +44,50 @@
       <div id="jeopardy" class="med-grid-item tile">Jeopardy!</div>
       <div id="sleeps" class="wide-grid-item tile">Zzzzz</div>
       <div class="spacer-1"></div>
-      <div class="spacer-2"></div>
+      <div class="spacer-1"></div>
       <div class="spacer-1"></div>
       <div class="spacer-2"></div>
       <div class="spacer-1"></div>
       <div class="spacer-2"></div>
       <div class="spacer-1"></div>
-      <div class="spacer-2"></div>
+      <div class="spacer-1"></div>
+      <div class="spacer-1"></div>
+      <div class="spacer-1"></div>
+      <div class="spacer-1"></div>
       <div class="spacer-1"></div>
       <div class="spacer-2"></div>
-      <div class="spacer-1"></div>
-      <div class="spacer-2"></div>
-      <div class="spacer-1"></div>
       <div class="spacer-2"></div>
       <div class="spacer-1"></div>
     </div>
   </section>
 
-  <footer>
+  <section id="games"></section>
+
+  <section id="about-me"></section>
+
+  <section id="contact">
+    <h1>Get In Touch</h1>
+    <form id="contact-form">
+      <label for="name">Name</label>
+      <input type="text" class="input-field" name="name" required>
+
+      <label for="subject">Subject</label>
+      <input type="text" class="input-field" name="subject" required>
+
+      <label for="email">Email</label>
+      <input type="email" class="input-field" name='email' required>
+
+      <label for="message">Message</label>
+      <textarea name="message" class="input-field" required></textarea>
+
+      <input type="submit" value="Send" id="submit-btn">
+    </form>
+  </section>
+
+  <footer id="footer">
+    <a href="https://www.linkedin.com/in/james-heilinger/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/SpaceMonkeyLab" target="_blank"><i class="fab fa-github-square"></i></a>
+    <i class="fas fa-cross"></i>
     <p id="copyright">Copyright 2020, James Heilinger</p>
   </footer>
 </body>
