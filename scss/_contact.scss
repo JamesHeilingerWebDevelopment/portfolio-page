@@ -9,6 +9,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid var(--text-light);
+  border-left: 1px solid var(--text-light);
+  border-right: 1px solid var(--text-light);
 
   h1 {
     font-family: var(--main-heading-font);
@@ -24,7 +27,6 @@
     background-color: var(--alt-bg-color);
     padding: 1rem 2rem 2rem 2rem;
     border: 1px solid var(--text-light);
-    // border-radius: 10px;
 
     label {
       font-family: var(--sub-heading-font);
@@ -39,7 +41,6 @@
       font-size: 1rem;
       padding: 0.75rem 1.25rem;
       margin: 0.5rem 0;
-      //   border-radius: 10px;
       border: 1px solid var(--text-light);
       outline: none;
 
@@ -49,7 +50,7 @@
     }
 
     textarea {
-      height: 200px;
+      height: 150px;
       font-size: 1rem;
     }
 
@@ -59,10 +60,11 @@
       margin-top: 1rem;
       font-family: var(--sub-heading-font);
       font-size: 2rem;
-      border: none;
+      border: 1px solid var(--color-1);
       transition-duration: 0.4s;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: var(--color-2);
         color: var(--text-light);
         border: 1px solid var(--text-light);

@@ -10,7 +10,9 @@
   height: 100vh;
   padding: 0 3rem;
   line-height: 1.3;
-  border-bottom: 1px solid var(--alt-text-light);
+  border-bottom: 1px solid var(--text-light);
+  border-left: 1px solid var(--text-light);
+  border-right: 1px solid var(--text-light);
 
   .container {
     background-color: var(--bg-color);

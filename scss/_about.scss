@@ -1,0 +1,86 @@
+/** @format */
+
+@import "vars";
+
+#about-me {
+  background-color: var(--alt-bg-color);
+  color: var(--text-light);
+  font-family: var(--body-font);
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  border-bottom: 1px solid var(--text-light);
+  border-left: 1px solid var(--text-light);
+  border-right: 1px solid var(--text-light);
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "pic txt"
+    "pic tech";
+
+  #picture {
+    grid-area: pic;
+    img {
+      width: 400px;
+      height: auto;
+      border: 1px solid var(--alt-text-light);
+    }
+  }
+
+  #text-about-me {
+    grid-area: txt;
+    width: 100%;
+    height: 100%;
+    // width: 300px;
+    text-align: justify;
+    border: 1px solid var(--alt-text-light);
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  #technologies {
+    grid-area: tech;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "title title title"
+      "one two three"
+      "four five six";
+
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid var(--alt-text-light);
+
+    #tech-heading {
+      grid-area: title;
+    }
+
+    #html-badge {
+      grid-area: one;
+    }
+
+    #css-badge {
+      grid-area: two;
+    }
+
+    #js-badge {
+      grid-area: three;
+    }
+
+    #git-badge {
+      grid-area: four;
+    }
+
+    #sass-badge {
+      grid-area: five;
+    }
+
+    #coffee-badge {
+      grid-area: six;
+    }
+  }
+}

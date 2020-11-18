@@ -29,6 +29,7 @@ $color-4: #9a409a;
   --main-heading-font: "News Cycle", sans-serif;
   --sub-heading-font: "Roboto Mono", monospace;
   --body-font: "Noto Sans", sans-serif;
+  --terminal-font: "VT323", monospace;
 
   --text-light: #dddddd;
   --alt-text-light: #aaaaaa;
@@ -37,6 +38,8 @@ $color-4: #9a409a;
 
   --bg-color: #333333;
   --alt-bg-color: #212121;
+
+  --shadow: -1px 1px 3px -1px var(--text-light);
 
   --color-1: #00b300;
   --color-2: #0000b3;

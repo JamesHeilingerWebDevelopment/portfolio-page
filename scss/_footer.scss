@@ -12,6 +12,9 @@
   font-family: var(--body-font);
   font-size: 1rem;
   padding: 1rem;
+  border-bottom: 1px solid var(--text-light);
+  border-left: 1px solid var(--text-light);
+  border-right: 1px solid var(--text-light);
 
   i,
   p {
