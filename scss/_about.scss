@@ -1,86 +1,216 @@
 /** @format */
 
 @import "vars";
+@import "defaults";
 
 #about-me {
-  background-color: var(--alt-bg-color);
-  color: var(--text-light);
-  font-family: var(--body-font);
-  height: 100vh;
+  background-color: $bg;
+  color: $text-light;
+  font-family: $font-3;
   display: grid;
   justify-items: center;
   align-items: center;
 
-  border-bottom: 1px solid var(--text-light);
-  border-left: 1px solid var(--text-light);
-  border-right: 1px solid var(--text-light);
+  @include section-borders;
 
-  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "pic txt"
-    "pic tech";
+    "title"
+    "pic"
+    "txt"
+    "tech";
+
+  @include bp(medium) {
+    grid-template-areas:
+      "title txt"
+      "pic txt"
+      "pic txt"
+      "tech tech";
+  }
+
+  @include bp(large) {
+    grid-template-areas:
+      "title txt"
+      "pic txt"
+      "pic tech";
+  }
+
+  h1 {
+    @include h1-style;
+  }
 
   #picture {
     grid-area: pic;
+
     img {
-      width: 400px;
+      max-width: 400px;
       height: auto;
-      border: 1px solid var(--alt-text-light);
+      border: 1px solid $text-light-alt;
+      margin: 0 1rem 1rem 1rem;
+
+      @include bp(medium) {
+        max-width: 300px;
+      }
+
+      @include bp(large) {
+        margin: 0 2rem 2rem 2rem;
+      }
+    }
+  }
+
+  .badge {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+      "icon"
+      "lbl";
+    margin: 0;
+    padding: 1rem;
+    overflow: hidden;
+
+    i {
+      grid-area: icon;
+      font-size: 3rem;
+    }
+
+    p {
+      grid-area: lbl;
+      font-family: $font-2;
+      font-size: 1rem;
     }
   }
 
   #text-about-me {
     grid-area: txt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    // width: 300px;
     text-align: justify;
-    border: 1px solid var(--alt-text-light);
     padding: 1rem;
-    margin: 1rem;
+
+    // p {
+    //   justify-items: center;
+    // }
+    // @include bp(medium) {
+    // border-left: 1px solid $text-light;
+    // }
+
+    @include bp(large) {
+      border-left: 1px solid $text-light;
+    }
   }
 
   #technologies {
+    background-color: $bg-alt;
     grid-area: tech;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    // gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       "title title title"
       "one two three"
       "four five six";
 
+    @include bp(medium) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "title title title title title title"
+        "one two three four five six";
+    }
+
+    @include bp(large) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        "title title title"
+        "one two three"
+        "four five six";
+      border-left: 1px solid $text-light;
+    }
+
+    @include bp(very-large) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "title title title title title title"
+        "one two three four five six";
+    }
+
     width: 100%;
     height: 100%;
     padding: 1rem;
-    margin: 1rem;
-    border: 1px solid var(--alt-text-light);
+    border-top: 1px solid $text-light-alt;
 
     #tech-heading {
       grid-area: title;
+      text-align: center;
+      font-size: 2rem;
+      font-family: $font-1;
+      font-weight: 400;
+
+      @include bp(small) {
+        font-size: 3rem;
+      }
     }
 
     #html-badge {
       grid-area: one;
+
+      i {
+        color: #e44d26;
+      }
     }
 
     #css-badge {
       grid-area: two;
+
+      i {
+        color: #2965f1;
+      }
     }
 
     #js-badge {
-      grid-area: three;
+      grid-area: four;
+
+      i {
+        color: #f4e21e;
+      }
     }
 
     #git-badge {
-      grid-area: four;
+      grid-area: six;
+
+      i {
+        color: #f05033;
+      }
     }
 
     #sass-badge {
-      grid-area: five;
+      grid-area: three;
+
+      i {
+        color: #cf649a;
+      }
     }
 
-    #coffee-badge {
-      grid-area: six;
+    #python-badge {
+      grid-area: five;
+
+      img {
+        width: 48px;
+        height: auto;
+      }
     }
   }
+
+  // @media only screen and (min-width: 992px) {
+  //   #about-me {
+
+  //     #picture {
+  //
+  //     }
+  //     }
+  //   }
+  // }
 }

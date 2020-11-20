@@ -8,26 +8,34 @@
   <title>James Heilinger: Web Developer</title>
 </head>
 <body>
-  <!-- <div class="scroll-down-button"><i class="fas fa-chevron-circle-down"></i></div> -->
 
   <nav>
-    <div class="nav-links">
-      <div class="nav-link tooltip" id="nav-home" data-tooltip='Home'>
-        <a href="#showcase" tabindex="0"><i class="fas fa-home"></i></a>
-      </div>
-      <div class="nav-link tooltip" id="nav-projects" data-tooltip='Projects'>
-        <a href="#projects" tabindex="0"><i class="fas fa-hammer"></i></a>
-      </div>
-      <!-- <div class="nav-link tooltip" id="nav-games" data-tooltip='Games'>
-        <a href="#games"><i class="fas fa-gamepad"></i></a>
-      </div> -->
-      <div class="nav-link tooltip" id="nav-about-me" data-tooltip='About Me'>
-        <a href="#about-me" tabindex="0"><i class="fas fa-user-circle"></i></a>
-      </div>
-      <div class="nav-link tooltip" id="nav-contact" data-tooltip='Get In Touch'>
-        <a href="#contact" tabindex="0"><i class="fas fa-envelope"></i></a>
-      </div>
+    <div class="nav-link tooltip" id="nav-home" data-tooltip='Home'>
+      <a href="#showcase" tabindex="0"><i class="fas fa-home"></i></a>
+      <p>Home</p>
     </div>
+    <div class="nav-link tooltip" id="nav-about-me" data-tooltip='About Me'>
+      <a href="#about-me-anchor" tabindex="0"><i class="fas fa-user-circle"></i></a>
+      <p>About Me</p>
+    </div>
+    <div class="nav-link tooltip" id="nav-tech" data-tooltip="Technologies">
+      <a href="#technologies" tabindex="0"><i class="fas fa-code"></i></a>
+      <p>Technologies</p>
+    </div>
+    <div class="nav-link tooltip" id="nav-projects" data-tooltip='Projects'>
+      <a href="#projects" tabindex="0"><i class="fas fa-hammer"></i></a>
+      <p>Projects</p>
+    </div>
+    <div class="nav-link tooltip" id="nav-contact" data-tooltip='Contact Me'>
+      <a href="#contact" tabindex="0"><i class="fas fa-envelope"></i></a>
+      <p>Contact</p>
+    </div>
+    <div id="terminal-wrapper">
+      <div id="terminal">>><span id="text-output"></span><div id="cursor"></div></div>
+    </div>
+    <!-- <div class="nav-link tooltip" id="nav-games" data-tooltip='Games'>
+      <a href="#games"><i class="fas fa-gamepad"></i></a>
+    </div> -->
     <!-- <div class="scheme-menu tooltip" data-tooltip="Choose your color scheme!">
       <i class="fas fa-palette" tabindex="0"></i>
       <div class="scheme-choices">
@@ -35,7 +43,6 @@
         <div class="style-item" id="light">Light</div>
       </div>
     </div> -->
-    <div id="terminal">>><span id="text-output"></span><div id="cursor"></div></div>
   </nav>
 
   <header id="showcase">
@@ -43,72 +50,96 @@
       <div class="showcase-content">
         <h1>James Heilinger</h1>
         <h2>Web Developer</h2>
+        <p>Reflecting&nbspyour&nbspstyle. Radiating&nbspyour&nbspbrand.</p>
       </div>
     </div>
   </header>
 
-  <!-- <section id="projects">
-    <div class="gallery">
-      <div id="title" class="tile">Projects</div>
-      <div id="geneology" class="med-grid-item tile">Geneology</div>
-      <div id="python" class="lg-grid-item tile">Python</div>
-      <div id="jeopardy" class="med-grid-item tile">Jeopardy!</div>
-      <div id="sleeps" class="wide-grid-item tile">Zzzzz</div>
-      <div id="spacer-1" class="spacer-1">1</div>
-      <div id="spacer-2" class="spacer-1">2</div>
-      <div id="spacer-3" class="spacer-1">3</div>
-      <div id="spacer-4" class="spacer-2">4</div>
-      <div id="spacer-5" class="spacer-1">5</div>
-      <div id="spacer-6" class="spacer-2">6</div>
-      <div id="spacer-7" class="spacer-1">7</div>
-      <div id="spacer-8" class="spacer-1">8</div>
-      <div id="spacer-9" class="spacer-1">9</div>
-      <div id="spacer-10" class="spacer-1">10</div>
-      <div id="spacer-11" class="spacer-1">11</div>
-      <div id="spacer-12" class="spacer-1">12</div>
-      <div id="spacer-13" class="spacer-2">13</div>
-      <div id="spacer-14" class="spacer-2">14</div>
-      <div id="spacer-15" class="spacer-1">15</div>
-    </div>
-  </section> -->
-
-  <section id="projects">
-    <div class="gallery">
-      <div id="title"></div>
-      
-    </div>
-  </section>
-
   <section id="about-me">
+    <h1>About Me</h1>
     <div id="picture">
-      <img src="images/james-wedding-piano.jpg" alt="James sitting at a piano looking suave.">
+      <img src="images/james-wedding-piano.jpg" alt="James sitting at a piano looking suave. No, I don't play the piano!">
     </div>
     <div id="text-about-me">
-      <h1>About Me</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur mollitia quae, nam libero nulla quod voluptatem recusandae unde, culpa pariatur doloribus veniam aliquid excepturi consequuntur eius molestias, delectus aspernatur quo. Animi, repellat. Laudantium sequi in provident eius corrupti deserunt quasi sapiente animi ratione, distinctio laboriosam reprehenderit et numquam iste fugiat eligendi sed neque enim perferendis est. Impedit, enim excepturi! Provident iste qui numquam, quibusdam at veniam sunt sequi minus alias sed fugit dolorum iusto eligendi quod earum magnam excepturi ratione debitis hic optio modi temporibus? Nulla delectus perferendis totam quidem labore officia, nisi hic distinctio iure assumenda explicabo ea enim?</p>
     </div>
     <div id="technologies">
-      <h1 id="tech-heading">Technologies</h1>
-      <div id="html-badge" class="badge"></div>
-      <div id="css-badge" class="badge"></div>
-      <div id="sass-badge" class="badge"></div>
-      <div id="js-badge" class="badge"></div>
-      <div id="git-badge" class="badge"></div>
-      <div id="coffee-badge" class="badge"></div>
+      <h2 id="tech-heading">Technologies</h2>
+      <div id="html-badge" class="badge">
+        <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><i class="fab fa-html5"></i></a>
+        <p>HTML5</p>
+      </div>
+      <div id="css-badge" class="badge">
+        <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank"><i class="fab fa-css3-alt"></i></a>
+        <p>CSS3</p>
+      </div>
+      <div id="sass-badge" class="badge">
+        <a href="https://sass-lang.com" target="_blank"><i class="fab fa-sass"></i></a>
+        <p>Sass</p>
+      </div>
+      <div id="js-badge" class="badge">
+        <a href="https://www.javascript.com" target="_blank"><i class="fab fa-js"></i></a>
+        <p>JavaScript</p>
+      </div>
+      <div id="python-badge" class="badge">
+        <a href="https://www.python.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="The Python logo"></a>
+        <p>Python</p>
+      </div>
+      <div id="git-badge" class="badge">
+        <a href="https://git-scm.com" target="_blank"><i class="fab fa-git-alt"></i></a>
+        <p>git</p>
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects">
+    <h1>Projects</h1>
+
+    <div class="gallery">
+
+      <div class="card">
+        <div class="img-wrapper">
+          <i class="fas fa-bed"></i>
+        </div>
+        <div class="card-info">
+          <h2 class="card-title">How many sleeps until...</h2>
+          <p class="card-snippet">An app to calculate how long until a certain event for my kids, in terms they can understand.</p>
+          <a href="#">Check it out!</a>
+        </div>
+      </div>
+  
+      <div class="card">
+        <img class="thumbnail" src="images/ancient_geneology.jpg">
+        <div class="card-info">
+          <h2 class="card-title">Biblical Family Tree</h2>
+          <p class="card-snippet">A visual guide to Biblical geneologies showing how all the names connect together.</p>
+          <a href="#">Check it out!</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="thumbnail" src="images/Jeopardy!_game_board_US.svg">
+        <div class="card-info">
+          <h2 class="card-title">Quiz Show Game</h2>
+          <p class="card-snippet">A Jeopardy clone with a game board display and a host console connected together.</p>
+          <a href="#">Check it out!</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <section id="contact">
-    <h1>Get In Touch</h1>
+    <h1>Contact Me</h1>
     <form id="contact-form">
       <label for="name">Name</label>
       <input type="text" class="input-field" name="name" data-tooltip="Who are you?" required>
 
       <label for="subject">Subject</label>
-      <input type="text" class="input-field" name="subject" data-tooltip="What is this message about?" required>
+      <input type="text" class="input-field" name="subject" data-tooltip="What's this about?" required>
 
       <label for="email">Email</label>
-      <input type="email" class="input-field" name='email' data-tooltip="How can I contact you?" required>
+      <input type="email" class="input-field" name='email' data-tooltip="What's your email?" required>
 
       <label for="message">Message</label>
       <textarea name="message" class="input-field" data-tooltip="What's on your mind?" required></textarea>
@@ -123,8 +154,8 @@
     </div> -->
     <!-- <div class="copyright"> -->
       <a href="https://www.linkedin.com/in/james-heilinger/" target="_blank" class="tooltip" data-tooltip="Find me on LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <!-- <a href="https://github.com/SpaceMonkeyLab" target="_blank" class="tooltip" data-tooltip="Check out my GitHub repo!"><i class="fab fa-github-square"></i></a> -->
-      <p id="copyright">Copyright 2020, James Heilinger</p>
+      <a href="https://github.com/SpaceMonkeyLab" target="_blank" class="tooltip" data-tooltip="Check out my GitHub repo!"><i class="fab fa-github-square"></i></a>
+      <p id="copyright">&#169; 2020, James Heilinger</p>
       <i class="fas fa-cross"></i>
     <!-- </div> -->
   </footer>

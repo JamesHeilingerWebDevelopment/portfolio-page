@@ -3,7 +3,7 @@
 @import "vars";
 
 .scroll-down-button {
-  color: var(--color-1);
+  color: $color-1;
   position: fixed;
   bottom: 2rem;
   left: 50vw;

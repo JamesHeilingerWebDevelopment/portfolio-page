@@ -1,33 +1,35 @@
 /** @format */
 @import "vars";
+@import "defaults";
 
 #footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
-  color: var(--text-light);
-  background-color: var(--alt-bg-color);
+  color: $text-light;
+  background-color: $bg;
 
-  font-family: var(--body-font);
-  font-size: 1rem;
+  font-family: $font-3;
   padding: 1rem;
-  border-bottom: 1px solid var(--text-light);
-  border-left: 1px solid var(--text-light);
-  border-right: 1px solid var(--text-light);
+  @include section-borders;
 
   i,
   p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0 0.5rem;
+
+    @include bp(medium) {
+      font-size: 1.5rem;
+    }
   }
 
   a {
-    color: var(--text-light);
+    color: $text-light;
     text-decoration: none;
 
     &:hover {
-      color: var(--color-1);
+      color: $color-1;
     }
   }
 }

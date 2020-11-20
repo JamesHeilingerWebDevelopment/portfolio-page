@@ -14,7 +14,7 @@ $("#nav-home").on('click', function () {
 });
 
 $("#nav-projects").on('click', function () {
-  const pos = $("#projects").position().top;
+  const pos = $("#projects").position().top - 72;
 
   $("html, body").animate(
     {
@@ -25,7 +25,18 @@ $("#nav-projects").on('click', function () {
 });
 
 $("#nav-about-me").on('click', function () {
-  const pos = $("#about-me").position().top;
+  const pos = $("#about-me").position().top - 72;
+
+  $("html, body").animate(
+    {
+      scrollTop: pos,
+    },
+    900
+  );
+});
+
+$("#nav-tech").on('click', function () {
+  const pos = $("#technologies").position().top - 71;
 
   $("html, body").animate(
     {
@@ -36,7 +47,7 @@ $("#nav-about-me").on('click', function () {
 });
 
 $("#nav-contact").on('click', function () {
-  const pos = $("#contact").position().top;
+  const pos = $("#contact").position().top - 72;
 
   $("html, body").animate(
     {
