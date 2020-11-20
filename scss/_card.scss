@@ -1,19 +1,13 @@
 /** @format */
 
 .card {
-  // box-shadow: -4px 4px 3px 0 #000000;
-  // transition: 0.3s;
   background-color: $bg-alt;
   border: 1px solid $text-light;
   margin: 1.6rem;
 
-  // &:hover {
-  //   box-shadow: -8px 8px 3px 0 #000000;
-  // }
-
-  // .container {
-  //   padding: 2px 16px;
-  // }
+  &:hover {
+    border: 1px solid $color-1;
+  }
 
   h2 {
     font-family: $font-2;

@@ -23,6 +23,7 @@ nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    color: $color-3;
     height: 100%;
     font-family: $font-2;
     border-right: 1px solid $text-light;
@@ -33,17 +34,9 @@ nav {
       width: 100px;
     }
 
-    &:hover,
-    &:focus {
-      color: $color-2;
-    }
-
-    &:active {
-      border: none;
-    }
-
     a {
       grid-area: icon;
+      text-decoration: none;
       color: $text-light;
       display: block;
       text-align: center;
@@ -56,16 +49,30 @@ nav {
         font-size: 2rem;
         padding: 0;
       }
-    }
 
-    p {
-      grid-area: lbl;
-      text-align: center;
-      color: $text-light;
-      margin-bottom: 0.5rem;
+      i {
+        font-size: 1.5rem;
+      }
 
-      @include bp(large) {
-        display: none;
+      p {
+        grid-area: lbl;
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+
+        @include bp(large) {
+          display: none;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        color: $color-2;
+        cursor: pointer;
+      }
+
+      &:active {
+        border: none;
       }
     }
   }
