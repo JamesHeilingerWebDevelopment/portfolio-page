@@ -11,15 +11,13 @@ nav {
   background-color: $bg-alt;
 
   display: grid;
+  // justify-content: left;
   align-items: center;
   border: 1px solid $text-light;
   grid-template-areas: "nav1 nav2 nav3 nav4 nav5";
 
   .nav-link {
     display: grid;
-    grid-template-areas:
-      "icon"
-      "lbl";
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -40,10 +38,14 @@ nav {
       color: $text-light;
       display: block;
       text-align: center;
-      font-size: 1.5rem;
       padding-top: 0.5rem;
       padding-left: 1em;
       padding-right: 1em;
+
+      @include bp(small) {
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+      }
 
       @include bp(large) {
         font-size: 2rem;
@@ -57,7 +59,7 @@ nav {
       p {
         grid-area: lbl;
         text-align: center;
-        font-size: 1rem;
+        font-size: 0.7rem;
         margin-bottom: 0.5rem;
 
         @include bp(large) {

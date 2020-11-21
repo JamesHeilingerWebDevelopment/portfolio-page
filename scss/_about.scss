@@ -42,7 +42,7 @@
     grid-area: pic;
 
     img {
-      max-width: 400px;
+      max-width: 300px;
       height: auto;
       border: 1px solid $text-light-alt;
       margin: 0 1rem 1rem 1rem;
@@ -52,6 +52,7 @@
       }
 
       @include bp(large) {
+        max-width: 400px;
         margin: 0 2rem 2rem 2rem;
       }
     }
