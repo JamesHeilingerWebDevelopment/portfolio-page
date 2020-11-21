@@ -4,6 +4,7 @@
   background-color: $bg-alt;
   border: 1px solid $text-light;
   margin: 1rem;
+  max-width: 360px;
 
   &:hover {
     border: 1px solid $color-1;

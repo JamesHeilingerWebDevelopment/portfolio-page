@@ -11,13 +11,14 @@ nav {
   background-color: $bg-alt;
 
   display: grid;
-  // justify-content: left;
-  align-items: center;
   border: 1px solid $text-light;
+  grid-template-columns: repeat(5, 1fr);
   grid-template-areas: "nav1 nav2 nav3 nav4 nav5";
 
   .nav-link {
     display: grid;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -42,11 +43,6 @@ nav {
       padding-left: 1em;
       padding-right: 1em;
 
-      @include bp(small) {
-        grid-template-columns: repeat(5, 1fr);
-        align-items: center;
-      }
-
       @include bp(large) {
         font-size: 2rem;
         padding: 0;
@@ -54,6 +50,9 @@ nav {
 
       i {
         font-size: 1.5rem;
+        @include bp(small) {
+          font-size: 1.5rem;
+        }
       }
 
       p {
@@ -61,6 +60,10 @@ nav {
         text-align: center;
         font-size: 0.7rem;
         margin-bottom: 0.5rem;
+
+        @include bp(small){
+          font-size: 0.7rem;
+        }
 
         @include bp(large) {
           display: none;

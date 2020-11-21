@@ -18,7 +18,7 @@
   h1 {
     font-family: $font-1;
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 2.5rem;
 
     @include bp(small) {
       font-size: 4rem;
@@ -38,7 +38,7 @@
     font-family: $font-2;
     color: $text-light-alt;
     font-weight: 300;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 0.75rem;
 
     @include bp(small) {
@@ -51,6 +51,10 @@
 
   p {
     font-family: $font-3;
-    font-size: 1.5rem;
+    font-size: 1rem;
+
+    @include bp(small) {
+      font-size: 1.5rem;
+    }
   }
 }
