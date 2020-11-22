@@ -8,10 +8,20 @@
 
   display: grid;
   grid-template-areas:
+    "anchor"
     "title"
     "gallery";
 
   @include section-borders;
+
+  #projects-anchor {
+    grid-area: anchor;
+    position: relative;
+    font-size: 0;
+    top: -72px;
+    margin: 0;
+    padding: 0;
+  }
 
   h1 {
     grid-area: title;

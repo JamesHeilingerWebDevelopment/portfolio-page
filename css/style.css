@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   scrollbar-color: #212121 #333333;
+  scroll-behavior: smooth;
 }
 
 /* Works on Chrome/Edge/Safari */
@@ -355,18 +356,18 @@ nav #nav-tech {
   border-bottom: 1px solid #dddddd;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
-      grid-template-areas: "title" "pic" "txt" "tech";
+      grid-template-areas: "anchor" "title" "pic" "txt" "tech";
 }
 
 @media (min-width: 768px) {
   #about-me {
-        grid-template-areas: "title txt" "pic txt" "pic txt" "tech tech";
+        grid-template-areas: "anchor txt" "title txt" "pic txt" "pic txt" "tech tech";
   }
 }
 
 @media (min-width: 992px) {
   #about-me {
-        grid-template-areas: "title txt" "pic txt" "pic tech";
+        grid-template-areas: "anchor txt" "title txt" "pic txt" "pic tech";
   }
 }
 
@@ -375,7 +376,10 @@ nav #nav-tech {
   font-size: 2rem;
   font-weight: 400;
   color: #dddddd;
+  padding: 0;
+  margin: 0;
   margin-bottom: 0.5rem;
+  margin-top: 0;
 }
 
 @media (min-width: 600px) {
@@ -385,7 +389,7 @@ nav #nav-tech {
 }
 
 #about-me #picture {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: pic;
 }
@@ -441,8 +445,19 @@ nav #nav-tech {
   font-size: 1rem;
 }
 
+#about-me #about-me-anchor {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: anchor;
+  position: relative;
+  font-size: 0;
+  top: -72px;
+  margin: 0;
+  padding: 0;
+}
+
 #about-me #text-about-me {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: txt;
   display: -webkit-box;
@@ -455,10 +470,24 @@ nav #nav-tech {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
-  text-align: justify;
   padding: 1rem;
+}
+
+#about-me #text-about-me a {
+  text-decoration: none;
+  font-family: "Roboto Mono", monospace;
+  width: 12rem;
+  border: 1px solid #dddddd;
+  padding: 1rem;
+  color: #53b40f;
+  background-color: #212121;
+  margin: 1rem;
+  text-align: center;
 }
 
 @media (min-width: 992px) {
@@ -469,14 +498,14 @@ nav #nav-tech {
 
 #about-me #technologies {
   background-color: #212121;
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: tech;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "title title title" "one two three" "four five six";
+      grid-template-areas: "anchor anchor anchor" "title title title" "one two three" "four five six";
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -487,7 +516,7 @@ nav #nav-tech {
   #about-me #technologies {
     -ms-grid-columns: (1fr)[6];
         grid-template-columns: repeat(6, 1fr);
-        grid-template-areas: "title title title title title title" "one two three four five six";
+        grid-template-areas: "anchor anchor anchor anchor anchor anchor" "title title title title title title" "one two three four five six";
   }
 }
 
@@ -495,7 +524,7 @@ nav #nav-tech {
   #about-me #technologies {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "title title title" "one two three" "four five six";
+        grid-template-areas: "anchor anchor anchor" "title title title" "one two three" "four five six";
     border-left: 1px solid #dddddd;
   }
 }
@@ -504,12 +533,23 @@ nav #nav-tech {
   #about-me #technologies {
     -ms-grid-columns: (1fr)[6];
         grid-template-columns: repeat(6, 1fr);
-        grid-template-areas: "title title title title title title" "one two three four five six";
+        grid-template-areas: "anchor anchor anchor anchor anchor anchor" "title title title title title title" "one two three four five six";
   }
 }
 
-#about-me #technologies #tech-heading {
+#about-me #technologies #skills-anchor {
   -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: anchor;
+  position: relative;
+  font-size: 0;
+  top: -72px;
+  margin: 0;
+  padding: 0;
+}
+
+#about-me #technologies #tech-heading {
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: title;
   text-align: center;
@@ -525,7 +565,7 @@ nav #nav-tech {
 }
 
 #about-me #technologies #html-badge {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: one;
 }
@@ -535,7 +575,7 @@ nav #nav-tech {
 }
 
 #about-me #technologies #css-badge {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: two;
 }
@@ -545,7 +585,7 @@ nav #nav-tech {
 }
 
 #about-me #technologies #js-badge {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: four;
 }
@@ -555,7 +595,7 @@ nav #nav-tech {
 }
 
 #about-me #technologies #git-badge {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 3;
   grid-area: six;
 }
@@ -565,7 +605,7 @@ nav #nav-tech {
 }
 
 #about-me #technologies #sass-badge {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: three;
 }
@@ -575,7 +615,7 @@ nav #nav-tech {
 }
 
 #about-me #technologies #python-badge {
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: five;
 }
@@ -592,14 +632,25 @@ nav #nav-tech {
   background-color: #333333;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "title" "gallery";
+      grid-template-areas: "anchor" "title" "gallery";
   border-bottom: 1px solid #dddddd;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
 }
 
-#projects h1 {
+#projects #projects-anchor {
   -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: anchor;
+  position: relative;
+  font-size: 0;
+  top: -72px;
+  margin: 0;
+  padding: 0;
+}
+
+#projects h1 {
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: title;
   -ms-grid-column-align: center;
@@ -608,6 +659,8 @@ nav #nav-tech {
   font-size: 2rem;
   font-weight: 400;
   color: #dddddd;
+  padding: 0;
+  margin: 0;
   margin-bottom: 0.5rem;
 }
 
@@ -618,7 +671,7 @@ nav #nav-tech {
 }
 
 #projects .gallery {
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: gallery;
   display: -ms-grid;
@@ -714,6 +767,17 @@ nav #nav-tech {
   border-bottom: 1px solid #dddddd;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
+}
+
+#contact #contact-anchor {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: anchor;
+  position: relative;
+  font-size: 0;
+  top: -72px;
+  margin: 0;
+  padding: 0;
 }
 
 #contact h1 {
