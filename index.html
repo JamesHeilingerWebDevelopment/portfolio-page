@@ -86,7 +86,7 @@
         <p>CSS3</p>
       </div>
       <div id="sass-badge" class="badge">
-        <a href="https://sass-lang.com" target="_blank" rel="noreferrer"><i class="fab fa-sass"></i></a>
+        <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)" target="_blank" rel="noreferrer"><i class="fab fa-sass"></i></a>
         <p>Sass</p>
       </div>
       <div id="js-badge" class="badge">
@@ -145,7 +145,10 @@
   <section id="contact">
     <div id="contact-anchor">&nbsp;</div>
     <h1>Contact Me</h1>
-    <form id="contact-form" netlify>
+    <form method="POST" name="contact-form" id="contact-form" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true">
+      <p class="hidden">
+        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+      </p>
       <label for="name">Name</label>
       <input type="text" class="input-field" name="name" data-tooltip="Who are you?" required>
 
@@ -158,6 +161,8 @@
       <label for="message">Message</label>
       <textarea name="message" class="input-field" data-tooltip="What's on your mind?" required></textarea>
 
+      <div data-netlify-recaptcha="true"></div>
+
       <input type="submit" value="Send" id="submit-btn" data-tooltip="Send it!">
     </form>
   </section>
@@ -168,7 +173,7 @@
     </div> -->
     <!-- <div class="copyright"> -->
       <a href="https://www.linkedin.com/in/james-heilinger/" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="Find me on LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/SpaceMonkeyLab" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="Check out my GitHub repo!"><i class="fab fa-github-square"></i></a>
+      <a href="https://github.com/SpaceMonkeyLab" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="My GitHub repo!"><i class="fab fa-github-square"></i></a>
       <p id="copyright">&#169; 2020, James Heilinger</p>
       <a href="https://calvarychapelkaneohe.com/abc-of-salvation/" target="_blank" rel="noreferrer" data-tooltip="The ABC's of Salvation" class="tooltip"><i class="fas fa-cross"></i></a>
     <!-- </div> -->
