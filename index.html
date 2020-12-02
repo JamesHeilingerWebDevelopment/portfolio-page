@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/54b1a1f787.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
   <title>James Heilinger: Web Developer</title>
 </head>
 <body>
@@ -67,39 +67,43 @@
   <section id="about-me">
     <div id="about-me-anchor">&nbsp;</div>
     <h1>About Me</h1>
-    <div id="picture">
-      <img src="images/james-wedding-piano.jpg" alt="James sitting at a piano looking suave. No, I don't play the piano!">
-    </div>
-    <div id="text-about-me">
-      <p>Welcome to my portfolio. I am a web developer with knowledge in front-end design using HTML5, CSS3, Sass and JavaScript. I am proficient in Python, with over 5 years of experience working as a software developer. I am combining these skills with my creativity, problem solving and eye for detail to design original projects. Let's reflect your style and radiate your brand today!</p>
-      <a href="#contact-anchor">Get Started!</a>
-    </div>
-    <div id="technologies">
-      <div id="skills-anchor">&nbsp;</div>
-      <h2 id="tech-heading">Skills</h2>
+    <img id="picture" src="images/james-wedding-piano.jpg" alt="James sitting at a piano looking suave. No, I don't play the piano!">
+    <p id="text-about-me">
+      Welcome to my portfolio. I am a web developer with knowledge in front-end design using HTML5, CSS3, Sass and JavaScript. Proficient in Python, I have over 5 years of experience working as a software developer. I am combining these skills with my creativity, problem solving and eye for detail to design original projects.
+    </p>
+    <p id="call-to-action">
+      Let's start <span>reflecting</span> your style and <span>radiating</span> your brand today!
+    </p>
+    <a href="#contact-anchor">Get Started!</a>
+  </section>
+
+  <section id="skills">
+    <div id="skills-anchor">&nbsp;</div>
+    <h1 id="skills-heading">Skills</h1>
+    <div class="badges">
       <div id="html-badge" class="badge">
-        <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" rel="noreferrer"><i class="fab fa-html5"></i></a>
-        <p>HTML5</p>
+        <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" rel="noreferrer"><i class="fab fa-html5 tooltip" data-tooltip='HTML5'></i></a>
+        <p class='tooltip' data-tooltip='HTML5'>HTML5</p>
       </div>
       <div id="css-badge" class="badge">
-        <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noreferrer"><i class="fab fa-css3-alt"></i></a>
-        <p>CSS3</p>
+        <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noreferrer"><i class="fab fa-css3-alt tooltip" data-tooltip='CSS3'></i></a>
+        <p class='tooltip' data-tooltip='CSS3'>CSS3</p>
       </div>
       <div id="sass-badge" class="badge">
-        <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)" target="_blank" rel="noreferrer"><i class="fab fa-sass"></i></a>
-        <p>Sass</p>
+        <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)" target="_blank" rel="noreferrer"><i class="fab fa-sass tooltip" data-tooltip='Sass'></i></a>
+        <p class='tooltip' data-tooltip='Sass'>Sass</p>
       </div>
       <div id="js-badge" class="badge">
-        <a href="https://www.javascript.com" target="_blank" rel="noreferrer"><i class="fab fa-js"></i></a>
-        <p>JavaScript</p>
+        <a href="https://www.javascript.com" target="_blank" rel="noreferrer"><i class="fab fa-js tooltip" data-tooltip='JavaScript'></i></a>
+        <p class='tooltip' data-tooltip='JavaScript'>JavaScript</p>
       </div>
       <div id="python-badge" class="badge">
-        <a href="https://www.python.org" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="The Python logo"></a>
-        <p>Python</p>
+        <a href="https://www.python.org" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="The Python logo"  class='tooltip' data-tooltip='Python'></a>
+        <p class='tooltip' data-tooltip='Python'>Python</p>
       </div>
       <div id="git-badge" class="badge">
-        <a href="https://git-scm.com" target="_blank" rel="noreferrer"><i class="fab fa-git-alt"></i></a>
-        <p>git</p>
+        <a href="https://git-scm.com" target="_blank" rel="noreferrer"><i class="fab fa-git-alt tooltip" data-tooltip='git'></i></a>
+        <p class='tooltip' data-tooltip='git'>git</p>
       </div>
     </div>
   </section>

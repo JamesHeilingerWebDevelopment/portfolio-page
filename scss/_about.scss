@@ -8,82 +8,50 @@
   color: $text-light;
   font-family: $font-3;
   display: grid;
+  row-gap: 1rem;
+  column-gap: 2rem;
   justify-items: center;
-  align-items: center;
 
   @include section-borders;
 
+  grid-template-columns: 1fr;
   grid-template-areas:
     "anchor"
     "title"
     "pic"
     "txt"
-    "tech";
+    "call"
+    "click";
 
   @include bp(medium) {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "anchor txt"
-      "title txt"
-      "pic txt"
-      "pic txt"
-      "tech tech";
-  }
-
-  @include bp(large) {
-    grid-template-areas:
-      "anchor txt"
-      "title txt"
-      "pic txt"
-      "pic tech";
+      "anchor anchor"
+      "title  title"
+      "pic    txt"
+      "call   call"
+      "click  click";
   }
 
   h1 {
+    grid-area: title;
     @include h1-style;
+    text-align: center;
     margin-top: 0;
   }
 
-  #picture {
+  img {
     grid-area: pic;
+    justify-self: center;
 
-    img {
-      width: 100%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid $text-light-alt;
+
+    @include bp(medium) {
+      justify-self: end;
       max-width: 300px;
-      height: auto;
-      border: 1px solid $text-light-alt;
-      // margin: 0 1rem 1rem 1rem;
-
-      @include bp(medium) {
-        max-width: 300px;
-      }
-
-      @include bp(large) {
-        max-width: 400px;
-        margin: 0 2rem 2rem 2rem;
-      }
-    }
-  }
-
-  .badge {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-areas:
-      "icon"
-      "lbl";
-    margin: 0;
-    padding: 1rem;
-    overflow: hidden;
-
-    i {
-      grid-area: icon;
-      font-size: 3rem;
-    }
-
-    p {
-      grid-area: lbl;
-      font-family: $font-2;
-      font-size: 1rem;
     }
   }
 
@@ -98,149 +66,42 @@
 
   #text-about-me {
     grid-area: txt;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
+    align-self: center;
+    max-width: 300px;
 
-    a {
-      text-decoration: none;
-      font-family: $font-2;
-      width: 12rem;
-      border: 1px solid $text-light;
-      padding: 1rem;
-      color: $color-2;
-      background-color: $bg-alt;
-      margin: 1rem;
-      text-align: center;
-    }
-
-    // p {
-    //   justify-items: center;
-    // }
-    // @include bp(medium) {
-    // border-left: 1px solid $text-light;
-    // }
-
-    @include bp(large) {
-      border-left: 1px solid $text-light;
+    @include bp(medium) {
+      justify-self: start;
     }
   }
 
-  #technologies {
-    background-color: $bg-alt;
-    grid-area: tech;
-    display: grid;
-    // gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      "anchor anchor anchor"
-      "title title title"
-      "one two three"
-      "four five six";
+  p > {
+    span {
+      color: $color-3;
+      text-transform: uppercase;
+    }
+  }
+
+  #call-to-action {
+    grid-area: call;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
 
     @include bp(medium) {
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-areas:
-        "anchor anchor anchor anchor anchor anchor"
-        "title title title title title title"
-        "one two three four five six";
+      max-width: 450px;
     }
+  }
 
-    @include bp(large) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas:
-        "anchor anchor anchor"
-        "title title title"
-        "one two three"
-        "four five six";
-      border-left: 1px solid $text-light;
-    }
-
-    @include bp(very-large) {
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-areas:
-        "anchor anchor anchor anchor anchor anchor"
-        "title title title title title title"
-        "one two three four five six";
-    }
-
-    width: 100%;
-    height: 100%;
+  a {
+    grid-area: click;
+    text-decoration: none;
+    font-family: $font-2;
+    width: 12rem;
+    border: 1px solid $text-light;
     padding: 1rem;
-    border-top: 1px solid $text-light-alt;
-
-    #skills-anchor {
-      grid-area: anchor;
-      position: relative;
-      font-size: 0;
-      top: -72px;
-      margin: 0;
-      padding: 0;
-    }
-
-    #tech-heading {
-      grid-area: title;
-      text-align: center;
-      font-size: 2rem;
-      font-family: $font-1;
-      font-weight: 400;
-
-      @include bp(small) {
-        font-size: 3rem;
-      }
-    }
-
-    #html-badge {
-      grid-area: one;
-
-      i {
-        color: #e44d26;
-      }
-    }
-
-    #css-badge {
-      grid-area: two;
-
-      i {
-        color: #2965f1;
-      }
-    }
-
-    #js-badge {
-      grid-area: four;
-
-      i {
-        color: #f4e21e;
-      }
-    }
-
-    #git-badge {
-      grid-area: six;
-
-      i {
-        color: #f05033;
-      }
-    }
-
-    #sass-badge {
-      grid-area: three;
-
-      i {
-        color: #cf649a;
-      }
-    }
-
-    #python-badge {
-      grid-area: five;
-
-      img {
-        width: 48px;
-        height: auto;
-      }
-    }
+    color: $color-2;
+    background-color: $bg-alt;
+    margin-bottom: 2rem;
+    text-align: center;
   }
 }

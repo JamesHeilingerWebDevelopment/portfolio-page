@@ -61,7 +61,7 @@ nav {
         font-size: 0.7rem;
         margin-bottom: 0.5rem;
 
-        @include bp(small){
+        @include bp(small) {
           font-size: 0.7rem;
         }
 
@@ -69,16 +69,18 @@ nav {
           display: none;
         }
       }
+    }
 
-      &:hover,
-      &:focus {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      a {
         color: $color-2;
-        cursor: pointer;
       }
+    }
 
-      &:active {
-        border: none;
-      }
+    &:active {
+      border: none;
     }
   }
 

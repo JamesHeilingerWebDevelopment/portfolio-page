@@ -7,6 +7,7 @@
   background-color: $bg;
 
   display: grid;
+  justify-items: center;
   grid-template-areas:
     "anchor"
     "title"
@@ -25,15 +26,21 @@
 
   h1 {
     grid-area: title;
-    justify-self: center;
     @include h1-style;
   }
 
   .gallery {
     grid-area: gallery;
     display: grid;
-    grid-template-columns: repeat(auto-fit, auto);
-    justify-content: center;
-    padding-bottom: 3rem;
+    justify-content: space-around;
+    grid-template-columns: 1fr;
+    padding-bottom: 2rem;
+
+    @include bp(medium) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include bp(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
