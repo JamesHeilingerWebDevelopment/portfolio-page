@@ -1,0 +1,117 @@
+/** @format */
+@import "vars";
+@import "defaults";
+
+#skills {
+  background-color: $bg-alt;
+  color: $text-light;
+  display: grid;
+
+  @include section-borders;
+
+  grid-template-columns: auto;
+  grid-template-areas:
+    "anchor"
+    "title"
+    "cont";
+
+  h1 {
+    grid-area: title;
+    @include h1-style;
+    text-align: center;
+  }
+
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+
+  #skills-anchor {
+    grid-area: anchor;
+    position: relative;
+    font-size: 0;
+    top: -72px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .badges {
+    grid-area: cont;
+    display: grid;
+    justify-self: center;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include bp(medium) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include bp(large) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include bp(very-large) {
+      grid-template-columns: repeat(6, 1fr);
+      // grid-template-columns: repeat(6, min-content);
+    }
+  }
+
+  .badge {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+      "icon"
+      "lbl";
+    margin: 0;
+    padding: 1rem;
+    overflow: hidden;
+
+    i {
+      grid-area: icon;
+      font-size: 3rem;
+    }
+
+    p {
+      grid-area: lbl;
+      font-family: $font-2;
+      font-size: 1rem;
+    }
+  }
+
+  #html-badge {
+    i {
+      color: #e44d26;
+    }
+  }
+
+  #css-badge {
+    i {
+      color: #2965f1;
+    }
+  }
+
+  #js-badge {
+    i {
+      color: #f4e21e;
+    }
+  }
+
+  #git-badge {
+    i {
+      color: #f05033;
+    }
+  }
+
+  #sass-badge {
+    i {
+      color: #cf649a;
+    }
+  }
+
+  #python-badge {
+    img {
+      width: 48px;
+      height: auto;
+    }
+  }
+}

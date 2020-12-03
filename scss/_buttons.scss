@@ -1,22 +1,45 @@
 /** @format */
 
-%btn {
-  display: inline-block;
-  border-radius: 5px;
-  padding: 8px 20px;
-  margin: 3px;
+.btn {
+  text-decoration: none;
+  font-family: $font-2;
+  font-size: 1.2rem;
+  border: 1px solid $text-light;
+  padding: 1rem;
+  color: $text-light;
+  background-color: $color-1;
+  margin-bottom: 2rem;
+  text-align: center;
+  transition-duration: 0.4s;
 
-  &:hover {
-    transform: scale(0.98);
+  @media (min-width: 375px) {
+    font-size: 1.5rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-2;
+    color: $text-dark;
   }
 }
 
-.btn-primary {
-  @extend %btn;
-  @include set-background(lighten($color-1, 10%));
-}
+// %btn {
+//   display: inline-block;
+//   border-radius: 5px;
+//   padding: 8px 20px;
+//   margin: 3px;
 
-.btn-secondary {
-  @extend %btn;
-  @include set-background($color-2);
-}
+//   &:hover {
+//     transform: scale(0.98);
+//   }
+// }
+
+// .btn-primary {
+//   @extend %btn;
+//   @include set-background(lighten($color-1, 10%));
+// }
+
+// .btn-secondary {
+//   @extend %btn;
+//   @include set-background($color-2);
+// }

@@ -49,7 +49,11 @@
     label {
       font-family: $font-2;
       color: $text-light;
-      font-size: 1.35rem;
+      font-size: 1rem;
+
+      @include bp(medium) {
+        font-size: 1.35rem;
+      }
     }
 
     .hidden {
@@ -77,21 +81,24 @@
       margin-bottom: 1rem;
     }
 
-    #submit-btn {
-      background-color: $color-1;
-      color: $text-light;
-      margin-top: 1rem;
-      font-family: $font-2;
+    button {
       font-size: 2rem;
-      border: 1px solid $text-light;
-      transition-duration: 0.4s;
-
-      &:hover,
-      &:focus {
-        background-color: $color-2;
-        color: $text-dark;
-        border: 1px solid $text-light;
-      }
     }
+
+    // #submit-btn {
+    //   background-color: $color-1;
+    //   color: $text-light;
+    //   margin-top: 1rem;
+    //   font-family: $font-2;
+    //   font-size: 2rem;
+    //   border: 1px solid $text-light;
+    //   transition-duration: 0.4s;
+
+    //   &:hover,
+    //   &:focus {
+    //     background-color: $color-2;
+    //     color: $text-dark;
+    //   }
+    // }
   }
 }

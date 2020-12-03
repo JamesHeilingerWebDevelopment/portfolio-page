@@ -1,0 +1,56 @@
+/** @format */
+
+@import "vars";
+@import "defaults";
+@import "navbar";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.thank-you-page {
+  box-sizing: border-box;
+  color: $text-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: auto;
+  background-color: $bg;
+
+  @include section-borders;
+
+  h1 {
+    @include h1-style;
+  }
+
+  p {
+    font-family: $font-3;
+    font-size: 1.5rem;
+  }
+
+  a {
+    display: grid;
+    gap: 1rem;
+    // padding: 1rem;
+    // border: 1px solid $text-light;
+    // background-color: $bg-alt;
+    grid-template-columns: auto auto;
+    grid-template-areas: "icn lnk";
+    // justify-content: center;
+    // align-items: center;
+    grid-area: lnk;
+    // color: $color-2;
+    // text-decoration: none;
+    // font-family: $font-2;
+    // text-align: center;
+
+    i {
+      grid-area: icn;
+      color: $color-2;
+      font-size: 2rem;
+    }
+  }
+}

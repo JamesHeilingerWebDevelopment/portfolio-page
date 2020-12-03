@@ -20,7 +20,7 @@
     "title"
     "pic"
     "txt"
-    "call"
+    "act"
     "click";
 
   @include bp(medium) {
@@ -29,7 +29,7 @@
       "anchor anchor"
       "title  title"
       "pic    txt"
-      "call   call"
+      "act    act"
       "click  click";
   }
 
@@ -68,6 +68,11 @@
     grid-area: txt;
     align-self: center;
     max-width: 300px;
+    font-size: 1rem;
+
+    @media (min-width: 375px) {
+      font-size: 1.2rem;
+    }
 
     @include bp(medium) {
       justify-self: start;
@@ -76,16 +81,21 @@
 
   p > {
     span {
-      color: $color-3;
+      color: $color-2;
       text-transform: uppercase;
     }
   }
 
   #call-to-action {
-    grid-area: call;
+    grid-area: act;
     text-align: center;
     font-weight: bold;
     font-size: 1.5rem;
+    max-width: 300px;
+
+    @media (min-width: 375px) {
+      max-width: 320px;
+    }
 
     @include bp(medium) {
       max-width: 450px;
@@ -94,14 +104,5 @@
 
   a {
     grid-area: click;
-    text-decoration: none;
-    font-family: $font-2;
-    width: 12rem;
-    border: 1px solid $text-light;
-    padding: 1rem;
-    color: $color-2;
-    background-color: $bg-alt;
-    margin-bottom: 2rem;
-    text-align: center;
   }
 }
