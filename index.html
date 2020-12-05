@@ -81,29 +81,63 @@
     <div id="skills-anchor">&nbsp;</div>
     <h1 id="skills-heading">Skills</h1>
     <div class="badges">
-      <div id="html-badge" class="badge">
+      <!-- <div id="html-badge" class="badge">
         <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" rel="noreferrer"><i class="fab fa-html5 tooltip" data-tooltip='HTML5'></i></a>
         <p class='tooltip' data-tooltip='HTML5'>HTML5</p>
+      </div> -->
+      <div class="skill">
+        <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" rel="noreferrer" data-tooltip='HTML5'>
+          <img src="images/html5-logo-white-words-min.svg" class="tooltip" alt="HTML5 logo" data-tooltip="HTML5">
+        </a>
       </div>
-      <div id="css-badge" class="badge">
+      <!-- <div id="css-badge" class="badge">
         <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noreferrer"><i class="fab fa-css3-alt tooltip" data-tooltip='CSS3'></i></a>
         <p class='tooltip' data-tooltip='CSS3'>CSS3</p>
+      </div> -->
+      <div class="skill">
+        <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noreferrer">
+          <img src="images/css3-logo-white-text.svg" alt="CSS3 Logo with white text" class="tooltip" data-tooltip='CSS3'>
+        </a>
       </div>
-      <div id="sass-badge" class="badge">
-        <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)" target="_blank" rel="noreferrer"><i class="fab fa-sass tooltip" data-tooltip='Sass'></i></a>
-        <p class='tooltip' data-tooltip='Sass'>Sass</p>
+      <!-- <div class="skill">
+        <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)" target="_blank" rel="noreferrer">
+          <i class="fab fa-sass tooltip" data-tooltip='Sass'></i>
+        </a>
+      </div> -->
+      <div class="skill">
+        <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)" target="_blank" rel="noreferrer">
+          <img src="/images/Sass Logo (Color).svg" alt="Sass Logo (Color)" class="tooltip" data-tooltip="Sass">
+        </a>
       </div>
-      <div id="js-badge" class="badge">
+      <!-- <div id="js-badge" class="badge">
         <a href="https://www.javascript.com" target="_blank" rel="noreferrer"><i class="fab fa-js tooltip" data-tooltip='JavaScript'></i></a>
         <p class='tooltip' data-tooltip='JavaScript'>JavaScript</p>
+      </div> -->
+      <div class="skill">
+        <a href="https://www.javascript.com" target="_blank" rel="noreferrer"><i class="fab fa-js tooltip" data-tooltip='JavaScript'></i></a>
       </div>
-      <div id="python-badge" class="badge">
+      <!-- <div id="python-badge" class="badge">
         <a href="https://www.python.org" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="The Python logo"  class='tooltip' data-tooltip='Python'></a>
         <p class='tooltip' data-tooltip='Python'>Python</p>
+      </div> -->
+      <div class="skill">
+        <a href="https://www.python.org" target="_blank" rel="noreferrer">
+          <img src="/images/python-logo-generic.svg" alt="Python logo generic">
+        </a>
       </div>
-      <div id="git-badge" class="badge">
+      <!-- <div id="git-badge" class="badge">
         <a href="https://git-scm.com" target="_blank" rel="noreferrer"><i class="fab fa-git-alt tooltip" data-tooltip='git'></i></a>
         <p class='tooltip' data-tooltip='git'>git</p>
+      </div> -->
+      <div class="skill">
+        <a href="https://git-scm.com" target="_blank" rel="noreferrer">
+          <img src="/images/Git-Logo-1788C.svg" alt="Git Logo">
+        </a>
+      </div>
+      <div class="skill">
+        <a href="https://netlify.com" target="_blank" rel="noreferrer">
+          <img src="/images/full-logo-dark.svg" alt="Netlify Logo">
+        </a>
       </div>
     </div>
   </section>
@@ -119,7 +153,7 @@
           <i class="fas fa-bed"></i>
         </div>
         <div class="card-info">
-          <h2 class="card-title">How many sleeps until...</h2>
+          <h2 class="card-title">How many sleeps...</h2>
           <p class="card-snippet">An app to calculate how long until a certain event for my kids, in terms they can understand.</p>
           <a href="#">Check it out!</a>
         </div>
@@ -149,9 +183,9 @@
   <section id="contact">
     <div id="contact-anchor">&nbsp;</div>
     <h1>Contact Me</h1>
-    <form method="POST" name="contact-form" id="contact-form" netlify-honeypot="bot-field" data-netlify="true">
+    <form method="POST" name="contact-form" id="contact-form" netlify-honeypot="pulse-check" data-netlify="true" data-netlify-recaptcha="true">
       <p class="hidden">
-        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        <label>Let's check if you have a pulse: <input name="pulse-check" /></label>
       </p>
       <label for="name">Name</label>
       <input type="text" class="input-field" name="name" data-tooltip="Who are you?" required>
@@ -165,7 +199,7 @@
       <label for="message">Message</label>
       <textarea name="message" class="input-field" data-tooltip="What's on your mind?" required></textarea>
 
-      <!-- <div data-netlify-recaptcha="true"></div> -->
+      <div data-netlify-recaptcha="true"></div>
 
       <input type="submit" value="Send" id="submit-btn" class="btn" data-tooltip="Send it!">
     </form>
@@ -182,12 +216,6 @@
       <a href="https://calvarychapelkaneohe.com/abc-of-salvation/" target="_blank" rel="noreferrer" data-tooltip="The ABC's of Salvation" class="tooltip"><i class="fas fa-cross"></i></a>
     <!-- </div> -->
   </footer>
-  <!-- <script
-      src="http://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script> -->
-  <!-- <script src="js/smoothScroll.js"></script> -->
   <script src="js/tooltips.js"></script>
 </body>
 </html>

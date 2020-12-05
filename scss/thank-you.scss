@@ -3,6 +3,7 @@
 @import "vars";
 @import "defaults";
 @import "navbar";
+@import "buttons";
 
 body {
   margin: 0;
@@ -34,22 +35,13 @@ body {
   a {
     display: grid;
     gap: 1rem;
-    // padding: 1rem;
-    // border: 1px solid $text-light;
-    // background-color: $bg-alt;
     grid-template-columns: auto auto;
     grid-template-areas: "icn lnk";
-    // justify-content: center;
-    // align-items: center;
+    align-items: center;
     grid-area: lnk;
-    // color: $color-2;
-    // text-decoration: none;
-    // font-family: $font-2;
-    // text-align: center;
 
     i {
       grid-area: icn;
-      color: $color-2;
       font-size: 2rem;
     }
   }
