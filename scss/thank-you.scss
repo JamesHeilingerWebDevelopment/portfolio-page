@@ -4,6 +4,7 @@
 @import "defaults";
 @import "navbar";
 @import "buttons";
+@import "footer";
 
 body {
   margin: 0;
@@ -19,17 +20,20 @@ body {
   align-items: center;
   height: 100vh;
   width: auto;
+  padding: 2rem;
   background-color: $bg;
 
   @include section-borders;
 
   h1 {
     @include h1-style;
+    text-align: center;
   }
 
   p {
     font-family: $font-3;
     font-size: 1.5rem;
+    text-align: center;
   }
 
   a {
@@ -45,4 +49,14 @@ body {
       font-size: 2rem;
     }
   }
+}
+
+#footer {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $bg-alt;
+  @include section-borders;
+  border-top: 1px solid $text-light;
 }
