@@ -80,6 +80,10 @@
       margin-bottom: 1rem;
     }
 
+    div[data-netlify-recaptcha="true"] {
+      width: 100%;
+    }
+
     input[type="submit"] {
       margin-top: 1rem;
       font-size: 2rem;
