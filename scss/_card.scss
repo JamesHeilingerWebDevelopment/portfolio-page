@@ -31,13 +31,15 @@
   }
 
   .img-wrapper {
+    width: 100%;
+    height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   i {
-    color: $color-3;
+    color: $color-2;
     font-size: 10rem;
   }
 

@@ -39,8 +39,8 @@
     @include bp(medium) {
       grid-template-columns: 1fr 1fr;
     }
-    @include bp(large) {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    // @include bp(large) {
+    //   grid-template-columns: repeat(3, 1fr);
+    // }
   }
 }
