@@ -81,7 +81,14 @@
     }
 
     div[data-netlify-recaptcha="true"] {
-      width: 100%;
+      margin-top: 1rem;
+
+      @include bp(very-small) {
+        transform: scale(0.77);
+        -webkit-transform: scale(0.77);
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+      }
     }
 
     input[type="submit"] {
