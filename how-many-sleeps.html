@@ -3,36 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/54b1a1f787.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/how-many-sleeps.min.css">
   <title>How Many Sleeps...</title>
 </head>
 <body>
 
   <nav>
     <div class="nav-link tooltip" id="nav-home" data-tooltip='Home'>
-      <a href="#showcase" tabindex="0">
+      <a href="index.html#showcase" tabindex="0">
         <i class="fas fa-home"></i>
         <p>Home</p>
       </a>
     </div>
     <div class="nav-link tooltip" id="nav-about-me" data-tooltip='About'>
-      <a href="#about-me-anchor" tabindex="0">
+      <a href="index.html#about-me-anchor" tabindex="0">
         <i class="fas fa-user-circle"></i>
         <p>About</p>
       </a>
     </div>
     <div class="nav-link tooltip" id="nav-tech" data-tooltip="Skills">
-      <a href="#skills-anchor" tabindex="0">
+      <a href="index.html#skills-anchor" tabindex="0">
         <i class="fas fa-code"></i>
         <p>Skills</p></a>
     </div>
     <div class="nav-link tooltip" id="nav-projects" data-tooltip='Projects'>
-      <a href="#projects-anchor" tabindex="0">
+      <a href="index.html#projects-anchor" tabindex="0">
         <i class="fas fa-hammer"></i>
         <p>Projects</p>
       </a>
     </div>
     <div class="nav-link tooltip" id="nav-contact" data-tooltip='Contact Me'>
-      <a href="#contact-anchor" tabindex="0">
+      <a href="index.html#contact-anchor" tabindex="0">
         <i class="fas fa-envelope"></i>
         <p>Contact</p>
       </a>
@@ -40,17 +42,29 @@
     <div id="terminal-wrapper">
       <div id="terminal">>><span id="text-output"></span><div id="cursor"></div></div>
     </div>
-    <!-- <div class="nav-link tooltip" id="nav-games" data-tooltip='Games'>
-      <a href="#games"><i class="fas fa-gamepad"></i></a>
-    </div> -->
-    <!-- <div class="scheme-menu tooltip" data-tooltip="Choose your color scheme!">
-      <i class="fas fa-palette" tabindex="0"></i>
-      <div class="scheme-choices">
-        <div class="style-item" id="dark">Dark</div>
-        <div class="style-item" id="light">Light</div>
-      </div>
-    </div> -->
   </nav>
+
+  <div class="container">
+
+    <!-- <div class="spacer"></div> -->
+
+    <div class="date-selector">
+      <label for="date-picker">Choose a date!</label>
+      <input type="date" name="date-picker" id="date-picker" onchange="sleepsCalc()">
+      
+      <p id="sleeps-display">10,056 sleeps</p>
+
+      <div class="save-section">
+        <label for="title" hidden>Enter a title:</label>
+        <input type="text" name="title" placeholder="Enter a title to save...">
+  
+        <label for="recurring"><input type="checkbox" name="recurring" id="recurring">Yearly event</label>
+  
+        <input class="btn" type="button" value="Save" disabled>
+      </div>
+    </div>
+
+  </div>
 
   <footer id="footer">
     <a href="https://www.linkedin.com/in/james-heilinger/" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="Find me on LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -58,6 +72,8 @@
     <a href="https://calvarychapelkaneohe.com/abc-of-salvation/" target="_blank" rel="noreferrer" data-tooltip="The ABC's of Salvation" class="tooltip"><i class="fas fa-cross"></i></a>
     <p id="copyright">&#169; 2020, James Heilinger</p>
   </footer>
+
   <script src="js/tooltips.js"></script>
+  <script src="js/sleepsCalculator.js"></script>
 </body>
 </html>

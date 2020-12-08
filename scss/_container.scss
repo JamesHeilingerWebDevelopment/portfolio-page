@@ -1,0 +1,18 @@
+/** @format */
+
+.container {
+  box-sizing: border-box;
+  color: $text-light;
+
+  height: 100vh;
+  width: auto;
+  padding: 6rem 2rem 2rem 2rem;
+  background-color: $bg;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  //   justify-content: center;
+  align-content: start;
+
+  @include section-borders;
+}

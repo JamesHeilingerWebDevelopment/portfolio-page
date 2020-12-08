@@ -21,6 +21,12 @@
     background-color: $color-2;
     color: $text-dark;
   }
+
+  &:disabled {
+    background-color: $bg;
+    color: $text-light-alt;
+    border-color: $text-light-alt;
+  }
 }
 
 // %btn {

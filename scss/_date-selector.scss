@@ -1,0 +1,54 @@
+/** @format */
+
+.date-selector {
+  box-sizing: border-box;
+  background-color: $bg-alt;
+  padding: 1rem;
+  font-family: $font-3;
+  border: 1px solid $text-light;
+  max-width: 350px;
+
+  display: grid;
+  gap: 1rem;
+  justify-self: center;
+
+  label[for="date-picker"] {
+    font-family: $font-1;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  input[type="date"] {
+    font-family: $font-3;
+    justify-self: stretch;
+    padding: 0.5rem;
+  }
+
+  p {
+    text-align: center;
+    font-family: $font-2;
+    font-size: 2rem;
+  }
+}
+
+.save-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.5rem;
+  margin-top: 1.5rem;
+
+  input[type="text"] {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  input[type="checkbox"] {
+    margin: 0 0.5rem 0 0;
+    padding: 0;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+}
