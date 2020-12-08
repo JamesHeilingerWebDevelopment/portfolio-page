@@ -46,16 +46,23 @@
 
   <div class="container">
 
-    <!-- <div class="spacer"></div> -->
-
     <div class="date-selector">
       <label for="date-picker">Choose a date!</label>
-      <input type="date" name="date-picker" id="date-picker" onchange="sleepsCalc()">
+      <input type="date" name="date-picker" id="date-picker">
       
-      <p id="sleeps-display">10,056 sleeps</p>
+      <div class="sleeps-card" tabindex="0">
+        <div class="sleeps-card-inner">
+          <div class="sleeps-card-front">
+            <p>Click to Reveal</p>
+          </div>
+          <div class="sleeps-card-back">
+            <p class="number-of-sleeps">156 sleeps</p>
+          </div>
+        </div>
+      </div>
 
       <div class="save-section">
-        <label for="title" hidden>Enter a title:</label>
+        <label for="title" hidden>Enter a title to save...</label>
         <input type="text" name="title" placeholder="Enter a title to save...">
   
         <label for="recurring"><input type="checkbox" name="recurring" id="recurring">Yearly event</label>

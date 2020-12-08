@@ -11,27 +11,77 @@
   display: grid;
   gap: 1rem;
   justify-self: center;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "title"
+    "date"
+    "disp"
+    "save";
 
   label[for="date-picker"] {
+    grid-area: title;
     font-family: $font-1;
     font-size: 2rem;
     text-align: center;
   }
 
   input[type="date"] {
+    grid-area: date;
     font-family: $font-3;
     justify-self: stretch;
     padding: 0.5rem;
   }
+}
 
-  p {
-    text-align: center;
-    font-family: $font-2;
-    font-size: 2rem;
-  }
+.sleeps-card {
+  box-sizing: border-box;
+  grid-area: disp;
+  // text-align: center;
+  // font-family: $font-2;
+  // color: $text-light;serif
+  background-color: transparent;
+  perspective: 1000px;
+  width: 260px;
+  height: 150px;
+}
+
+.sleeps-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.sleeps-card:focus .sleeps-card-inner {
+  outline-style: none;
+  transform: rotateY(180deg);
+}
+
+.sleeps-card-front,
+.sleeps-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $text-light;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: $color-1;
+  color: $text-light;
+  font-family: $font-2;
+  font-size: 32px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.sleeps-card-back {
+  transform: rotateY(180deg);
 }
 
 .save-section {
+  grid-area: save;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 0.5rem;
