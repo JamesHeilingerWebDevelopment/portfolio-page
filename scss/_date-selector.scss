@@ -43,6 +43,7 @@
   perspective: 1000px;
   width: 260px;
   height: 150px;
+  outline-style: none;
 }
 
 .sleeps-card-inner {
@@ -52,10 +53,11 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  outline-style: none;
 }
 
 .sleeps-card:focus .sleeps-card-inner {
-  outline-style: none;
+  outline: none;
   transform: rotateY(180deg);
 }
 
@@ -74,9 +76,12 @@
   text-align: center;
   display: flex;
   align-items: center;
+  outline-style: none;
 }
 
 .sleeps-card-back {
+  display: flex;
+  justify-content: center;
   transform: rotateY(180deg);
 }
 

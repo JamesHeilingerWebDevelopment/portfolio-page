@@ -48,7 +48,7 @@
 
     <div class="date-selector">
       <label for="date-picker">Choose a date!</label>
-      <input type="date" name="date-picker" id="date-picker">
+      <input type="date" name="date-picker" id="date-picker" onchange="sleepsCalc()">
       
       <div class="sleeps-card" tabindex="0">
         <div class="sleeps-card-inner">
@@ -56,7 +56,7 @@
             <p>Click to Reveal</p>
           </div>
           <div class="sleeps-card-back">
-            <p class="number-of-sleeps">156 sleeps</p>
+            <p id="number-of-sleeps">Pick a date first!</p>
           </div>
         </div>
       </div>
@@ -74,9 +74,15 @@
   </div>
 
   <footer id="footer">
-    <a href="https://www.linkedin.com/in/james-heilinger/" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="Find me on LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/SpaceMonkeyLab" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="My GitHub repo!"><i class="fab fa-github-square"></i></a>
-    <a href="https://calvarychapelkaneohe.com/abc-of-salvation/" target="_blank" rel="noreferrer" data-tooltip="The ABC's of Salvation" class="tooltip"><i class="fas fa-cross"></i></a>
+    <a href="https://www.linkedin.com/in/james-heilinger/" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="Find me on LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/SpaceMonkeyLab" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="My GitHub repo!">
+      <i class="fab fa-github-square"></i>
+    </a>
+    <a href="https://calvarychapelkaneohe.com/abc-of-salvation/" target="_blank" rel="noreferrer" data-tooltip="The ABC's of Salvation" class="tooltip">
+      <i class="fas fa-cross"></i>
+    </a>
     <p id="copyright">&#169; 2020, James Heilinger</p>
   </footer>
 
