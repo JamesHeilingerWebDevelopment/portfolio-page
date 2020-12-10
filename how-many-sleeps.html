@@ -48,7 +48,7 @@
 
     <div class="date-selector">
       <label for="date-picker">Choose a date!</label>
-      <input type="date" name="date-picker" id="date-picker" onchange="Calc.sleeps()">
+      <input type="date" name="date-picker" id="date-picker" onchange="UI.updateDateSelection()">
       
       <div class="sleeps-card" tabindex="0">
         <div class="sleeps-card-inner">
@@ -62,14 +62,24 @@
       </div>
 
       <div class="save-section">
-        <label for="title" hidden>Enter a title to save...</label>
-        <input type="text" name="title" placeholder="Enter a title to save...">
+        <label for="title" hidden>Enter a title</label>
+        <input type="text" name="title" id="title" placeholder="Enter a title...">
   
         <label for="recurring"><input type="checkbox" name="recurring" id="recurring">Yearly event</label>
   
-        <input class="btn" type="button" value="Save" disabled>
+        <input class="btn" id="save-button" type="button" value="Save" onclick="Store.addDate()" disabled>
       </div>
     </div>
+
+    <details class="accordian-container">
+      <summary>Saved Dates</summary>
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Services</li>
+        <li>Contact</li>
+      </ul>
+    </details>
 
   </div>
 

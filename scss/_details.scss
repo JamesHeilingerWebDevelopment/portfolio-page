@@ -1,0 +1,25 @@
+/** @format */
+
+details {
+  margin-top: 2rem;
+  max-width: 300px;
+  justify-self: center;
+
+  summary {
+    font-family: $font-1;
+    color: $text-light;
+    font-size: 2rem;
+    background-color: $bg-alt;
+    border: 1px solid $text-light;
+    padding: 0.5rem 1rem;
+  }
+
+  ul {
+    // margin: 0 auto;
+    list-style-type: none;
+
+    li {
+      //   margin: 0 auto;
+    }
+  }
+}
