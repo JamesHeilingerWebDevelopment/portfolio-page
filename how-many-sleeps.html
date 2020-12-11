@@ -67,19 +67,38 @@
   
         <label for="recurring"><input type="checkbox" name="recurring" id="recurring">Yearly event</label>
   
-        <input class="btn" id="save-button" type="button" value="Save" onclick="Store.addDate()" disabled>
+        <input class="btn" id="save-button" type="button" value="Save" onclick="Storage.addDate()" disabled>
       </div>
     </div>
 
     <details class="accordian-container">
-      <summary>Saved Dates</summary>
+      <summary>
+        <div>Saved Dates</div>
+        <i class="fas fa-angle-down"></i>
+      </summary>
+      <ul id="saved-dates">
+        <!-- <li>
+          <div class="title">Christmas Day!</div>
+          <div class="date">25-Dec-2020</div>
+          <div class="info">18,356 sleeps ago</div>
+          <div class="delete"><i class="fas fa-times-circle"></i></div>
+          <div class="edit"><i class="fas fa-pencil-alt"></i></div>
+        </li> -->
+      </ul>
+    </details>
+
+    <!-- <details class="accordian-container">
+      <summary>
+        <div>US Holidays</div>
+        <i class="fas fa-angle-down"></i>
+      </summary>
       <ul>
         <li>Home</li>
         <li>About Us</li>
         <li>Services</li>
         <li>Contact</li>
       </ul>
-    </details>
+    </details> -->
 
   </div>
 

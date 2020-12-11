@@ -7,6 +7,7 @@
   font-family: $font-3;
   border: 1px solid $text-light;
   max-width: 300px;
+  margin-bottom: 1.5rem;
 
   display: grid;
   gap: 1rem;
@@ -70,7 +71,7 @@
   border: 1px solid $text-light;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background-color: $color-3;
+  background-color: $color-2;
   color: $text-dark;
   font-family: $font-2;
   font-size: 32px;
