@@ -130,7 +130,12 @@ class UI {
     const ul = document.getElementById('saved-dates')
 
     dates.forEach(date => {
-      let saneDateFormat = `${date.day}-${monthConvert[date.month]}-${date.year}`;
+      if (date.year == null) {
+        
+      } else {
+        let saneDateFormat = `${date.day}-${monthConvert[date.month]}-${date.year}`;
+      }
+      
 
       // Create the li element and set the data-id attribute to the UID of the current date item
       let li = document.createElement('li');
@@ -166,17 +171,6 @@ class UI {
       // Add the li to the ul
       ul.appendChild(li);
     });
-
-
-
-
-    // <li>
-    //   <div class="title">Christmas Day!</div>
-    //   <div class="date">25-Dec-2020</div>
-    //   <div class="info">18,356 sleeps ago</div>
-    //   <div class="delete"><i class="fas fa-times-circle"></i></div>
-    //   <div class="edit"><i class="fas fa-pencil-alt"></i></div>
-    // </li>
   }
 }
 
