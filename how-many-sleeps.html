@@ -46,9 +46,9 @@
 
   <div class="container">
 
-    <div class="date-selector">
+    <form class="date-selector" id="date-form">
       <label for="date-picker">Choose a date!</label>
-      <input type="date" name="date-picker" id="date-picker" onchange="UI.updateDateSelection()">
+      <input type="date" name="date-picker" id="date-picker" onchange="UI.setDate()">
       
       <div class="sleeps-card" tabindex="0">
         <div class="sleeps-card-inner">
@@ -67,39 +67,17 @@
   
         <label for="recurring"><input type="checkbox" name="recurring" id="recurring">Yearly event</label>
   
-        <input class="btn" id="save-button" type="button" value="Save" onclick="Storage.addDate()" disabled>
+        <input class="btn" id="save-button" type="button" value="Save" onclick="UI.saveButtonHandler()" disabled>
       </div>
-    </div>
+    </form>
 
     <details class="accordian-container">
       <summary>
         <div>Saved Dates</div>
         <i class="fas fa-angle-down"></i>
       </summary>
-      <ul id="saved-dates">
-        <!-- <li>
-          <div class="title">Christmas Day!</div>
-          <div class="date">25-Dec-2020</div>
-          <div class="info">18,356 sleeps ago</div>
-          <div class="delete"><i class="fas fa-times-circle"></i></div>
-          <div class="edit"><i class="fas fa-pencil-alt"></i></div>
-        </li> -->
-      </ul>
+      <ul id="saved-dates"></ul>
     </details>
-
-    <!-- <details class="accordian-container">
-      <summary>
-        <div>US Holidays</div>
-        <i class="fas fa-angle-down"></i>
-      </summary>
-      <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Services</li>
-        <li>Contact</li>
-      </ul>
-    </details> -->
-
   </div>
 
   <footer id="footer">

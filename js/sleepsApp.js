@@ -2,7 +2,7 @@ var lut = []; for (var i = 0; i < 256; i++) {
   lut[i] = (i < 16 ? '0' : '') + (i).toString(16);
 }
 
-const monthConvert = {
+const monthLUT = {
   "01": 'Jan',
   "02": 'Feb',
   "03": 'Mar',
@@ -43,6 +43,35 @@ class Calc {
     // https://stackoverflow.com/a/44078785/5823604
     // 571ms to generate 500,000 IDs
     return Date.now().toString(36) + Math.random().toString(36).substring(2);
+  }
+
+  static whichYear(selectedDate) {
+    const today = new Date();
+
+    if (selectedDate.year !== null) {
+      return selectedDate.year;
+    } else {
+      let newDate = new Date(today.year, selectedDate.month, selectedDate.day);
+      if ((newDate - today.getTime()) >= 0) {
+        return today.getFullYear();
+      } else {
+        return today.getFullYear() + 1;
+      }
+    }
+  }
+
+  static makeUnits(val) {
+    let unit = ' sleeps';
+    if (Math.abs(val) == 1) {
+      unit = ' sleep';
+    }
+
+    let pastOrFuture = '';
+    if (val < 0) {
+      pastOrFuture = ' ago';
+    }
+
+    return unit + pastOrFuture;
   }
 }
 
@@ -106,71 +135,81 @@ class UI {
     }
   }
 
-  static updateDateSelection() {
-    UI.setDate();
-    // UI.validateDate();
-  }
-
   static setDate() {
     let chosenDay = document.getElementById('date-picker').value.split('-');
 
-    let sleeps = Calc.sleeps(chosenDay)
-    
-    let unit = ' sleeps'
-    if (Math.abs(sleeps) == 1) {
-      unit = ' sleep'
-    }
+    let sleeps = Calc.sleeps(chosenDay);
 
-    document.getElementById('number-of-sleeps').innerHTML = sleeps + unit;
+    document.getElementById('number-of-sleeps').innerHTML = Math.abs(sleeps) + Calc.makeUnits(sleeps);
     document.getElementById('save-button').removeAttribute('disabled');
   }
 
   static displaySavedDates() {
     const dates = Storage.getDates();
-    const ul = document.getElementById('saved-dates')
+    const ul = document.getElementById('saved-dates');
 
     dates.forEach(date => {
-      if (date.year == null) {
-        
-      } else {
-        let saneDateFormat = `${date.day}-${monthConvert[date.month]}-${date.year}`;
-      }
-      
-
-      // Create the li element and set the data-id attribute to the UID of the current date item
-      let li = document.createElement('li');
-      li.setAttribute('data-id', date.uid);
-
-      // Create the title div
-      let titleDiv = li.appendChild(document.createElement('div'));
-      titleDiv.className = 'title';
-      titleDiv.innerHTML = date.title;
-
-      // Create the date div
-      let dateDiv = li.appendChild(document.createElement('div'));
-      dateDiv.className = 'date';
-      dateDiv.innerHTML = saneDateFormat;
-
-      // Create the info div
-      let infoDiv = li.appendChild(document.createElement('div'));
-      infoDiv.className = 'info';
-      infoDiv.innerHTML = Calc.sleeps([date.year, date.month, date.day]);
-
-      // Create the delete div
-      let deleteDiv = li.appendChild(document.createElement('div'));
-      deleteDiv.className = 'delete';
-      let delIcon = deleteDiv.appendChild(document.createElement('i'));
-      delIcon.className = 'fas fa-times-circle';
-
-      // Create the edit div
-      let editDiv = li.appendChild(document.createElement('div'));
-      editDiv.className = 'edit';
-      let editIcon = editDiv.appendChild(document.createElement('i'));
-      editIcon.className = 'fas fa-pencil-alt';
-
-      // Add the li to the ul
-      ul.appendChild(li);
+      // Create the li and add it to the ul
+      ul.appendChild(this.createSavedDateElement(date));
     });
+  }
+
+  static createSavedDateElement(date) {
+    let computedYear = Calc.whichYear(date);
+    let saneDate = `${date.day}-${monthLUT[date.month]}-${computedYear}`;
+
+    // Create the li element and set the data-id attribute to the UID of the current date item
+    let li = document.createElement('li');
+    li.setAttribute('data-id', date.uid);
+
+    // Create the title div
+    let titleDiv = li.appendChild(document.createElement('div'));
+    titleDiv.className = 'title';
+    titleDiv.innerHTML = date.title;
+
+    // Create the date div
+    let dateDiv = li.appendChild(document.createElement('div'));
+    dateDiv.className = 'date';
+    dateDiv.innerHTML = saneDate;
+
+    // Create the info div
+    let infoDiv = li.appendChild(document.createElement('div'));
+    infoDiv.className = 'info';
+    let sleeps = Calc.sleeps([computedYear, date.month, date.day]);
+    infoDiv.innerHTML = Math.abs(sleeps) + Calc.makeUnits(sleeps);
+
+    // Create the delete div
+    let deleteDiv = li.appendChild(document.createElement('div'));
+    deleteDiv.className = 'delete';
+    let delIcon = deleteDiv.appendChild(document.createElement('i'));
+    delIcon.className = 'fas fa-times-circle';
+
+    // Create the edit div
+    let editDiv = li.appendChild(document.createElement('div'));
+    editDiv.className = 'edit';
+    let editIcon = editDiv.appendChild(document.createElement('i'));
+    editIcon.className = 'fas fa-pencil-alt';
+
+    return li;
+  }
+
+  static updateSavedDatesDisplay() {
+    const ul = document.getElementById('saved-dates');
+    ul.appendChild(this.createSavedDateElement(Storage.getDates().pop()));
+  }
+
+  static saveButtonHandler() {
+    Storage.addDate();
+    this.updateSavedDatesDisplay();
+    document.getElementById('date-form').reset();
+  }
+
+  static editButtonHandler() {
+
+  }
+
+  static deleteButtonHandler() {
+    
   }
 }
 
