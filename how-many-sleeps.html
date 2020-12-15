@@ -49,17 +49,27 @@
     <form class="date-selector" id="date-form">
       <label for="date-picker">Choose a date!</label>
       <input type="date" name="date-picker" id="date-picker" onblur="UI.setDate()">
-      
-      <div class="sleeps-card" tabindex="0">
-        <div class="sleeps-card-inner">
-          <div class="sleeps-card-front">
-            <p>Click to Reveal</p>
-          </div>
-          <div class="sleeps-card-back">
-            <p id="number-of-sleeps">Pick a date first!</p>
-          </div>
-        </div>
-      </div>
+
+      <!-- The parent component -->
+      <div class="curtain">
+        
+        <!-- The component wrapper -->
+        <div class="curtain__wrapper">
+          <!-- The checkbox hack! -->
+          <input type="checkbox" checked>
+
+          <!-- The left curtain panel -->
+          <div class="curtain__panel curtain__panel--left"></div>
+          
+          <!-- The prize behind the curtain panels -->
+          <div class="curtain__prize">10 sleeps</div>
+
+          <!-- The right curtain panel -->
+          <div class="curtain__panel curtain__panel--right"></div>
+          
+        </div> <!-- curtain__wrapper -->
+
+      </div> <!-- curtain -->
 
       <div class="save-section" id="save-section">
         <label for="title" hidden>Enter a title</label>
