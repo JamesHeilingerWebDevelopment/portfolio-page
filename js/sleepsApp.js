@@ -221,42 +221,35 @@ class UI {
     }
   }
 
-  static createSavedDatesSection() {
-    let container = document.getElementsByClassName('container');
-    let savedDatesSection = `
-    <details class="accordian-container">
-      <summary>
-        <div>Saved Dates</div>
-        <i class="fas fa-angle-down"></i>
-      </summary>
-      <ul id="saved-dates"></ul>
-    </details>`
-
-    container.appendChild = savedDatesSection;
+  static hideSaveSections() {
+    document.getElementById('save-section').remove();
+    document.getElementById('saved-dates-container').remove();
   }
 }
 
+// Event: Prepare the page
 document.addEventListener('DOMContentLoaded', () => {
+  // document.getElementById('date-picker').addEventListener('blur', UI.setDate());
+
   if (Storage.available('localStorage')) {
-    // console.log('Storage is available');
-    // UI.createSavedDatesSection();
     UI.displaySavedDates();
+    
+    // Event: Remove a Saved Date
+    document.getElementById('saved-dates').addEventListener('click', (e) => {
+      // Remove Saved Date from UI
+      UI.deleteSavedDate(e.target);
+      
+      // Remove Saved Date from Storage
+      Storage.removeDate(e.target.parentElement.parentElement.getAttribute('data-id'));
+    });
+    
+    // Event: Saving a Date
+    document.getElementById('save-button').addEventListener('click', () => {
+      Storage.addDate();
+      UI.updateSavedDatesDisplay();
+      UI.resetFormDisplay();
+    });
+  } else {
+    UI.hideSaveSections();
   }
-  
-  // Event: Remove a Saved Date
-  document.getElementById('saved-dates').addEventListener('click', (e) => {
-    // Remove Saved Date from UI
-    UI.deleteSavedDate(e.target);
-  
-    // Remove Saved Date from Storage
-    Storage.removeDate(e.target.parentElement.parentElement.getAttribute('data-id'));
-  });
-  
-  // Event: Saving a Date
-  document.getElementById('save-button').addEventListener('click', () => {
-    Storage.addDate();
-    UI.updateSavedDatesDisplay();
-    UI.resetFormDisplay();
-  });
-  
 });

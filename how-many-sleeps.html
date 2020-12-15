@@ -48,7 +48,7 @@
 
     <form class="date-selector" id="date-form">
       <label for="date-picker">Choose a date!</label>
-      <input type="date" name="date-picker" id="date-picker" onchange="UI.setDate()">
+      <input type="date" name="date-picker" id="date-picker" onblur="UI.setDate()">
       
       <div class="sleeps-card" tabindex="0">
         <div class="sleeps-card-inner">
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <div class="save-section">
+      <div class="save-section" id="save-section">
         <label for="title" hidden>Enter a title</label>
         <input type="text" name="title" id="title" placeholder="Enter a title...">
   
@@ -71,7 +71,7 @@
       </div>
     </form>
 
-    <details class="accordian-container">
+    <details class="accordian-container" id="saved-dates-container">
       <summary>
         <div>Saved Dates</div>
         <i class="fas fa-angle-down"></i>
