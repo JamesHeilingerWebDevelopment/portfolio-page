@@ -152,11 +152,13 @@ class UI {
 
   static setDate() {
     let chosenDay = document.getElementById('date-picker').value.split('-');
-
     let sleeps = Calc.sleeps(chosenDay);
+    let saveButton = document.getElementById('save-button');
 
     document.getElementById('number-of-sleeps').innerHTML = Math.abs(sleeps) + Calc.makeUnits(sleeps);
-    document.getElementById('save-button').removeAttribute('disabled');
+    if (saveButton !== null) {
+      saveButton.removeAttribute('disabled')
+    }
   }
 
   static displaySavedDates() {
@@ -213,6 +215,9 @@ class UI {
 
     // Reset the sleeps display
     document.getElementById('number-of-sleeps').innerHTML = 'Pick a date first!';
+
+    // Disable the button
+    document.getElementById('save-button').disabled = true;
   }
 
   static deleteSavedDate(el) {
