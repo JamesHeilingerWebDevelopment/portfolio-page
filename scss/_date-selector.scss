@@ -37,12 +37,9 @@
 .sleeps-card {
   box-sizing: border-box;
   grid-area: disp;
-  // text-align: center;
-  // font-family: $font-2;
-  // color: $text-light;serif
   background-color: transparent;
   perspective: 1000px;
-  width: 260px;
+  max-width: 260px;
   height: 150px;
   outline-style: none;
   cursor: pointer;
@@ -74,11 +71,12 @@
   background-color: $color-2;
   color: $text-dark;
   font-family: $font-2;
-  font-size: 32px;
+  font-size: 2rem;
   text-align: center;
   display: flex;
   align-items: center;
   outline-style: none;
+  padding: 0.5rem;
 }
 
 .sleeps-card-back {

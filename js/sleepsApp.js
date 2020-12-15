@@ -124,6 +124,17 @@ class Storage {
 
     localStorage.setItem('how-many-sleeps', JSON.stringify(dates));
   }
+
+  static available(type) {
+    try {
+        let storage = window[type], x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    } catch(e) {
+        return false;
+    }
+  }
 }
 
 class UI {
@@ -180,15 +191,9 @@ class UI {
 
     // Create the delete div
     let deleteDiv = li.appendChild(document.createElement('div'));
-    deleteDiv.className = 'delete';
+    deleteDiv.className = 'delete-div';
     let delIcon = deleteDiv.appendChild(document.createElement('i'));
-    delIcon.className = 'fas fa-times-circle';
-
-    // Create the edit div
-    let editDiv = li.appendChild(document.createElement('div'));
-    editDiv.className = 'edit';
-    let editIcon = editDiv.appendChild(document.createElement('i'));
-    editIcon.className = 'fas fa-pencil-alt';
+    delIcon.className = 'fas fa-times-circle delete';
 
     return li;
   }
@@ -198,19 +203,56 @@ class UI {
     ul.appendChild(this.createSavedDateElement(Storage.getDates().pop()));
   }
 
-  static saveButtonHandler() {
-    Storage.addDate();
-    this.updateSavedDatesDisplay();
+  static resetFormDisplay() {
+    // Reset the form input fields
     document.getElementById('date-form').reset();
+
+    // Reset the sleeps display
+    document.getElementById('number-of-sleeps').innerHTML = 'Pick a date first!';
   }
 
-  static editButtonHandler() {
-
+  static deleteSavedDate(el) {
+    if (el.classList.contains('delete')) {
+      el.parentElement.parentElement.remove();
+    }
   }
 
-  static deleteButtonHandler() {
-    
+  static createSavedDatesSection() {
+    let container = document.getElementsByClassName('container');
+    let savedDatesSection = `
+    <details class="accordian-container">
+      <summary>
+        <div>Saved Dates</div>
+        <i class="fas fa-angle-down"></i>
+      </summary>
+      <ul id="saved-dates"></ul>
+    </details>`
+
+    container.appendChild = savedDatesSection;
   }
 }
 
-document.addEventListener('DOMContentLoaded', UI.displaySavedDates(), false);
+document.addEventListener('DOMContentLoaded', () => {
+  if (Storage.available('localStorage')) {
+    // console.log('Storage is available');
+    // UI.createSavedDatesSection();
+    UI.displaySavedDates();
+  }
+  
+  // Event: Remove a Saved Date
+  document.getElementById('saved-dates').addEventListener('click', (e) => {
+    // Remove Saved Date from UI
+    UI.deleteSavedDate(e.target);
+  
+    // Remove Saved Date from Storage
+    Storage.removeDate(e.target.parentElement.parentElement.getAttribute('data-id'));
+  });
+  
+  // Event: Saving a Date
+  document.getElementById('save-button').addEventListener('click', () => {
+    Storage.addDate();
+    UI.updateSavedDatesDisplay();
+    UI.resetFormDisplay();
+  });
+  
+});

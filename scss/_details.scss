@@ -4,7 +4,7 @@ details {
   margin-top: 0.5rem;
   box-sizing: border-box;
   width: 100%;
-  max-width: 300px;
+  max-width: 255px;
   justify-self: center;
   ::-webkit-details-marker {
     display: none;
@@ -48,26 +48,16 @@ details {
       grid-template-columns: 5fr 1fr;
       grid-template-areas:
         "title del"
-        "date  blank"
-        "info  edit";
+        "date  del"
+        "info  del";
     }
   }
 }
 
-.edit {
-  grid-area: edit;
-  justify-self: center;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1);
-    color: $color-1;
-  }
-}
-
-.delete {
+.delete-div {
   grid-area: del;
   justify-self: center;
+  align-self: center;
   cursor: pointer;
 
   &:hover {
