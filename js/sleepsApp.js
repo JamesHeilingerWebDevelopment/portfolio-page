@@ -47,16 +47,20 @@ class Calc {
 
   static whichYear(selectedDate) {
     const today = new Date();
-
+    // const oneYear = ;
+    
     if (selectedDate.year !== null) {
       return selectedDate.year;
     } else {
-      let newDate = new Date(today.year, selectedDate.month, selectedDate.day);
-      if ((newDate - today.getTime()) >= 0) {
-        return today.getFullYear();
-      } else {
-        return today.getFullYear() + 1;
-      }
+      let newDate = new Date(today.getFullYear(), selectedDate.month-1, selectedDate.day);
+      console.log(today.getFullYear());
+      console.log(newDate.getFullYear());
+      console.log('Year Diff = ' + (today.getFullYear() - newDate.getFullYear()));
+      // if (((newDate - today.getTime()) >= 0) && (newDate - newYear )) {
+      //   return today.getFullYear();
+      // } else {
+      //   return today.getFullYear() + 1;
+      // }
     }
   }
 
