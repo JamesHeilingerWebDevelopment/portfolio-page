@@ -48,7 +48,7 @@
 
     <form class="date-selector" id="date-form">
       <label for="date-picker">Choose a date!</label>
-      <input type="date" name="date-picker" id="date-picker" onblur="UI.setDate()">
+      <input type="date" name="date-picker" id="date-picker" onblur="UI.setDate()" class="tooltip" data-tooltip="Choose a date">
       
       <div class="sleeps-card" tabindex="0">
         <div class="sleeps-card-inner">
@@ -63,11 +63,11 @@
 
       <div class="save-section" id="save-section">
         <label for="title" hidden>Enter a title</label>
-        <input type="text" name="title" id="title" placeholder="Enter a title...">
+        <input type="text" name="title" id="title" placeholder="Enter a title..." class="tooltip" data-tooltip="Enter a title">
   
-        <label for="recurring"><input type="checkbox" name="recurring" id="recurring">Yearly event</label>
+        <label for="recurring"><input type="checkbox" name="recurring" id="recurring" class="tooltip" data-tooltip="Enable recurring date">Yearly event</label>
   
-        <input class="btn" id="save-button" type="button" value="Save" disabled>
+        <input class="btn tooltip" data-tooltip="Save this date" id="save-button" type="button" value="Save" disabled>
       </div>
     </form>
 

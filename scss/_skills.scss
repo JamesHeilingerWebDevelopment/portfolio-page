@@ -51,30 +51,6 @@
     }
   }
 
-  // .badge {
-  //   display: grid;
-  //   justify-content: center;
-  //   justify-items: center;
-  //   align-items: center;
-  //   grid-template-areas:
-  //     "icon"
-  //     "lbl";
-  //   margin: 0;
-  //   padding: 1rem;
-  //   overflow: hidden;
-
-  //   i {
-  //     grid-area: icon;
-  //     font-size: 3rem;
-  //   }
-
-  //   p {
-  //     grid-area: lbl;
-  //     font-family: $font-2;
-  //     font-size: 1rem;
-  //   }
-  // }
-
   .skill {
     justify-self: center;
     img {
@@ -101,35 +77,4 @@
   .fixed-2 {
     grid-column: span 2;
   }
-
-  // #css-badge {
-  //   i {
-  //     color: #2965f1;
-  //   }
-  // }
-
-  // #js-badge {
-  //   i {
-  //     color: #f4e21e;
-  //   }
-  // }
-
-  // #git-badge {
-  //   i {
-  //     color: #f05033;
-  //   }
-  // }
-
-  // #sass-badge {
-  //   i {
-  //     color: #cf649a;
-  //   }
-  // }
-
-  // #python-badge {
-  //   img {
-  //     width: 48px;
-  //     height: auto;
-  //   }
-  // }
 }
