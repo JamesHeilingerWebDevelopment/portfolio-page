@@ -6,6 +6,7 @@
   background-color: $bg-alt;
   color: $text-light;
   display: grid;
+  gap: 1rem;
 
   @include section-borders;
 
@@ -23,7 +24,7 @@
 
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  // padding: 1rem;
 
   #skills-anchor {
     grid-area: anchor;
@@ -42,12 +43,12 @@
     justify-content: center;
     gap: 1rem;
 
-    align-items: center;
-    grid-template-columns: repeat(3, 1fr);
+    // align-items: center;
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 6rem;
 
     @include bp(medium) {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -56,6 +57,10 @@
     img {
       height: 4rem;
     }
+
+    // img[data-tooltip="Jamstack"] {
+    //   transform: scale(0.75);
+    // }
 
     i {
       font-size: 5rem;
@@ -67,7 +72,11 @@
   }
 
   .wide {
-    grid-column: span 3;
+    img {
+      height: 3rem;
+    }
+
+    grid-column: span 2;
 
     @include bp(medium) {
       grid-column: span 2;
@@ -75,6 +84,10 @@
   }
 
   .fixed-2 {
-    grid-column: span 2;
+    img {
+      height: 3rem;
+    }
+
+    // grid-column: span 2;
   }
 }

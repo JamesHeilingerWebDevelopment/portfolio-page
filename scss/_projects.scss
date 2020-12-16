@@ -7,6 +7,7 @@
   background-color: $bg;
 
   display: grid;
+  gap: 1rem;
   justify-items: center;
   grid-template-areas:
     "anchor"
@@ -32,6 +33,7 @@
   .gallery {
     grid-area: gallery;
     display: grid;
+    gap: 1rem;
     justify-content: space-around;
     grid-template-columns: 1fr;
     padding-bottom: 2rem;
