@@ -5,6 +5,7 @@
   border: 1px solid $text-light;
   margin: 0 1rem;
   max-width: 360px;
+  text-decoration: none;
   cursor: pointer;
 
   h2 {
@@ -50,4 +51,12 @@
   .card-info {
     padding: 1rem;
   }
+
+  .link {
+    color: $color-2;
+  }
+}
+
+.teaser {
+  cursor: default;
 }
