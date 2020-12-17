@@ -72,11 +72,11 @@
     <p id="call-to-action">
       Let's start <span>reflecting</span> your style and <span>radiating</span> your brand today!
     </p>
-    <div>
-      <a class="btn" id="cta" href="#contact-anchor">Get Started!</a>
-      <p id="bait">*Free, no obligation, consult!</p>
+    <div class="cta">
+      <a class="btn" id="cta-btn" href="#contact-anchor">Get Started!</a>
+      <p id="caption">*No obligation!</p>
     </div>
-    <a class="btn-secondary" id="hook" href="#projects-anchor">Learn More</a>
+    <a class="btn-secondary" id="cta-hook" href="#projects-anchor">Learn More</a>
   </section>
 
   <section id="skills">
@@ -188,16 +188,16 @@
         <label>Let's check if you have a pulse: <input name="pulse-check" /></label>
       </p>
       <label for="name">Name</label>
-      <input type="text" class="input-field" name="name" data-tooltip="Who are you?" required>
+      <input type="text" class="input-field" name="name" data-tooltip="Who are you?" placeholder="First and/or last name..." required>
 
       <label for="subject">Subject</label>
-      <input type="text" class="input-field" name="subject" data-tooltip="What's this about?" required>
+      <input type="text" class="input-field" name="subject" data-tooltip="What's this about?" placeholder="What's this about?" required>
 
       <label for="email">Email</label>
-      <input type="email" class="input-field" name='email' data-tooltip="What's your email?" required>
+      <input type="email" class="input-field" name='email' data-tooltip="What's your email?" placeholder="you@yourhost.com" required>
 
       <label for="message">Message</label>
-      <textarea name="message" class="input-field" data-tooltip="What's on your mind?" required></textarea>
+      <textarea name="message" class="input-field" data-tooltip="What's on your mind?" placeholder="Tell me about your project..." required></textarea>
 
       <div data-netlify-recaptcha="true"></div>
 

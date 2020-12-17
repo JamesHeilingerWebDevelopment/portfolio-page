@@ -104,28 +104,34 @@
     }
   }
 
-  #cta {
+  .cta {
     grid-area: cta;
     justify-self: end;
-    width: fit-content;
-    // align-self: center;
   }
 
-  #hook {
+  #cta-btn {
+    width: fit-content;
+  }
+
+  #cta-hook {
     grid-area: hook;
     justify-self: start;
     width: fit-content;
     height: fit-content;
+
+    @media (max-width: 463px) {
+      padding: 1rem 2rem;
+    }
   }
 }
 
-#bait {
-  font-size: 0.6rem;
+#caption {
+  font-size: 0.9rem;
   margin-top: 0.5rem;
   text-align: center;
   font-style: italic;
 
-  @include bp(small) {
-    font-size: 0.75rem;
+  @include bp(medium) {
+    font-size: 1rem;
   }
 }
