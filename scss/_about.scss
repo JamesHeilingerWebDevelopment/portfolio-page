@@ -3,7 +3,7 @@
 @import "vars";
 @import "defaults";
 
-#about-me {
+#about-me-section {
   background-color: $bg;
   color: $text-light;
   font-family: $font-3;
@@ -53,11 +53,11 @@
 
     @include bp(medium) {
       justify-self: end;
-      max-width: 300px;
+      max-width: 315px;
     }
   }
 
-  #about-me-anchor {
+  #about-me {
     grid-area: anchor;
     position: relative;
     font-size: 0;
@@ -71,10 +71,6 @@
     align-self: center;
     max-width: 300px;
     font-size: 1rem;
-
-    @media (min-width: 375px) {
-      font-size: 1rem;
-    }
 
     @include bp(medium) {
       justify-self: start;

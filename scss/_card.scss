@@ -5,10 +5,7 @@
   border: 1px solid $text-light;
   margin: 0 1rem;
   max-width: 360px;
-
-  &:hover {
-    border: 1px solid $color-1;
-  }
+  cursor: pointer;
 
   h2 {
     font-family: $font-2;

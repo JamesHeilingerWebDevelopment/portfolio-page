@@ -3,7 +3,7 @@
 @import "vars";
 @import "defaults";
 
-#contact {
+#contact-section {
   background-color: $bg-alt;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 
   @include section-borders;
 
-  #contact-anchor {
+  #contact {
     grid-area: anchor;
     position: relative;
     font-size: 0;
@@ -94,6 +94,7 @@
     input[type="submit"] {
       margin-top: 1rem;
       font-size: 2rem;
+      cursor: pointer;
     }
   }
 }

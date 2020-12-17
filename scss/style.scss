@@ -1,14 +1,12 @@
 /** @format */
-// @import url("https://fonts.googleapis.com/css2?family=News+Cycle:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=News+Cycle&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
 @import "vars";
 @import "config";
+@import "buttons";
 
-// @import "floating-action-button";
 @import "navbar";
 @import "showcase";
 @import "about";
@@ -17,7 +15,3 @@
 @import "card";
 @import "contact";
 @import "footer";
-
-// @import "utilities";
-@import "buttons";
-@import "mobile";

@@ -3,7 +3,7 @@
 @import "vars";
 @import "defaults";
 
-#projects {
+#projects-section {
   background-color: $bg;
 
   display: grid;
@@ -16,7 +16,7 @@
 
   @include section-borders;
 
-  #projects-anchor {
+  #projects {
     grid-area: anchor;
     position: relative;
     font-size: 0;

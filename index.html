@@ -17,24 +17,24 @@
       </a>
     </div>
     <div class="nav-link tooltip" id="nav-about-me" data-tooltip='About'>
-      <a href="#about-me-anchor" tabindex="0">
+      <a href="#about-me" tabindex="0">
         <i class="fas fa-user-circle"></i>
         <p>About</p>
       </a>
     </div>
     <div class="nav-link tooltip" id="nav-tech" data-tooltip="Skills">
-      <a href="#skills-anchor" tabindex="0">
+      <a href="#skills" tabindex="0">
         <i class="fas fa-code"></i>
         <p>Skills</p></a>
     </div>
     <div class="nav-link tooltip" id="nav-projects" data-tooltip='Projects'>
-      <a href="#projects-anchor" tabindex="0">
+      <a href="#projects" tabindex="0">
         <i class="fas fa-hammer"></i>
         <p>Projects</p>
       </a>
     </div>
     <div class="nav-link tooltip" id="nav-contact" data-tooltip='Contact Me'>
-      <a href="#contact-anchor" tabindex="0">
+      <a href="#contact" tabindex="0">
         <i class="fas fa-envelope"></i>
         <p>Contact</p>
       </a>
@@ -62,25 +62,30 @@
     </div>
   </header>
 
-  <section id="about-me">
-    <div id="about-me-anchor">&nbsp;</div>
+  <section id="about-me-section">
+    <div id="about-me">&nbsp;</div>
     <h1>About Me</h1>
-    <img id="picture" src="images/james-heilinger.jpg" alt="James Heilinger: Web Developer">
-    <p id="text-about-me">
+    <img id="picture" src="images/james-heilinger.jpg" alt="Photo of James Heilinger">
+    <div id="text-about-me">
+      <p>As a web developer, I know how important it is to have an eye-catching, easy-to-use, conversion centered website that reflects your style and radiates your brand. Let me make one for you!</p>
+      <br>
+      <p>But do you know there is much more to a successful web presence than just having a good looking website? You need to get your site in front of the right people in order to make sales. From setting up advertising campaigns, managing social media, and improving SEO (Search Engine Optimization), it can be a lot to learn and manage on your own. I can help your business grow in all of these areas and more!</p>
+    </div>
+    <!-- <p id="text-about-me">
       As a web developer, I know there is so much more to a successful web presence and business than having an eye-catching website. You need to get your site in front of the right people in order to make sales. From setting up advertising campaigns, active social media management, and improving SEO (Search Engine Optimization), it can be a lot to learn and manage on your own. Your website design is also important. You can have the coolest website in your business sector, but if it doesn't lead to sales conversions, it's useless. I can help your business grow in all of these areas and more!
-    </p>
+    </p> -->
     <p id="call-to-action">
       Let's start <span>reflecting</span> your style and <span>radiating</span> your brand today!
     </p>
     <div class="cta">
-      <a class="btn" id="cta-btn" href="#contact-anchor">Get Started!</a>
+      <a class="btn" id="cta-btn" href="#contact">Get Started!</a>
       <p id="caption">*No obligation!</p>
     </div>
-    <a class="btn-secondary" id="cta-hook" href="#projects-anchor">Learn More</a>
+    <a class="btn-secondary" id="cta-hook" href="#projects">Learn More</a>
   </section>
 
-  <section id="skills">
-    <div id="skills-anchor">&nbsp;</div>
+  <section id="skills-section">
+    <div id="skills">&nbsp;</div>
     <h1 id="skills-heading">Skills</h1>
     <div class="badges">
       <div class="skill">
@@ -118,21 +123,21 @@
           <img src="/images/Jamstack_Logo.svg" alt="Jamstack Logo" class="tooltip" data-tooltip="Jamstack">
         </a>
       </div>
-      <div class="skill">
-        <a href="https://www.javascript.com" target="_blank" rel="noreferrer">
-          <i class="fab fa-js tooltip" data-tooltip='JavaScript'></i>
-        </a>
-      </div>
       <div class="skill wide">
         <a href="https://www.netlify.com" target="_blank" rel="noreferrer">
           <img src="/images/full-logo-dark.svg" alt="Netlify Logo" class="tooltip" data-tooltip="Netlify">
         </a>
       </div>
+      <div class="skill">
+        <a href="https://www.javascript.com" target="_blank" rel="noreferrer">
+          <i class="fab fa-js tooltip" data-tooltip='JavaScript'></i>
+        </a>
+      </div>
     </div>
   </section>
   
-  <section id="projects">
-    <div id="projects-anchor">&nbsp;</div>
+  <section id="projects-section">
+    <div id="projects">&nbsp;</div>
     <h1>Projects</h1>
 
     <div class="gallery">
@@ -158,35 +163,16 @@
           <!-- <a href="#">Check it out!</a> -->
         </div>
       </div>
-  
-      <!-- <div class="card">
-        <img class="thumbnail" src="images/ancient_geneology.jpg">
-        <div class="card-info">
-          <h2 class="card-title">Biblical Family Tree</h2>
-          <p class="card-snippet">A visual guide to Biblical geneologies showing how all the names connect together.</p>
-          <a href="#">Check it out!</a>
-        </div>
-      </div> -->
-
-      <!-- <div class="card">
-        <img class="thumbnail" src="images/Jeopardy!_game_board_US.svg">
-        <div class="card-info">
-          <h2 class="card-title">Quiz Show Game</h2>
-          <p class="card-snippet">A Jeopardy clone with a game board display and a host console connected together.</p>
-          <a href="#">Check it out!</a>
-        </div>
-      </div> -->
 
     </div>
   </section>
 
-  <section id="contact">
-    <div id="contact-anchor">&nbsp;</div>
+  <section id="contact-section">
+    <div id="contact">&nbsp;</div>
     <h1>Contact Me</h1>
     <form method="POST" name="contact-form" id="contact-form" action="/thank-you.html" netlify-honeypot="pulse-check" data-netlify="true" data-netlify-recaptcha="true">
-      <p class="hidden">
-        <label>Let's check if you have a pulse: <input name="pulse-check" /></label>
-      </p>
+      <label class="hidden">Let's check if you have a pulse: <input name="pulse-check" /></label>
+
       <label for="name">Name</label>
       <input type="text" class="input-field" name="name" data-tooltip="Who are you?" placeholder="First and/or last name..." required>
 
