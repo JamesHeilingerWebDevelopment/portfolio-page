@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/54b1a1f787.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/how-many-sleeps.min.css">
+  <title>How Many Sleeps...</title>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-link tooltip" id="nav-home" data-tooltip='Home'>
+      <a href="index.html#showcase" tabindex="0">
+        <i class="fas fa-home"></i>
+        <p>Home</p>
+      </a>
+    </div>
+    <div class="nav-link tooltip" id="nav-about-me" data-tooltip='About'>
+      <a href="index.html#about-me-anchor" tabindex="0">
+        <i class="fas fa-user-circle"></i>
+        <p>About</p>
+      </a>
+    </div>
+    <div class="nav-link tooltip" id="nav-tech" data-tooltip="Skills">
+      <a href="index.html#skills-anchor" tabindex="0">
+        <i class="fas fa-code"></i>
+        <p>Skills</p></a>
+    </div>
+    <div class="nav-link tooltip" id="nav-projects" data-tooltip='Projects'>
+      <a href="index.html#projects-anchor" tabindex="0">
+        <i class="fas fa-hammer"></i>
+        <p>Projects</p>
+      </a>
+    </div>
+    <div class="nav-link tooltip" id="nav-contact" data-tooltip='Contact Me'>
+      <a href="index.html#contact-anchor" tabindex="0">
+        <i class="fas fa-envelope"></i>
+        <p>Contact</p>
+      </a>
+    </div>
+    <div id="terminal-wrapper">
+      <div id="terminal">>><span id="text-output"></span><div id="cursor"></div></div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <form class="date-selector" id="date-form">
+      <label for="date-picker">Choose a date!</label>
+      <input type="date" name="date-picker" id="date-picker" onblur="UI.setDate()" class="tooltip" data-tooltip="Choose a date">
+      
+      <div class="sleeps-card" tabindex="0">
+        <div class="sleeps-card-inner">
+          <div class="sleeps-card-front">
+            <p>Click to Reveal</p>
+          </div>
+          <div class="sleeps-card-back">
+            <p id="number-of-sleeps">Pick a date first!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="save-section" id="save-section">
+        <label for="title" hidden>Enter a title</label>
+        <input type="text" name="title" id="title" placeholder="Enter a title..." class="tooltip" data-tooltip="Enter a title">
+  
+        <label for="recurring"><input type="checkbox" name="recurring" id="recurring" class="tooltip" data-tooltip="Enable recurring date">Yearly event</label>
+  
+        <input class="btn tooltip" data-tooltip="Save this date" id="save-button" type="button" value="Save" disabled>
+      </div>
+    </form>
+
+    <details class="accordian-container" id="saved-dates-container">
+      <summary>
+        <div>Saved Dates</div>
+        <i class="fas fa-angle-down"></i>
+      </summary>
+      <ul id="saved-dates"></ul>
+    </details>
+
+  </div>
+
+  <footer id="footer">
+    <a href="https://www.linkedin.com/in/james-heilinger/" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="Find me on LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/SpaceMonkeyLab" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="My GitHub repo!">
+      <i class="fab fa-github-square"></i>
+    </a>
+    <a href="https://calvarychapelkaneohe.com/abc-of-salvation/" target="_blank" rel="noreferrer" data-tooltip="The ABC's of Salvation" class="tooltip">
+      <i class="fas fa-cross"></i>
+    </a>
+    <p id="copyright">&#169; 2020, James Heilinger</p>
+  </footer>
+
+  <script src="js/tooltips.js"></script>
+  <script src="js/sleepsApp.js"></script>
+</body>
+</html>

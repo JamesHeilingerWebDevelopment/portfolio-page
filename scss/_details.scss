@@ -1,0 +1,80 @@
+/** @format */
+
+details {
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+  ::-webkit-details-marker {
+    display: none;
+  }
+
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $font-1;
+    color: $text-light;
+    font-size: 2rem;
+    background-color: $bg;
+    border: 1px solid $text-light;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  &[open] > summary {
+    background-color: $color-2;
+    color: $text-dark;
+  }
+
+  &[open] > summary i {
+    transform: rotate(180deg);
+  }
+
+  ul {
+    // margin: 0 auto;
+    list-style-type: none;
+    font-family: $font-3;
+    background-color: $bg;
+    font-size: 1.5rem;
+
+    li {
+      @include section-borders;
+      padding: 1rem 0.5rem 1rem 1rem;
+      display: grid;
+      gap: 0.5rem;
+      grid-template-columns: 5fr 1fr;
+      grid-template-areas:
+        "title del"
+        "date  del"
+        "info  del";
+    }
+  }
+}
+
+.delete-div {
+  grid-area: del;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    color: red;
+  }
+}
+
+.title {
+  grid-area: title;
+}
+
+.date {
+  grid-area: date;
+  font-size: 1rem;
+}
+
+.info {
+  grid-area: info;
+}

@@ -2,7 +2,7 @@
 @import "vars";
 @import "defaults";
 
-#footer {
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,8 +19,12 @@
     margin-right: 1rem;
   }
   p {
-    font-size: 1rem;
+    font-size: 0.7rem;
     margin: 0 0.5rem;
+
+    @media (min-width: 375px) {
+      font-size: 1rem;
+    }
 
     @include bp(medium) {
       font-size: 1.5rem;

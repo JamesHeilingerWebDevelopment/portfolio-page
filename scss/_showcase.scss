@@ -2,8 +2,9 @@
 @import "vars";
 @import "defaults";
 
-#showcase {
-  background: $bg url("/images/lake.jpg") no-repeat center center / cover;
+header {
+  background: $bg-alt url("/images/lake.jpg") no-repeat center center / cover;
+  opacity: 1.5;
   color: $text-light;
   display: flex;
   flex-direction: column;

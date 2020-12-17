@@ -9,28 +9,30 @@
   font-family: $font-3;
   display: grid;
   row-gap: 1rem;
-  column-gap: 2rem;
+  column-gap: 1rem;
   justify-items: center;
+  padding: 0 1rem 2rem 1rem;
 
   @include section-borders;
 
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "anchor"
-    "title"
-    "pic"
-    "txt"
-    "act"
-    "click";
+    "anchor anchor"
+    "title title"
+    "pic   pic"
+    "txt   txt"
+    "act   act"
+    "cta   hook";
 
   @include bp(medium) {
     grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
     grid-template-areas:
       "anchor anchor"
       "title  title"
       "pic    txt"
       "act    act"
-      "click  click";
+      "cta    hook";
   }
 
   h1 {
@@ -102,7 +104,34 @@
     }
   }
 
-  a {
-    grid-area: click;
+  .cta {
+    grid-area: cta;
+    justify-self: end;
+  }
+
+  #cta-btn {
+    width: fit-content;
+  }
+
+  #cta-hook {
+    grid-area: hook;
+    justify-self: start;
+    width: fit-content;
+    height: fit-content;
+
+    @media (max-width: 463px) {
+      padding: 1rem 2rem;
+    }
+  }
+}
+
+#caption {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-style: italic;
+
+  @include bp(medium) {
+    font-size: 1rem;
   }
 }
