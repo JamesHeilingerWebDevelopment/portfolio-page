@@ -14,8 +14,3 @@
 @import "container";
 @import "date-selector";
 @import "footer";
-
-footer {
-  background-color: $bg-alt;
-  @include section-borders;
-}
