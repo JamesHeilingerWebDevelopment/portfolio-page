@@ -8,9 +8,44 @@
   padding: 1rem;
   color: $text-light;
   background-color: $color-1;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   text-align: center;
   transition-duration: 0.4s;
+  display: grid;
+  // grid-template-columns: repeat(2, minmax(0, auto));
+  align-content: center;
+
+  @media (min-width: 375px) {
+    font-size: 1.5rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-2;
+    color: $text-dark;
+  }
+
+  &:disabled {
+    background-color: $bg;
+    color: $text-light-alt;
+    border-color: $text-light-alt;
+  }
+}
+
+.btn-secondary {
+  text-decoration: none;
+  font-family: $font-2;
+  font-size: 1.2rem;
+  border: 1px solid $text-light;
+  padding: 1rem;
+  color: $text-light;
+  // background-color: $color-1;
+  // margin-bottom: 2rem;
+  text-align: center;
+  transition-duration: 0.4s;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  align-content: center;
 
   @media (min-width: 375px) {
     font-size: 1.5rem;
