@@ -50,7 +50,13 @@
       <label for="date-picker">Choose a date!</label>
       <input type="date" name="date-picker" id="date-picker" onblur="UI.setDate()" class="tooltip" data-tooltip="Choose a date">
       
-      <div class="sleeps-card" tabindex="0">
+      <div class="sleeps-cover" tabindex="0">
+        <p>Click to Reveal</p>
+      </div>
+      <div class="sleeps-answer">
+        <p id="number-of-sleeps">Pick a date first!</p>
+      </div>
+      <!-- <div class="sleeps-card" tabindex="0">
         <div class="sleeps-card-inner">
           <div class="sleeps-card-front">
             <p>Click to Reveal</p>
@@ -59,7 +65,7 @@
             <p id="number-of-sleeps">Pick a date first!</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="save-section" id="save-section">
         <label for="title" hidden>Enter a title</label>
