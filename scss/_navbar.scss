@@ -56,6 +56,13 @@ nav {
         }
       }
 
+      img {
+        height: 2rem;
+        // background-color: $text-light;
+        // fill: $text-light;
+        filter: invert(98%) sepia(1%) saturate(671%) hue-rotate(328deg) brightness(113%) contrast(73%);
+      }
+
       p {
         grid-area: lbl;
         text-align: center;
@@ -77,6 +84,9 @@ nav {
       cursor: pointer;
       a {
         color: $color-2;
+      }
+      img {
+        filter: invert(53%) sepia(100%) saturate(608%) hue-rotate(54deg) brightness(91%) contrast(88%);
       }
     }
 
