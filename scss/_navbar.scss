@@ -18,15 +18,20 @@ nav {
 
   .nav-link {
     display: grid;
+    grid-template-areas:
+      "icon"
+      "lbl";
     justify-content: center;
-    align-items: center;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    color: $color-3;
+    // color: $color-3;
     height: 100%;
     font-family: $font-2;
     border-right: 1px solid $text-light;
+    text-decoration: none;
+    color: $text-light;
+    text-align: center;
 
     @include bp(large) {
       grid-template-areas: "icon";
@@ -34,12 +39,33 @@ nav {
       width: 100px;
     }
 
+    i {
+      align-self: end;
+      grid-area: icon;
+      font-size: 1.5rem;
+      @include bp(small) {
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      grid-area: lbl;
+      text-align: center;
+      font-size: 0.7rem;
+      margin-bottom: 0.5rem;
+
+      @include bp(small) {
+        font-size: 0.7rem;
+      }
+
+      @include bp(large) {
+        display: none;
+      }
+    }
+
     a {
       grid-area: icon;
-      text-decoration: none;
-      color: $text-light;
       display: block;
-      text-align: center;
       padding-top: 0.5rem;
       padding-left: 1em;
       padding-right: 1em;
@@ -49,33 +75,15 @@ nav {
         padding: 0;
       }
 
-      i {
-        font-size: 1.5rem;
-        @include bp(small) {
-          font-size: 1.5rem;
-        }
-      }
-
       img {
+        grid-area: icon;
         height: 2rem;
+        // align-self: center;
+        // padding-top: 1rem;
+        // margin-top: 1rem;
         // background-color: $text-light;
         // fill: $text-light;
         filter: invert(98%) sepia(1%) saturate(671%) hue-rotate(328deg) brightness(113%) contrast(73%);
-      }
-
-      p {
-        grid-area: lbl;
-        text-align: center;
-        font-size: 0.7rem;
-        margin-bottom: 0.5rem;
-
-        @include bp(small) {
-          font-size: 0.7rem;
-        }
-
-        @include bp(large) {
-          display: none;
-        }
       }
     }
 
