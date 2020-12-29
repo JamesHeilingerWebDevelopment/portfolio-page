@@ -25,13 +25,22 @@ nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    // color: $color-3;
     height: 100%;
     font-family: $font-2;
     border-right: 1px solid $text-light;
     text-decoration: none;
     color: $text-light;
     text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      i {
+        color: $color-2;
+      }
+      img {
+        filter: invert(53%) sepia(100%) saturate(608%) hue-rotate(54deg) brightness(91%) contrast(88%);
+      }
+    }
 
     @include bp(large) {
       grid-template-areas: "icon";
@@ -43,8 +52,13 @@ nav {
       align-self: end;
       grid-area: icon;
       font-size: 1.5rem;
+
       @include bp(small) {
         font-size: 1.5rem;
+      }
+
+      @include bp(large) {
+        align-self: center;
       }
     }
 
@@ -52,7 +66,6 @@ nav {
       grid-area: lbl;
       text-align: center;
       font-size: 0.7rem;
-      margin-bottom: 0.5rem;
 
       @include bp(small) {
         font-size: 0.7rem;
@@ -63,38 +76,14 @@ nav {
       }
     }
 
-    a {
+    img {
       grid-area: icon;
-      display: block;
-      padding-top: 0.5rem;
-      padding-left: 1em;
-      padding-right: 1em;
+      align-self: end;
+      height: 2rem;
+      filter: invert(98%) sepia(1%) saturate(671%) hue-rotate(328deg) brightness(113%) contrast(73%);
 
       @include bp(large) {
-        font-size: 2rem;
-        padding: 0;
-      }
-
-      img {
-        grid-area: icon;
-        height: 2rem;
-        // align-self: center;
-        // padding-top: 1rem;
-        // margin-top: 1rem;
-        // background-color: $text-light;
-        // fill: $text-light;
-        filter: invert(98%) sepia(1%) saturate(671%) hue-rotate(328deg) brightness(113%) contrast(73%);
-      }
-    }
-
-    &:hover,
-    &:focus {
-      cursor: pointer;
-      a {
-        color: $color-2;
-      }
-      img {
-        filter: invert(53%) sepia(100%) saturate(608%) hue-rotate(54deg) brightness(91%) contrast(88%);
+        align-self: center;
       }
     }
 
