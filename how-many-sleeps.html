@@ -6,42 +6,39 @@
   <script src="https://kit.fontawesome.com/54b1a1f787.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/how-many-sleeps.min.css">
   <title>How Many Sleeps...</title>
+  <link rel="shortcut icon" type="image/svg" href="favicon.ico">
 </head>
 <body>
 
   <nav>
-    <div class="nav-link tooltip" id="nav-home" data-tooltip='Home'>
-      <a href="index.html#showcase" tabindex="0">
-        <i class="fas fa-home"></i>
-        <p>Home</p>
-      </a>
-    </div>
-    <div class="nav-link tooltip" id="nav-about-me" data-tooltip='About'>
-      <a href="index.html#about-me-anchor" tabindex="0">
-        <i class="fas fa-user-circle"></i>
-        <p>About</p>
-      </a>
-    </div>
-    <div class="nav-link tooltip" id="nav-tech" data-tooltip="Skills">
-      <a href="index.html#skills-anchor" tabindex="0">
-        <i class="fas fa-code"></i>
-        <p>Skills</p></a>
-    </div>
-    <div class="nav-link tooltip" id="nav-projects" data-tooltip='Projects'>
-      <a href="index.html#projects-anchor" tabindex="0">
-        <i class="fas fa-hammer"></i>
-        <p>Projects</p>
-      </a>
-    </div>
-    <div class="nav-link tooltip" id="nav-contact" data-tooltip='Contact Me'>
-      <a href="index.html#contact-anchor" tabindex="0">
-        <i class="fas fa-envelope"></i>
-        <p>Contact</p>
-      </a>
-    </div>
+    <a href="/#showcase" class="nav-link tooltip" id="nav-home" data-tooltip='Home' tabindex="0">
+      <img src="/images/jh-black-logo.svg" alt="James Heilinger 'JH' logo">
+    </a>
+    <a href="/#about-me" class="nav-link tooltip" id="nav-about-me" data-tooltip='About' tabindex="0">
+      <i class="fas fa-user-circle"></i>
+      <p>About</p>
+    </a>
+    <a href="/#skills" class="nav-link tooltip" id="nav-tech" data-tooltip="Skills" tabindex="0">
+      <i class="fas fa-code"></i>
+      <p>Skills</p></a>
+    <a href="/#projects" class="nav-link tooltip" id="nav-projects" data-tooltip='Projects' tabindex="0">
+      <i class="fas fa-hammer"></i>
+      <p>Projects</p>
+    </a>
+    <a href="/#contact" class="nav-link tooltip" id="nav-contact" data-tooltip='Contact Me' tabindex="0">
+      <i class="fas fa-envelope"></i>
+      <p>Contact</p>
+    </a>
     <div id="terminal-wrapper">
       <div id="terminal">>><span id="text-output"></span><div id="cursor"></div></div>
     </div>
+    <!-- <div class="scheme-menu tooltip" data-tooltip="Choose your color scheme!">
+      <i class="fas fa-palette" tabindex="0"></i>
+      <div class="scheme-choices">
+        <div class="style-item" id="dark">Dark</div>
+        <div class="style-item" id="light">Light</div>
+      </div>
+    </div> -->
   </nav>
 
   <div class="container">
