@@ -52,6 +52,10 @@ body {
   }
 }
 
+.nav-link > p {
+  margin: 0;
+}
+
 #footer {
   box-sizing: border-box;
   position: fixed;

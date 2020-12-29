@@ -3,6 +3,9 @@
 .card {
   background-color: $bg-alt;
   border: 1px solid $text-light;
+  &:hover {
+    border-color: $color-1;
+  }
   margin: 0 1rem;
   max-width: 360px;
   text-decoration: none;
@@ -59,4 +62,7 @@
 
 .teaser {
   cursor: default;
+  &:hover {
+    border-color: $text-light;
+  }
 }
