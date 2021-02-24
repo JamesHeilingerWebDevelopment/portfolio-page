@@ -2,8 +2,15 @@
 @import "vars";
 @import "defaults";
 
-header {
+.no-webp header {
   background: $bg-alt url("/images/lake.jpg") no-repeat center center / cover;
+}
+
+.webp header {
+  background: $bg-alt url("/images/lake.webp") no-repeat center center / cover;
+}
+
+header {
   opacity: 1.5;
   color: $text-light;
   display: flex;
