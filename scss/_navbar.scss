@@ -34,6 +34,9 @@ nav {
 
     &:hover {
       cursor: pointer;
+      svg {
+        fill: $color-2;
+      }
       i {
         color: $color-2;
       }
@@ -49,6 +52,10 @@ nav {
       grid-template-areas: "icon";
       align-items: center;
       width: 100px;
+    }
+
+    svg {
+      fill: $text-light;
     }
 
     i {
@@ -181,6 +188,8 @@ nav {
       }
     }
   }
+
+  
 
   // .style-item:hover {
   //   color: $color-1;

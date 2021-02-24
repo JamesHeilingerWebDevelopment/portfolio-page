@@ -42,18 +42,24 @@
     margin-top: 0;
   }
 
-  img {
-    grid-area: pic;
+  picture {
+
     justify-self: center;
-
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border: 1px solid $text-light-alt;
-
+    align-self: center;
+    
     @include bp(medium) {
       justify-self: end;
-      max-width: 315px;
+    }
+    
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border: 1px solid $text-light-alt;
+
+      @include bp(medium) {
+        max-width: 315px;
+      }
     }
   }
 

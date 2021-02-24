@@ -20,8 +20,3 @@ for (let i = 0; i < inputFields.length; i++) {
   inputFields[i].addEventListener('focus', terminalPrint);
   inputFields[i].addEventListener('blur', terminalReset, false);
 }
-
-// formSubmit.addEventListener('focus', terminalPrint);
-// formSubmit.addEventListener('blur', terminalReset);
-// formSubmit.addEventListener('mouseenter', terminalPrint);
-// formSubmit.addEventListener('mouseleave', terminalReset);
