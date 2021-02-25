@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 0 1rem 0 1rem;
 
   @include section-borders;
 
@@ -37,9 +37,9 @@
   #contact-form {
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 100%;
     max-width: 650px;
-    min-width: 300px;
+    // min-width: 300px;
     background-color: $bg;
     padding: 1rem 2rem 2rem 2rem;
     border: 1px solid $text-light;

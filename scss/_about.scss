@@ -43,6 +43,7 @@
   }
 
   picture {
+    grid-area: pic;
 
     justify-self: center;
     align-self: center;
@@ -56,6 +57,7 @@
       max-width: 300px;
       height: auto;
       border: 1px solid $text-light-alt;
+      justify-self: center;
 
       @include bp(medium) {
         max-width: 315px;
@@ -77,9 +79,11 @@
     align-self: center;
     max-width: 300px;
     font-size: 1rem;
+    text-align: center;
 
     @include bp(medium) {
       justify-self: start;
+      text-align: left;
     }
   }
 

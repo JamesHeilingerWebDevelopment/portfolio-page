@@ -3,9 +3,11 @@
 @import "defaults";
 
 footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 
   color: $text-light;
   background-color: $bg;
@@ -14,17 +16,15 @@ footer {
   padding: 1rem;
   @include section-borders;
 
-  i {
-    font-size: 2rem;
-    margin-right: 1rem;
+  svg {
+    padding: 0.5rem;
+    height: 3rem;
+    width: auto;
   }
-  p {
-    font-size: 0.7rem;
-    margin: 0 0.5rem;
 
-    @media (min-width: 375px) {
-      font-size: 1rem;
-    }
+  p {
+    font-size: 1rem;
+    margin: 0 0.5rem;
 
     @include bp(medium) {
       font-size: 1.5rem;
@@ -32,11 +32,13 @@ footer {
   }
 
   a {
-    color: $text-light;
     text-decoration: none;
+    fill: $text-light;
 
-    &:hover {
-      color: $color-2;
+    &:hover, &:focus {
+      svg {
+        fill: $color-2;
+      }
     }
   }
 }

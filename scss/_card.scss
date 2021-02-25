@@ -3,10 +3,11 @@
 .card {
   background-color: $bg-alt;
   border: 1px solid $text-light;
-  &:hover {
+  &:hover, &:focus {
     border-color: $color-1;
   }
   margin: 0 1rem;
+  width: 100%;
   max-width: 360px;
   text-decoration: none;
   cursor: pointer;
@@ -37,23 +38,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
-  i {
-    color: $color-2;
-    font-size: 10rem;
+  svg {
+    width: 10rem;
+    height: auto;
+    fill: $color-2;
   }
 
   img {
-    width: 10rem;
-    height: auto;
+    width: auto;
+    height: 100%;
   }
 
-  .thumbnail {
-    display: block;
+  .auto-shop-growth-logo {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: auto;
   }
 
   .card-info {
@@ -62,12 +63,5 @@
 
   .link {
     color: $color-2;
-  }
-}
-
-.teaser {
-  cursor: default;
-  &:hover {
-    border-color: $text-light;
   }
 }

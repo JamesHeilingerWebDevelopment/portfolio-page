@@ -32,17 +32,25 @@
 
   .gallery {
     grid-area: gallery;
+    width: 100%;
     display: grid;
+    justify-items: center;
     gap: 1rem;
-    justify-content: space-around;
-    grid-template-columns: 1fr;
-    padding-bottom: 2rem;
-
-    @include bp(medium) {
-      grid-template-columns: 1fr 1fr;
-    }
-    // @include bp(large) {
-    //   grid-template-columns: repeat(3, 1fr);
-    // }
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 0 1rem 2rem 1rem;
   }
+}
+
+.sweet-lous {
+  background-image: linear-gradient(to bottom right, #f6caa1, #ed9544);
+  padding: 1rem;
+}
+
+.auto-shop-growth {
+  background-color: white;
+  padding: 1rem;
+  img {
+    width: 100%;
+    height: auto;
+}
 }

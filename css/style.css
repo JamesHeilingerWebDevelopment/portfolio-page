@@ -24,7 +24,7 @@
   }
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   background-color: #53b40f;
   color: #212121;
 }
@@ -128,6 +128,10 @@
 }
 
 #about-me-section picture {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: pic;
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
@@ -147,6 +151,8 @@
   max-width: 300px;
   height: auto;
   border: 1px solid #aaaaaa;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 @media (min-width: 768px) {
@@ -176,12 +182,14 @@
       align-self: center;
   max-width: 300px;
   font-size: 1rem;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   #about-me-section #text-about-me {
     -ms-grid-column-align: start;
         justify-self: start;
+    text-align: left;
   }
 }
 
@@ -431,21 +439,30 @@
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: gallery;
+  width: 100%;
   display: -ms-grid;
   display: grid;
+  justify-items: center;
   gap: 1rem;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  padding-bottom: 2rem;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 0 1rem 2rem 1rem;
 }
 
-@media (min-width: 768px) {
-  #projects-section .gallery {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
+.sweet-lous {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#f6caa1), to(#ed9544));
+  background-image: linear-gradient(to bottom right, #f6caa1, #ed9544);
+  padding: 1rem;
+}
+
+.auto-shop-growth {
+  background-color: white;
+  padding: 1rem;
+}
+
+.auto-shop-growth img {
+  width: 100%;
+  height: auto;
 }
 
 /** @format */
@@ -453,12 +470,13 @@
   background-color: #333333;
   border: 1px solid #dddddd;
   margin: 0 1rem;
+  width: 100%;
   max-width: 360px;
   text-decoration: none;
   cursor: pointer;
 }
 
-.card:hover {
+.card:hover, .card:focus {
   border-color: #0f53b4;
 }
 
@@ -494,24 +512,23 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
-.card i {
-  color: #53b40f;
-  font-size: 10rem;
+.card svg {
+  width: 10rem;
+  height: auto;
+  fill: #53b40f;
 }
 
 .card img {
-  width: 10rem;
-  height: auto;
+  width: auto;
+  height: 100%;
 }
 
-.card .thumbnail {
-  display: block;
+.card .auto-shop-growth-logo {
   width: 100%;
-  height: 180px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: auto;
 }
 
 .card .card-info {
@@ -520,14 +537,6 @@
 
 .card .link {
   color: #53b40f;
-}
-
-.teaser {
-  cursor: default;
-}
-
-.teaser:hover {
-  border-color: #dddddd;
 }
 
 /** @format */
@@ -552,7 +561,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0;
+  padding: 0 1rem 0 1rem;
   border-bottom: 1px solid #dddddd;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
@@ -591,9 +600,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50vw;
+  width: 100%;
   max-width: 650px;
-  min-width: 300px;
   background-color: #212121;
   padding: 1rem 2rem 2rem 2rem;
   border: 1px solid #dddddd;
@@ -660,15 +668,18 @@
 }
 
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (max-content)[3];
+      grid-template-columns: repeat(3, -webkit-max-content);
+      grid-template-columns: repeat(3, max-content);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 1rem;
   color: #dddddd;
   background-color: #212121;
   font-family: "Noto Sans", sans-serif;
@@ -678,20 +689,15 @@ footer {
   border-right: 1px solid #dddddd;
 }
 
-footer i {
-  font-size: 2rem;
-  margin-right: 1rem;
+footer svg {
+  padding: 0.5rem;
+  height: 3rem;
+  width: auto;
 }
 
 footer p {
-  font-size: 0.7rem;
+  font-size: 1rem;
   margin: 0 0.5rem;
-}
-
-@media (min-width: 375px) {
-  footer p {
-    font-size: 1rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -701,11 +707,11 @@ footer p {
 }
 
 footer a {
-  color: #dddddd;
   text-decoration: none;
+  fill: #dddddd;
 }
 
-footer a:hover {
-  color: #53b40f;
+footer a:hover svg, footer a:focus svg {
+  fill: #53b40f;
 }
 /*# sourceMappingURL=style.css.map */

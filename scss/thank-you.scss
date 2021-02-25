@@ -45,9 +45,10 @@ body {
     grid-area: lnk;
     margin-top: 0.5rem;
 
-    i {
+    svg {
       grid-area: icn;
       font-size: 2rem;
+      fill: $text-light;
     }
   }
 }
