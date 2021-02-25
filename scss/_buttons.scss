@@ -10,6 +10,7 @@
   background-color: $color-1;
   // margin-bottom: 2rem;
   text-align: center;
+  transition: all;
   transition-duration: 0.4s;
   display: grid;
   // grid-template-columns: repeat(2, minmax(0, auto));
@@ -22,12 +23,20 @@
   &:hover, &:focus {
     background-color: $color-2;
     color: $text-dark;
+
+    svg {
+      fill: $text-dark;
+    }
   }
 
   &:disabled {
     background-color: $bg-alt;
     color: $text-light-alt;
     border-color: $text-light-alt;
+
+    svg {
+      fill: $text-light-alt;
+    }
   }
 }
 

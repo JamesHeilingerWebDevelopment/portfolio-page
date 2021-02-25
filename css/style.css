@@ -10,6 +10,8 @@
   color: #dddddd;
   background-color: #0f53b4;
   text-align: center;
+  -webkit-transition: all;
+  transition: all;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
   display: -ms-grid;
@@ -29,10 +31,18 @@
   color: #212121;
 }
 
+.btn:hover svg, .btn:focus svg {
+  fill: #212121;
+}
+
 .btn:disabled {
   background-color: #333333;
   color: #aaaaaa;
   border-color: #aaaaaa;
+}
+
+.btn:disabled svg {
+  fill: #aaaaaa;
 }
 
 .btn-secondary {
@@ -690,14 +700,12 @@ footer {
 }
 
 footer svg {
-  padding: 0.5rem;
-  height: 3rem;
+  height: 2.5rem;
   width: auto;
 }
 
 footer p {
   font-size: 1rem;
-  margin: 0 0.5rem;
 }
 
 @media (min-width: 768px) {
