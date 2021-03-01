@@ -58,10 +58,33 @@
   }
 
   .card-info {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60px auto min-content;
+    // align-content: space-between;
+    height: 276px;
     padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.35rem;
+    height: 70px;
+  }
+
+  .card-link {
+    align-self: end;
   }
 
   .link {
     color: $color-2;
+  }
+
+}
+
+.teaser-card {
+  cursor: default;
+
+  &:hover, &:focus {
+    border-color: $text-light;
   }
 }

@@ -195,11 +195,20 @@ class UI {
     let sleeps = Calc.sleeps([computedYear, date.month, date.day]);
     infoDiv.innerHTML = Math.abs(sleeps) + Calc.makeUnits(sleeps);
 
-    // Create the delete div
-    let deleteDiv = li.appendChild(document.createElement('div'));
-    deleteDiv.className = 'delete-div';
-    let delIcon = deleteDiv.appendChild(document.createElement('i'));
-    delIcon.className = 'fas fa-times-circle delete';
+    // Create the delete icon
+    let delSVG = li.appendChild(document.createElementNS('http://www.w3.org/2000/svg', 'svg'));
+    delSVG.setAttribute('version', '1.1');
+    delSVG.setAttribute('width', '24');
+    delSVG.setAttribute('height', '28');
+    delSVG.setAttribute('viewBox', '0 0 24 28');
+    let delPath = delSVG.appendChild(document.createElementNS('http://www.w3.org/2000/svg', 'path'));
+    delPath.setAttribute('d', 'M17.953 17.531c0-0.266-0.109-0.516-0.297-0.703l-2.828-2.828 2.828-2.828c0.187-0.187 0.297-0.438 0.297-0.703s-0.109-0.531-0.297-0.719l-1.406-1.406c-0.187-0.187-0.453-0.297-0.719-0.297s-0.516 0.109-0.703 0.297l-2.828 2.828-2.828-2.828c-0.187-0.187-0.438-0.297-0.703-0.297s-0.531 0.109-0.719 0.297l-1.406 1.406c-0.187 0.187-0.297 0.453-0.297 0.719s0.109 0.516 0.297 0.703l2.828 2.828-2.828 2.828c-0.187 0.187-0.297 0.438-0.297 0.703s0.109 0.531 0.297 0.719l1.406 1.406c0.187 0.187 0.453 0.297 0.719 0.297s0.516-0.109 0.703-0.297l2.828-2.828 2.828 2.828c0.187 0.187 0.438 0.297 0.703 0.297s0.531-0.109 0.719-0.297l1.406-1.406c0.187-0.187 0.297-0.453 0.297-0.719zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z');
+
+
+//     <symbol id="icon-times-circle" viewBox="0 0 24 28">
+// <title>times-circle</title>
+// <path d="M17.953 17.531c0-0.266-0.109-0.516-0.297-0.703l-2.828-2.828 2.828-2.828c0.187-0.187 0.297-0.438 0.297-0.703s-0.109-0.531-0.297-0.719l-1.406-1.406c-0.187-0.187-0.453-0.297-0.719-0.297s-0.516 0.109-0.703 0.297l-2.828 2.828-2.828-2.828c-0.187-0.187-0.438-0.297-0.703-0.297s-0.531 0.109-0.719 0.297l-1.406 1.406c-0.187 0.187-0.297 0.453-0.297 0.719s0.109 0.516 0.297 0.703l2.828 2.828-2.828 2.828c-0.187 0.187-0.297 0.438-0.297 0.703s0.109 0.531 0.297 0.719l1.406 1.406c0.187 0.187 0.453 0.297 0.719 0.297s0.516-0.109 0.703-0.297l2.828-2.828 2.828 2.828c0.187 0.187 0.438 0.297 0.703 0.297s0.531-0.109 0.719-0.297l1.406-1.406c0.187-0.187 0.297-0.453 0.297-0.719zM24 14c0 6.625-5.375 12-12 12s-12-5.375-12-12 5.375-12 12-12 12 5.375 12 12z"></path>
+// </symbol>
 
     return li;
   }

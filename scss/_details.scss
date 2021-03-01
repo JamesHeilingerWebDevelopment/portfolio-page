@@ -16,6 +16,7 @@ details {
     align-items: center;
     font-family: $font-1;
     color: $text-light;
+    fill: $text-light;
     font-size: 2rem;
     background-color: $bg;
     border: 1px solid $text-light;
@@ -27,14 +28,14 @@ details {
   &[open] > summary {
     background-color: $color-2;
     color: $text-dark;
+    fill: $text-dark;
   }
 
-  &[open] > summary i {
+  &[open] > summary svg {
     transform: rotate(180deg);
   }
 
   ul {
-    // margin: 0 auto;
     list-style-type: none;
     font-family: $font-3;
     background-color: $bg;
@@ -50,21 +51,23 @@ details {
         "title del"
         "date  del"
         "info  del";
+      
+      svg {
+        grid-area: del;
+        justify-self: center;
+        align-self: center;
+        fill: $text-light;
+        cursor: pointer;
+      
+        &:hover {
+          transform: scale(1.1);
+          fill: red;
+        }
+      }
     }
   }
 }
 
-.delete-div {
-  grid-area: del;
-  justify-self: center;
-  align-self: center;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1);
-    color: red;
-  }
-}
 
 .title {
   grid-area: title;

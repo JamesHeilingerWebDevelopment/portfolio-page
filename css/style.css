@@ -542,11 +542,38 @@
 }
 
 .card .card-info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 60px auto min-content;
+      grid-template-rows: 60px auto -webkit-min-content;
+      grid-template-rows: 60px auto min-content;
+  height: 276px;
   padding: 1rem;
+}
+
+.card .card-title {
+  font-size: 1.35rem;
+  height: 70px;
+}
+
+.card .card-link {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
 
 .card .link {
   color: #53b40f;
+}
+
+.teaser-card {
+  cursor: default;
+}
+
+.teaser-card:hover, .teaser-card:focus {
+  border-color: #dddddd;
 }
 
 /** @format */
