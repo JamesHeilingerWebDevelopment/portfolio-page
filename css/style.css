@@ -533,7 +533,19 @@
 
 .card img {
   width: auto;
+  height: 154px;
+}
+
+.card .sl-img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.card .icaw-img {
   height: 100%;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .card .auto-shop-growth-logo {
