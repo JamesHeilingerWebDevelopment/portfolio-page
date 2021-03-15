@@ -103,15 +103,15 @@ nav {
   }
 
   #nav-projects {
+    grid-area: nav3;
+  }
+
+  #nav-tech {
     grid-area: nav4;
   }
 
   #nav-contact {
     grid-area: nav5;
-  }
-
-  #nav-tech {
-    grid-area: nav3;
   }
 
   @include bp(very-small) {

@@ -78,13 +78,8 @@
 
     .g-recaptcha {
       margin-top: 1rem;
-
-      @include bp(very-small) {
-        transform: scale(0.76);
-        -webkit-transform: scale(0.76);
-        transform-origin: 0 0;
-        -webkit-transform-origin: 0 0;
-      }
+      grid-column: 1 / -1;
+      place-self: center;
     }
 
     input[type="submit"] {
