@@ -286,7 +286,7 @@
 }
 
 #skills-section {
-  background-color: #333333;
+  background-color: #212121;
   color: #dddddd;
   display: -ms-grid;
   display: grid;
@@ -404,7 +404,7 @@
 }
 
 #projects-section {
-  background-color: #212121;
+  background-color: #333333;
   display: -ms-grid;
   display: grid;
   gap: 1rem;
@@ -477,7 +477,7 @@
 
 /** @format */
 .card {
-  background-color: #333333;
+  background-color: #212121;
   border: 1px solid #dddddd;
   margin: 0 1rem;
   width: 100%;
@@ -692,15 +692,8 @@
 
 #contact-section #contact-form .g-recaptcha {
   margin-top: 1rem;
-}
-
-@media (max-width: 600px) {
-  #contact-section #contact-form .g-recaptcha {
-    transform: scale(0.76);
-    -webkit-transform: scale(0.76);
-    transform-origin: 0 0;
-    -webkit-transform-origin: 0 0;
-  }
+  grid-column: 1 / -1;
+  place-self: center;
 }
 
 #contact-section #contact-form input[type="submit"] {
@@ -719,15 +712,15 @@
 footer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (max-content)[3];
-      grid-template-columns: repeat(3, -webkit-max-content);
-      grid-template-columns: repeat(3, max-content);
+  -ms-grid-columns: (max-content)[4];
+      grid-template-columns: repeat(4, -webkit-max-content);
+      grid-template-columns: repeat(4, max-content);
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  place-items: center;
   gap: 1rem;
   color: #dddddd;
   background-color: #212121;
@@ -745,6 +738,9 @@ footer svg {
 
 footer p {
   font-size: 1rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / 5;
 }
 
 @media (min-width: 768px) {
@@ -759,6 +755,22 @@ footer a {
 }
 
 footer a:hover svg, footer a:focus svg {
-  fill: #53b40f;
+  fill: #b40f53;
+}
+
+footer .linkedin-link {
+  fill: #0077b5;
+}
+
+footer .fiverr-link {
+  fill: #1dbf73;
+}
+
+footer .upwork-link {
+  fill: #6fda44;
+}
+
+footer .abc-link {
+  fill: #0f53b4;
 }
 /*# sourceMappingURL=style.css.map */

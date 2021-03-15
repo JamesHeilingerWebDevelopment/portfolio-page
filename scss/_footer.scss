@@ -4,9 +4,10 @@
 
 footer {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(4, max-content);
+  grid-template-rows: auto auto;
   justify-content: center;
-  align-items: center;
+  place-items: center;
   gap: 1rem;
 
   color: $text-light;
@@ -17,13 +18,13 @@ footer {
   @include section-borders;
 
   svg {
-    // padding: 0.5rem;
     height: 2.5rem;
     width: auto;
   }
 
   p {
     font-size: 1rem;
+    grid-column: 1 / 5;
     // margin: 0 0.5rem;
 
     @include bp(medium) {
@@ -37,8 +38,24 @@ footer {
 
     &:hover, &:focus {
       svg {
-        fill: $color-2;
+        fill: $color-3;
       }
     }
+  }
+
+  .linkedin-link {
+    fill: #0077b5;
+  }
+
+  .fiverr-link {
+    fill: #1dbf73;
+  }
+
+  .upwork-link {
+    fill: #6fda44;
+  }
+
+  .abc-link {
+    fill: $color-1;
   }
 }
