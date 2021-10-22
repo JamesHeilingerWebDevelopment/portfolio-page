@@ -103,7 +103,7 @@
   border-right: 1px solid #dddddd;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-      grid-template-areas: "anchor anchor" "title title" "pic   pic" "txt   txt" "act   act" "cta   hook";
+      grid-template-areas: "anchor anchor" "title title" "pic   pic" "txt   txt" "act   act" "cta   hook";
 }
 
 @media (min-width: 768px) {
@@ -112,7 +112,7 @@
         grid-template-columns: 1fr 1fr;
     -webkit-column-gap: 2rem;
             column-gap: 2rem;
-        grid-template-areas: "anchor anchor" "title  title" "pic    txt" "act    act" "cta    hook";
+        grid-template-areas: "anchor anchor" "title  title" "pic    txt" "act    act" "cta    hook";
   }
 }
 
@@ -296,7 +296,7 @@
   border-right: 1px solid #dddddd;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-      grid-template-areas: "anchor" "title" "container";
+      grid-template-areas: "anchor" "title" "container";
   width: 100%;
   height: 100%;
 }
@@ -392,6 +392,14 @@
   }
 }
 
+#skills-section .extra-wide {
+  grid-column: span 3;
+}
+
+#skills-section .extra-wide img {
+  height: 3rem;
+}
+
 #skills-section .fixed-2 img {
   height: 3rem;
 }
@@ -409,7 +417,7 @@
   display: grid;
   gap: 1rem;
   justify-items: center;
-      grid-template-areas: "anchor" "title" "gallery";
+      grid-template-areas: "anchor" "title" "gallery";
   border-bottom: 1px solid #dddddd;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
