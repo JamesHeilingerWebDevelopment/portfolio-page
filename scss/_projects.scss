@@ -39,7 +39,8 @@
     // justify-content: space-evenly;
     justify-items: center;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(303px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(304px, 1fr));
+    // grid-template-columns: repeat(3, 1fr);
     padding: 0 1rem 2rem 1rem;
   }
 }
@@ -60,4 +61,8 @@
 
 .hcs {
   background-color: black;
+}
+
+.divndef {
+  background-color: #0c4a6e;
 }
