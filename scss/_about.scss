@@ -47,11 +47,11 @@
 
     justify-self: center;
     align-self: center;
-    
+
     @include bp(medium) {
       justify-self: end;
     }
-    
+
     img {
       width: 100%;
       max-width: 300px;
@@ -91,6 +91,11 @@
     span {
       color: $color-2;
       text-transform: uppercase;
+    }
+
+    a {
+      color: $color-2;
+      font-family: $font-3;
     }
   }
 

@@ -1,334 +1,1242 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- INLINE STYLING -->
-  <style>
-    *{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;scrollbar-color:#333 #212121;scroll-behavior:smooth}*::-webkit-scrollbar{width:1rem}*::-webkit-scrollbar-track{background:#212121}*::-webkit-scrollbar-thumb{background-color:#aaa;border-radius:20px;border:3px solid #212121}:focus{border:3px solid #b40f53}nav{position:fixed;top:0;width:100%;height:72px;font-size:1rem;background-color:#212121;z-index:1000;display:-ms-grid;display:grid;border:1px solid #ddd;-ms-grid-columns:(1fr)[5];grid-template-columns:repeat(5, 1fr);grid-template-areas:"nav1 nav2 nav3 nav4 nav5"}nav .nav-link{display:-ms-grid;display:grid;grid-template-areas:"icon" "lbl";-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0;padding:0;overflow:hidden;height:100%;font-family:"Roboto Mono",monospace;border-right:1px solid #ddd;text-decoration:none;color:#ddd;text-align:center}nav .nav-link svg{fill:#ddd;-ms-grid-column-align:center;justify-self:center;-ms-flex-item-align:end;-ms-grid-row-align:end;align-self:end}nav .nav-link:hover svg,nav .nav-link:focus svg{fill:#53b40f}nav .nav-link:hover p,nav .nav-link:focus p{color:#53b40f}@media (min-width: 992px){nav .nav-link{grid-template-areas:"icon";-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100px}}nav .nav-link svg{-ms-flex-item-align:end;-ms-grid-row-align:end;align-self:end;-ms-grid-row:1;-ms-grid-column:1;grid-area:icon}@media (min-width: 992px){nav .nav-link svg{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center}}nav .nav-link p{-ms-grid-row:2;-ms-grid-column:1;grid-area:lbl;text-align:center;font-size:0.7rem}@media (min-width: 600px){nav .nav-link p{font-size:0.7rem}}@media (min-width: 992px){nav .nav-link p{display:none}}nav .nav-link img{-ms-grid-row:1;-ms-grid-column:1;grid-area:icon;-ms-flex-item-align:end;-ms-grid-row-align:end;align-self:end;height:2rem;-webkit-filter:invert(98%) sepia(1%) saturate(671%) hue-rotate(328deg) brightness(113%) contrast(73%);filter:invert(98%) sepia(1%) saturate(671%) hue-rotate(328deg) brightness(113%) contrast(73%)}@media (min-width: 992px){nav .nav-link img{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center}}nav .nav-link:active{border:none}nav #nav-home{-ms-grid-row:1;-ms-grid-column:1;grid-area:nav1}nav #nav-about-me{-ms-grid-row:1;-ms-grid-column:2;grid-area:nav2}nav #nav-projects{-ms-grid-row:1;-ms-grid-column:3;grid-area:nav3}nav #nav-tech{-ms-grid-row:1;-ms-grid-column:4;grid-area:nav4}nav #nav-contact{-ms-grid-row:1;-ms-grid-column:5;grid-area:nav5}@media (max-width: 600px){nav #terminal-wrapper{display:none}}@media (min-width: 600px){nav #terminal-wrapper{display:none}}@media (min-width: 992px){nav{font-size:2rem;-ms-grid-columns:(100px)[5] auto;grid-template-columns:repeat(5, 100px) auto;grid-template-areas:"nav1 nav2 nav3 nav4 nav5 term"}nav #terminal-wrapper{display:block;-ms-grid-row:1;-ms-grid-column:6;grid-area:term;padding:1rem}nav #terminal{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#53b40f;background-color:#333;border:1px solid #ddd;font-family:"Roboto Mono",monospace;font-size:1.75rem;max-width:442px}nav #text-output{padding-left:10px}nav #cursor{background-color:#53b40f;height:1.75rem;width:1rem;-webkit-animation:cursor-blink;animation:cursor-blink;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}@-webkit-keyframes cursor-blink{0%{visibility:block}25%{visibility:hidden}50%{visibility:block}75%{visibility:hidden}}@keyframes cursor-blink{0%{visibility:block}25%{visibility:hidden}50%{visibility:block}75%{visibility:hidden}}}.hidden{display:none}.no-webp header{background:#333 url("/images/lake.jpg") no-repeat center center/cover}.webp header{background:#333 url("/images/lake.webp") no-repeat center center/cover}header{opacity:1.5;color:#ddd;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100vh;width:auto;padding:0 3rem;line-height:1.3;border-bottom:1px solid #ddd;border-left:1px solid #ddd;border-right:1px solid #ddd}header h1{font-family:"News Cycle",sans-serif;font-weight:400;font-size:2.5rem;text-align:center}@media (min-width: 600px){header h1{font-size:4rem}}@media (min-width: 768px){header h1{font-size:5rem}}@media (min-width: 992px){header h1{font-size:6rem}}@media (min-width: 1200px){header h1{font-size:7rem}}header h2{font-family:"Roboto Mono",monospace;color:#aaa;font-weight:300;font-size:1.5rem;margin-bottom:0.75rem;text-align:center}@media (min-width: 600px){header h2{font-size:3rem}}@media (min-width: 992px){header h2{font-size:4rem}}header p{font-family:"Noto Sans",sans-serif;font-size:1rem;text-align:center}@media (min-width: 600px){header p{font-size:1.5rem}}
-  </style>
-  
-  <!-- CSS -->
-  <link rel="preload" href="css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
-  <link rel="preload" href="css/icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="css/icons.min.css"></noscript>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=News+Cycle&family=Noto+Sans:ital@0;1&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <!-- INLINE STYLING -->
+    <style>
+      * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scrollbar-color: #333 #212121;
+        scroll-behavior: smooth;
+      }
+      *::-webkit-scrollbar {
+        width: 1rem;
+      }
+      *::-webkit-scrollbar-track {
+        background: #212121;
+      }
+      *::-webkit-scrollbar-thumb {
+        background-color: #aaa;
+        border-radius: 20px;
+        border: 3px solid #212121;
+      }
+      :focus {
+        border: 3px solid #b40f53;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 72px;
+        font-size: 1rem;
+        background-color: #212121;
+        z-index: 1000;
+        display: -ms-grid;
+        display: grid;
+        border: 1px solid #ddd;
+        -ms-grid-columns: (1fr) [5];
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: "nav1 nav2 nav3 nav4 nav5";
+      }
+      nav .nav-link {
+        display: -ms-grid;
+        display: grid;
+        grid-template-areas: "icon" "lbl";
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        font-family: "Roboto Mono", monospace;
+        border-right: 1px solid #ddd;
+        text-decoration: none;
+        color: #ddd;
+        text-align: center;
+      }
+      nav .nav-link svg {
+        fill: #ddd;
+        -ms-grid-column-align: center;
+        justify-self: center;
+        -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+      }
+      nav .nav-link:hover svg,
+      nav .nav-link:focus svg {
+        fill: #53b40f;
+      }
+      nav .nav-link:hover p,
+      nav .nav-link:focus p {
+        color: #53b40f;
+      }
+      @media (min-width: 992px) {
+        nav .nav-link {
+          grid-template-areas: "icon";
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          width: 100px;
+        }
+      }
+      nav .nav-link svg {
+        -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        grid-area: icon;
+      }
+      @media (min-width: 992px) {
+        nav .nav-link svg {
+          -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center;
+        }
+      }
+      nav .nav-link p {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        grid-area: lbl;
+        text-align: center;
+        font-size: 0.7rem;
+      }
+      @media (min-width: 600px) {
+        nav .nav-link p {
+          font-size: 0.7rem;
+        }
+      }
+      @media (min-width: 992px) {
+        nav .nav-link p {
+          display: none;
+        }
+      }
+      nav .nav-link img {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        grid-area: icon;
+        -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+        height: 2rem;
+        -webkit-filter: invert(98%) sepia(1%) saturate(671%) hue-rotate(328deg)
+          brightness(113%) contrast(73%);
+        filter: invert(98%) sepia(1%) saturate(671%) hue-rotate(328deg)
+          brightness(113%) contrast(73%);
+      }
+      @media (min-width: 992px) {
+        nav .nav-link img {
+          -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center;
+        }
+      }
+      nav .nav-link:active {
+        border: none;
+      }
+      nav #nav-home {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        grid-area: nav1;
+      }
+      nav #nav-about-me {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        grid-area: nav2;
+      }
+      nav #nav-projects {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+        grid-area: nav3;
+      }
+      nav #nav-tech {
+        -ms-grid-row: 1;
+        -ms-grid-column: 4;
+        grid-area: nav4;
+      }
+      nav #nav-contact {
+        -ms-grid-row: 1;
+        -ms-grid-column: 5;
+        grid-area: nav5;
+      }
+      @media (max-width: 600px) {
+        nav #terminal-wrapper {
+          display: none;
+        }
+      }
+      @media (min-width: 600px) {
+        nav #terminal-wrapper {
+          display: none;
+        }
+      }
+      @media (min-width: 992px) {
+        nav {
+          font-size: 2rem;
+          -ms-grid-columns: (100px) [5] auto;
+          grid-template-columns: repeat(5, 100px) auto;
+          grid-template-areas: "nav1 nav2 nav3 nav4 nav5 term";
+        }
+        nav #terminal-wrapper {
+          display: block;
+          -ms-grid-row: 1;
+          -ms-grid-column: 6;
+          grid-area: term;
+          padding: 1rem;
+        }
+        nav #terminal {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          color: #53b40f;
+          background-color: #333;
+          border: 1px solid #ddd;
+          font-family: "Roboto Mono", monospace;
+          font-size: 1.75rem;
+          max-width: 442px;
+        }
+        nav #text-output {
+          padding-left: 10px;
+        }
+        nav #cursor {
+          background-color: #53b40f;
+          height: 1.75rem;
+          width: 1rem;
+          -webkit-animation: cursor-blink;
+          animation: cursor-blink;
+          -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+        }
+        @-webkit-keyframes cursor-blink {
+          0% {
+            visibility: block;
+          }
+          25% {
+            visibility: hidden;
+          }
+          50% {
+            visibility: block;
+          }
+          75% {
+            visibility: hidden;
+          }
+        }
+        @keyframes cursor-blink {
+          0% {
+            visibility: block;
+          }
+          25% {
+            visibility: hidden;
+          }
+          50% {
+            visibility: block;
+          }
+          75% {
+            visibility: hidden;
+          }
+        }
+      }
+      .hidden {
+        display: none;
+      }
+      .no-webp header {
+        background: #333 url("/images/lake.jpg") no-repeat center center/cover;
+      }
+      .webp header {
+        background: #333 url("/images/lake.webp") no-repeat center center/cover;
+      }
+      header {
+        opacity: 1.5;
+        color: #ddd;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 100vh;
+        width: auto;
+        padding: 0 3rem;
+        line-height: 1.3;
+        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+      }
+      header h1 {
+        font-family: "News Cycle", sans-serif;
+        font-weight: 400;
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      @media (min-width: 600px) {
+        header h1 {
+          font-size: 4rem;
+        }
+      }
+      @media (min-width: 768px) {
+        header h1 {
+          font-size: 5rem;
+        }
+      }
+      @media (min-width: 992px) {
+        header h1 {
+          font-size: 6rem;
+        }
+      }
+      @media (min-width: 1200px) {
+        header h1 {
+          font-size: 7rem;
+        }
+      }
+      header h2 {
+        font-family: "Roboto Mono", monospace;
+        color: #aaa;
+        font-weight: 300;
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+        text-align: center;
+      }
+      @media (min-width: 600px) {
+        header h2 {
+          font-size: 3rem;
+        }
+      }
+      @media (min-width: 992px) {
+        header h2 {
+          font-size: 4rem;
+        }
+      }
+      header p {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 1rem;
+        text-align: center;
+      }
+      @media (min-width: 600px) {
+        header p {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
 
-  <!-- FAVICON -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#212121">
-  <meta name="msapplication-TileColor" content="#212121">
-  <meta name="theme-color" content="#212121">
+    <!-- CSS -->
+    <link
+      rel="preload"
+      href="css/style.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/style.min.css" /></noscript>
+    <link
+      rel="preload"
+      href="css/icons.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/icons.min.css" /></noscript>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=News+Cycle&family=Noto+Sans:ital@0;1&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- reCAPTCHA JavaScript -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#212121" />
+    <meta name="msapplication-TileColor" content="#212121" />
+    <meta name="theme-color" content="#212121" />
 
-  <!-- TITLE AND META DESCRIPTION -->
-  <title>James Heilinger: Web Developer</title>
-  <meta name="description" content="Welcome to my web developer portfolio. I'm all about reflecting your style and radiating your brand. Learn about how I can make your website more successful, more visible and a better reflection of you and your brand. You can also browse previous projects I've worked on.">
-</head>
-<body>
+    <!-- reCAPTCHA JavaScript -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-  <nav>
-    <a href="/#showcase" class="nav-link tooltip" id="nav-home" data-tooltip='Home' tabindex="0">
-      <svg version="1.1" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-        <path d="m21.908 0-4.7207 0.022427v1.5476h1.5352v8.0875l-13.289 0.00224v1.5587h5.3203v13.78c0 1.0029-0.2482 1.9446-0.74414 2.8237-0.48516 0.87899-1.0242 1.5035-1.6172 1.8749-0.78703 0.49502-1.6237 0.74235-2.5078 0.74235-0.79782 0-1.6064-0.21727-2.4258-0.65041-0.8086-0.44568-1.6269-1.1081-2.457-1.9871l-1.002 1.164c1.1644 1.2256 1.8802 1.6913 2.8613 2.2361 0.99188 0.53204 1.9992 0.79842 3.0234 0.79842 1.7034 0 3.1713-0.69474 4.4004-2.0813 1.2291-1.3866 1.8438-3.0265 1.8438-4.9207v-13.78l6.5938-0.0022v8.9509h-1.5352v1.561h4.7207v-1.561h-1.8262v-8.9509h9.0078v8.9509h-1.8125v1.561h4.7227v-1.561h-1.5371v-18.606h1.5371v-1.561h-4.7227v1.561h1.8125v8.0964h-9.0078v-8.0875h1.8262v-1.57z"/>
-      </svg>
-    </a>
-    <a href="/#about-me" class="nav-link tooltip" id="nav-about-me" data-tooltip='About' tabindex="0">
-      <svg class="nav-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-        <title>face</title>
-        <path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 26c-1.514 0-2.95-0.337-4.236-0.94l1.036-1.727c0.98 0.428 2.061 0.667 3.199 0.667 2.913 0 5.462-1.557 6.861-3.884l1.715 1.029c-1.749 2.908-4.935 4.855-8.576 4.855zM26 12c0 1.1-0.9 2-2 2h-4c-1.1 0-2-0.9-2-2h-4c0 1.1-0.9 2-2 2h-4c-1.1 0-2-0.9-2-2v-3c0-0.55 0.45-1 1-1h6c0.55 0 1 0.45 1 1v1h4v-1c0-0.55 0.45-1 1-1h6c0.55 0 1 0.45 1 1v3z" />
-      </svg>
-      <p>About</p>
-    </a>
-    <a href="/#skills" class="nav-link tooltip" id="nav-tech" data-tooltip="Skills" tabindex="0">
-      <svg class="nav-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-        <title>terminal</title>
-        <path d="M0 2v28h32v-28h-32zM30 28h-28v-24h28v24zM28 6h-24v20h24v-20zM14 16h-2v2h-2v2h-2v-2h2v-2h2v-2h-2v-2h-2v-2h2v2h2v2h2v2zM22 20h-6v-2h6v2z"></path>
-      </svg>
-      <p>Skills</p>
-    </a>
-    <a href="/#projects" class="nav-link tooltip" id="nav-projects" data-tooltip='Projects' tabindex="0">
-      <svg class="nav-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-        <title>wrench</title>
-        <path d="M31.342 25.559l-14.392-12.336c0.67-1.259 1.051-2.696 1.051-4.222 0-4.971-4.029-9-9-9-0.909 0-1.787 0.135-2.614 0.386l5.2 5.2c0.778 0.778 0.778 2.051 0 2.828l-3.172 3.172c-0.778 0.778-2.051 0.778-2.828 0l-5.2-5.2c-0.251 0.827-0.386 1.705-0.386 2.614 0 4.971 4.029 9 9 9 1.526 0 2.963-0.38 4.222-1.051l12.336 14.392c0.716 0.835 1.938 0.882 2.716 0.104l3.172-3.172c0.778-0.778 0.731-2-0.104-2.716z"></path>
-      </svg>
-      <p>Projects</p>
-    </a>
-    <a href="/#contact" class="nav-link tooltip" id="nav-contact" data-tooltip='Contact Me' tabindex="0">
-      <svg class="nav-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-        <title>envelop</title>
-        <path d="M29 4h-26c-1.65 0-3 1.35-3 3v20c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-20c0-1.65-1.35-3-3-3zM12.461 17.199l-8.461 6.59v-15.676l8.461 9.086zM5.512 8h20.976l-10.488 7.875-10.488-7.875zM12.79 17.553l3.21 3.447 3.21-3.447 6.58 8.447h-19.579l6.58-8.447zM19.539 17.199l8.461-9.086v15.676l-8.461-6.59z"></path>
-      </svg>
-      <p>Contact</p>
-    </a>
-    <div id="terminal-wrapper">
-      <div id="terminal">>><span id="text-output"></span><div id="cursor"></div></div>
-    </div>
-    <!-- <div class="scheme-menu tooltip" data-tooltip="Choose your color scheme!">
+    <!-- TITLE AND META DESCRIPTION -->
+    <title>James Heilinger: Web Developer</title>
+    <meta
+      name="description"
+      content="Welcome to my web developer portfolio. I'm all about reflecting your style and radiating your brand. Learn about how I can make your website more successful, more visible and a better reflection of you and your brand. You can also browse previous projects I've worked on."
+    />
+  </head>
+  <body>
+    <nav>
+      <a
+        href="/#showcase"
+        class="nav-link tooltip"
+        id="nav-home"
+        data-tooltip="Home"
+        tabindex="0"
+      >
+        <svg
+          version="1.1"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m21.908 0-4.7207 0.022427v1.5476h1.5352v8.0875l-13.289 0.00224v1.5587h5.3203v13.78c0 1.0029-0.2482 1.9446-0.74414 2.8237-0.48516 0.87899-1.0242 1.5035-1.6172 1.8749-0.78703 0.49502-1.6237 0.74235-2.5078 0.74235-0.79782 0-1.6064-0.21727-2.4258-0.65041-0.8086-0.44568-1.6269-1.1081-2.457-1.9871l-1.002 1.164c1.1644 1.2256 1.8802 1.6913 2.8613 2.2361 0.99188 0.53204 1.9992 0.79842 3.0234 0.79842 1.7034 0 3.1713-0.69474 4.4004-2.0813 1.2291-1.3866 1.8438-3.0265 1.8438-4.9207v-13.78l6.5938-0.0022v8.9509h-1.5352v1.561h4.7207v-1.561h-1.8262v-8.9509h9.0078v8.9509h-1.8125v1.561h4.7227v-1.561h-1.5371v-18.606h1.5371v-1.561h-4.7227v1.561h1.8125v8.0964h-9.0078v-8.0875h1.8262v-1.57z"
+          />
+        </svg>
+      </a>
+      <a
+        href="/#about-me"
+        class="nav-link tooltip"
+        id="nav-about-me"
+        data-tooltip="About Me"
+        tabindex="0"
+      >
+        <svg
+          class="nav-icon"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <title>face</title>
+          <path
+            d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 26c-1.514 0-2.95-0.337-4.236-0.94l1.036-1.727c0.98 0.428 2.061 0.667 3.199 0.667 2.913 0 5.462-1.557 6.861-3.884l1.715 1.029c-1.749 2.908-4.935 4.855-8.576 4.855zM26 12c0 1.1-0.9 2-2 2h-4c-1.1 0-2-0.9-2-2h-4c0 1.1-0.9 2-2 2h-4c-1.1 0-2-0.9-2-2v-3c0-0.55 0.45-1 1-1h6c0.55 0 1 0.45 1 1v1h4v-1c0-0.55 0.45-1 1-1h6c0.55 0 1 0.45 1 1v3z"
+          />
+        </svg>
+        <p>About</p>
+      </a>
+      <a
+        href="/#projects"
+        class="nav-link tooltip"
+        id="nav-projects"
+        data-tooltip="Projects"
+        tabindex="0"
+      >
+        <svg
+          class="nav-icon"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <title>wrench</title>
+          <path
+            d="M31.342 25.559l-14.392-12.336c0.67-1.259 1.051-2.696 1.051-4.222 0-4.971-4.029-9-9-9-0.909 0-1.787 0.135-2.614 0.386l5.2 5.2c0.778 0.778 0.778 2.051 0 2.828l-3.172 3.172c-0.778 0.778-2.051 0.778-2.828 0l-5.2-5.2c-0.251 0.827-0.386 1.705-0.386 2.614 0 4.971 4.029 9 9 9 1.526 0 2.963-0.38 4.222-1.051l12.336 14.392c0.716 0.835 1.938 0.882 2.716 0.104l3.172-3.172c0.778-0.778 0.731-2-0.104-2.716z"
+          ></path>
+        </svg>
+        <p>Projects</p>
+      </a>
+      <a
+        href="/#skills"
+        class="nav-link tooltip"
+        id="nav-tech"
+        data-tooltip="Skills"
+        tabindex="0"
+      >
+        <svg
+          class="nav-icon"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <title>terminal</title>
+          <path
+            d="M0 2v28h32v-28h-32zM30 28h-28v-24h28v24zM28 6h-24v20h24v-20zM14 16h-2v2h-2v2h-2v-2h2v-2h2v-2h-2v-2h-2v-2h2v2h2v2h2v2zM22 20h-6v-2h6v2z"
+          ></path>
+        </svg>
+        <p>Skills</p>
+      </a>
+      <a
+        href="/#contact"
+        class="nav-link tooltip"
+        id="nav-contact"
+        data-tooltip="Contact Me"
+        tabindex="0"
+      >
+        <svg
+          class="nav-icon"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <title>envelop</title>
+          <path
+            d="M29 4h-26c-1.65 0-3 1.35-3 3v20c0 1.65 1.35 3 3 3h26c1.65 0 3-1.35 3-3v-20c0-1.65-1.35-3-3-3zM12.461 17.199l-8.461 6.59v-15.676l8.461 9.086zM5.512 8h20.976l-10.488 7.875-10.488-7.875zM12.79 17.553l3.21 3.447 3.21-3.447 6.58 8.447h-19.579l6.58-8.447zM19.539 17.199l8.461-9.086v15.676l-8.461-6.59z"
+          ></path>
+        </svg>
+        <p>Contact</p>
+      </a>
+      <div id="terminal-wrapper">
+        <div id="terminal">
+          >><span id="text-output"></span>
+          <div id="cursor"></div>
+        </div>
+      </div>
+      <!-- <div class="scheme-menu tooltip" data-tooltip="Choose your color scheme!">
       <i class="fas fa-palette" tabindex="0"></i>
       <div class="scheme-choices">
         <div class="style-item" id="dark">Dark</div>
         <div class="style-item" id="light">Light</div>
       </div>
     </div> -->
-  </nav>
+    </nav>
 
-  <header id="showcase">
-    <div class="showcase-content">
-      <h1>James Heilinger</h1>
-      <h2>Web Developer</h2>
-      <p>Reflecting&nbspyour&nbspstyle. Radiating&nbspyour&nbspbrand.</p>
-    </div>
-  </header>
+    <header id="showcase">
+      <div class="showcase-content">
+        <h1>James Heilinger</h1>
+        <!-- <h2>Python Programmer</h2> -->
+        <h2>Software Developer</h2>
+        <!-- <p>Reflecting&nbspyour&nbspstyle. Radiating&nbspyour&nbspbrand.</p> -->
+      </div>
+    </header>
 
-  <section id="about-me-section">
-    <div id="about-me">&nbsp;</div>
-    <h1>About Me</h1>
-    <picture>
-      <source class="about-pic" srcset="images/james-heilinger.webp" type="image/webp">
-      <source class="about-pic" srcset="images/james-heilinger.jpg" type="image/jpeg">
-      <img class="about-pic" id="picture" src="images/james-heilinger.jpg" width="300" height="380" alt="Photo of James Heilinger">
-    </picture>
-    <div id="text-about-me">
-      <p>As a web developer, I know how important it is to have an eye-catching, easy-to-use, conversion centered website that reflects your style and radiates your brand. Let me make one for you!</p>
-      <br>
-      <p>Do you know there is much more to a successful web presence than just having a good looking website? You need to get your site in front of the right people in order to make sales. From setting up advertising campaigns, managing social media, and improving SEO (Search Engine Optimization), it can be a lot to learn and manage on your own. I can help your business grow in all of these areas and more!</p>
-    </div>
-    <p id="call-to-action">
-      Let's start <span>reflecting</span> your style and <span>radiating</span> your brand today!
-    </p>
-    <div class="cta">
-      <a class="btn" id="cta-btn" href="#contact">Get Started!</a>
-      <p id="caption">*Free call, no obligation!</p>
-    </div>
-    <a class="btn-secondary" id="cta-hook" href="#projects">Learn More</a>
-  </section>
-  
-  <section id="projects-section">
-    <div id="projects">&nbsp;</div>
-    <h1>Projects</h1>
+    <section id="about-me-section">
+      <div id="about-me">&nbsp;</div>
+      <h1>About Me</h1>
+      <picture>
+        <source
+          class="about-pic"
+          srcset="images/james-heilinger.webp"
+          type="image/webp"
+        />
+        <source
+          class="about-pic"
+          srcset="images/james-heilinger.jpg"
+          type="image/jpeg"
+        />
+        <img
+          class="about-pic"
+          id="picture"
+          src="images/james-heilinger.jpg"
+          width="300"
+          height="380"
+          alt="Photo of James Heilinger"
+        />
+      </picture>
+      <div id="text-about-me">
+        <p>
+          Welcome to my portfolio! I am a Python programmer, web developer, and
+          constant learner. I'm always looking to learn new something new, from
+          Vue.js and CSS Grid to the Linux operating system.
+        </p>
+        <br />
+        <p>
+          My work experience has had me working on Agile software development
+          teams, maintaining CI/CD solutions with Jenkins and Jenkins Pipeline,
+          developing software testing, and even programming a Raspberry Pi Pico.
+        </p>
+        <br />
+        <p>
+          <a href="/james-heilinger-resume.pdf"
+            >Click here to view my resume.</a
+          >
+        </p>
+        <br />
+        <p>Send a message if you'd like to get in touch with me!</p>
+      </div>
+      <!-- <p id="call-to-action">
+        Let's start <span>reflecting</span> your style and
+        <span>radiating</span> your brand today!
+      </p> -->
+      <div class="cta">
+        <a class="btn" id="cta-btn" href="#contact" tabindex="0"
+          >Get In Touch</a
+        >
+      </div>
+      <a class="btn-secondary" id="cta-hook" href="#projects" tabindex="0"
+        >Learn More</a
+      >
+    </section>
 
-    <div class="gallery">
+    <section id="projects-section">
+      <div id="projects">&nbsp;</div>
+      <h1>Projects</h1>
 
-      <a href="https://www.donrtitus.com" target="_blank" rel="noreferrer noopener" class="card">
-        <div class="img-wrapper auto-shop-growth">
-          <picture>
-            <source srcset="/images/drtrd-house-logo.webp" type="image/webp">
-            <source srcset="/images/drtrd-house-logo.jpeg" type="image/jpeg">
-            <img class="sl-img" src="/images/drtrd-house-logo.jpeg" alt="Don R Titus Residential Designer logo." width="154" height="154">
-          </picture>
+      <div class="gallery">
+        <a
+          href="https://soldoutservant.net"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="card"
+          tabindex="0"
+        >
+          <div class="img-wrapper auto-shop-growth">
+            <picture>
+              <source srcset="/images/SOM-favicon-SO.webp" type="image/webp" />
+              <img
+                class="sl-img"
+                src="/images/SOM-favicon-SO.png"
+                alt="Sold Out Servant logo."
+                width="154"
+                height="154"
+              />
+            </picture>
+          </div>
+          <div class="card-info">
+            <h2 class="card-title">Sold Out Servant</h2>
+            <p class="card-snippet">
+              This website was created to advertize the book "Sold Out: A True
+              Story" for the author, Abraham Singbeh. Another site created with
+              my preferred stack; Eleventy, TailwindCSS and AlpineJS.
+            </p>
+            <p class="link">Check it out!</p>
+          </div>
+        </a>
+
+        <a
+          href="https://www.donrtitus.com"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="card"
+          tabindex="0"
+        >
+          <div class="img-wrapper auto-shop-growth">
+            <picture>
+              <source
+                srcset="/images/drtrd-house-logo.webp"
+                type="image/webp"
+              />
+              <source
+                srcset="/images/drtrd-house-logo.jpeg"
+                type="image/jpeg"
+              />
+              <img
+                class="sl-img"
+                src="/images/drtrd-house-logo.jpeg"
+                alt="Don R Titus Residential Designer logo."
+                width="154"
+                height="154"
+              />
+            </picture>
+          </div>
+          <div class="card-info">
+            <h2 class="card-title">Don R Titus</h2>
+            <p class="card-snippet">
+              Don Titus, a Portland area residential designer, asked me to
+              improve the SEO on his website, which I was delighted to do. This
+              site is created and hosted on Squarespace.
+            </p>
+            <p class="link">Check it out!</p>
+          </div>
+        </a>
+
+        <a
+          href="https://calvarypo.org"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="card"
+          tabindex="0"
+        >
+          <div class="img-wrapper auto-shop-growth">
+            <picture>
+              <img
+                class="icaw-img"
+                src="/images/Calvary.png"
+                alt="CCPO logo"
+                width="384"
+                height="180"
+              />
+            </picture>
+          </div>
+          <div class="card-info">
+            <h2 class="card-title">CCPO</h2>
+            <p class="card-snippet">
+              CCPO needed a new Wordpress theme to fix a longstanding sermon
+              download issue. I coordinated the process to update the theme and
+              the sermon download feature works perfectly now!
+            </p>
+            <p class="link">Check it out!</p>
+          </div>
+        </a>
+
+        <a
+          href="https://www.hcskitsap.com"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="card"
+          tabindex="0"
+        >
+          <div class="img-wrapper hcs">
+            <picture>
+              <source srcset="/images/hcskitsap-logo.webp" type="image/webp" />
+              <!-- <source srcset="/images/sweet-lous-logo.jpg" type="image/jpeg" /> -->
+              <img
+                class="sl-img"
+                src="/images/hcskitsap-logo.jpg"
+                alt="Horizon Cleaning Services logo."
+                width="154"
+                height="154"
+              />
+            </picture>
+          </div>
+          <div class="card-info">
+            <h2 class="card-title">HCS</h2>
+            <p class="card-snippet">
+              Horizon Cleaning Services needed a website to advertize on Google
+              Ads. I developed this website following their branding guidelines.
+              Site created with Eleventy, TailwindCSS and AlpineJS.
+            </p>
+            <p class="link">Check it out!</p>
+          </div>
+        </a>
+
+        <!-- <a
+          href="https://autoshopgrowth.com"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="card"
+        >
+          <div class="img-wrapper auto-shop-growth">
+            <img
+              class="auto-shop-growth-logo"
+              src="/images/auto-shop-growth-logo.svg"
+              alt="Auto Shop Growth logo."
+            />
+          </div>
+          <div class="card-info">
+            <h2 class="card-title">Auto Shop Growth</h2>
+            <p class="card-snippet">
+              This website helps car repair shops that need web development
+              services find me. Created using MaterializeCSS.
+            </p>
+            <p class="link">Check it out!</p>
+          </div>
+        </a> -->
+
+        <a href="how-many-sleeps.html" class="card" tabindex="0">
+          <div class="img-wrapper">
+            <svg
+              id="night-time"
+              version="1.1"
+              width="42.098"
+              height="39.995"
+              viewBox="0 0 42.098 39.995"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>night-time</title>
+              <path
+                d="m33.754 0.01018q-2.156-0.094-4.031 0.68t-3.281 2.156-2.203 3.211q-0.797 1.829-0.797 3.938 0 2.063 0.773 3.867t2.156 3.188 3.188 2.156 3.867 0.773q1.875 0 3.516-0.633t2.953-1.758 2.203-2.625q-2.25-0.047-4.102-0.984t-3.164-2.484q-1.312-1.547-1.945-3.469t-0.445-3.984q0.188-2.062 1.313-4.031z"
+              />
+              <path
+                d="m4 31.995h27c0.547 0 1 0.453 1 1v7h-4v-4h-24v4h-4v-19c0-0.547 0.453-1 1-1h2c0.547 0 1 0.453 1 1zm9-5c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm19 4v-1c0-3.313-2.688-6-6-6h-11c-0.547 0-1 0.453-1 1v6z"
+              />
+              <path
+                d="m1.7413 8.8166-0.36912-0.44042-0.57207 0.054389 0.3048-0.48715-0.2285-0.52726 0.55749 0.13935 0.43084-0.38025 0.03975 0.57327 0.49478 0.29225-0.53293 0.21495z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m13.837 12.793 0.07561 0.58896 0.52804 0.27161-0.53677 0.25391-0.09514 0.58612-0.40735-0.43204-0.58684 0.09064 0.28502-0.52092-0.26754-0.53011 0.5835 0.11009z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m21.922 5.935-0.52895-0.24844-0.50453 0.29489 0.07282-0.57984-0.43637-0.38871 0.57396-0.10992 0.23484-0.53513 0.2819 0.5119 0.58151 0.05798-0.39974 0.42629z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m19.757 2.2195-0.41645-0.16213-0.36965 0.25115 0.0255-0.44617-0.35308-0.27395 0.43221-0.11362 0.15143-0.42046 0.24162 0.37595 0.44667 0.014093-0.28288 0.34596z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m9.1894 4.1033-0.23725-0.22318-0.31835 0.068919 0.13894-0.2946-0.16392-0.28147 0.32312 0.041102 0.21704-0.24288 0.06076 0.32001 0.29806 0.13136-0.28557 0.15667z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m7.8273 9.5548-0.19219-0.074711-0.1705 0.11597 0.011664-0.20587-0.16298-0.12632 0.1994-0.052524 0.069775-0.19404 0.11157 0.17341 0.2061 0.0064-0.13045 0.1597z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m19.571 13.582 0.0088-0.2795-0.22525-0.1657 0.26854-0.07799 0.08799-0.26543 0.15716 0.23129 0.27963 0.0017-0.17141 0.22094 0.08483 0.26646-0.2631-0.09474z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m15.611 7.6313-0.42923-0.067544-0.29898 0.3153-0.0684-0.42909-0.39225-0.18691 0.38696-0.19765 0.056551-0.43081 0.30755 0.30694 0.4272-0.079345-0.19688 0.38735z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m17.215 18.198-0.03194-0.45974-0.39683-0.23432 0.42736-0.17244 0.10022-0.44982 0.29607 0.35316 0.45877-0.04368-0.24439 0.39071 0.18331 0.42282-0.44711-0.11169z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m6.842 15.066 0.3483-0.1719 0.055853-0.38438 0.27112 0.27814 0.38282-0.06566-0.18074 0.3438 0.18074 0.3438-0.38282-0.06566-0.27112 0.27814-0.055853-0.38438z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m1.739 13.731 0.053262 0.1282 0.13581 0.02881-0.10547 0.09027 0.014571 0.13806-0.11845-0.07241-0.1268 0.05652 0.032267-0.13503-0.092939-0.10313 0.13839-0.01104z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m3.07 2.2613-0.088557-0.3733-0.35772-0.13868 0.32767-0.19958 0.02135-0.38307 0.29107 0.24996 0.37092-0.09807-0.14778 0.35406 0.20789 0.32246-0.3824-0.031134z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+              <path
+                d="m15.236 1.7206-0.31887-0.2166-0.3592 0.13988 0.10746-0.3702-0.24404-0.2984 0.38529-0.012193 0.20838-0.3243 0.13066 0.36266 0.37282 0.097967-0.30454 0.23633z"
+                stroke-linecap="round"
+                stroke-width="4"
+              />
+            </svg>
+          </div>
+          <div class="card-info">
+            <h2 class="card-title">How many sleeps...</h2>
+            <p class="card-snippet">
+              An app to calculate how long until a certain event for my kids, in
+              terms they can understand. Feel free to use it! Dates are saved in
+              local storage. Written in HTML, CSS/Sass and vanilla JavaScript.
+            </p>
+            <p class="link card-link">Check it out!</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="skills-section">
+      <div id="skills">&nbsp;</div>
+      <h1 id="skills-heading">Skills</h1>
+      <div class="badges">
+        <div class="skill">
+          <a
+            href="https://en.wikipedia.org/wiki/HTML5"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="images/html5-logo-white-words-min.svg"
+              class="tooltip"
+              width="64"
+              height="64"
+              alt="HTML5 logo"
+              data-tooltip="HTML5"
+            />
+          </a>
         </div>
-        <div class="card-info">
-          <h2 class="card-title">Don R Titus</h2>
-          <p class="card-snippet">Don Titus, a Portland area residential designer, asked me to improve the SEO on his website, which I was delighted to do. This site is created and hosted on Squarespace.</p>
-          <p class="link">Check it out!</p>
+        <div class="skill">
+          <a
+            href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="images/css3-logo-white-text.svg"
+              height="64"
+              width="64"
+              alt="CSS3 Logo with white text"
+              class="tooltip"
+              data-tooltip="CSS3"
+            />
+          </a>
         </div>
+        <div class="skill">
+          <a
+            href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/Sass Logo (Color).svg"
+              width="85.38"
+              height="64"
+              alt="Sass Logo (Color)"
+              class="tooltip"
+              data-tooltip="Sass"
+            />
+          </a>
+        </div>
+        <div class="skill wide">
+          <a
+            href="https://www.python.org"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/Python_Logo.svg"
+              width="197.27"
+              height="48"
+              alt="Python logo generic"
+              class="tooltip"
+              data-tooltip="Python"
+            />
+          </a>
+        </div>
+        <div class="skill fixed-2">
+          <a
+            href="https://git-scm.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/Git-Logo-1788C.svg"
+              width="114.91"
+              height="48"
+              alt="Git Logo"
+              class="tooltip"
+              data-tooltip="git"
+            />
+          </a>
+        </div>
+        <div class="skill">
+          <a
+            href="https://materializecss.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/Materialize-CSS-logo.svg"
+              width="64"
+              height="64"
+              alt="Materialize CSS Logo"
+              class="tooltip"
+              data-tooltip="Materialize CSS"
+            />
+          </a>
+        </div>
+        <div class="skill wide">
+          <a
+            href="https://jamstack.org"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/Jamstack_Logo.svg"
+              width="258.58"
+              height="48"
+              alt="Jamstack Logo"
+              class="tooltip"
+              data-tooltip="Jamstack"
+            />
+          </a>
+        </div>
+        <div class="skill wide">
+          <a
+            href="https://tailwindcss.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/tailwindcss-logotype.svg"
+              height="48"
+              width="250"
+              alt="tailwindCSS Logo"
+              class="tooltip"
+              data-tooltip="tailwindCSS"
+            />
+          </a>
+        </div>
+        <div class="skill wide">
+          <a
+            href="https://www.netlify.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/full-logo-dark.svg"
+              width="176"
+              height="48"
+              alt="Netlify Logo"
+              class="tooltip"
+              data-tooltip="Netlify"
+            />
+          </a>
+        </div>
+        <div class="skill">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/GitHub-Mark-Light-64px.png"
+              height="64"
+              width="64"
+              alt="GitHub Logo"
+              class="tooltip"
+              data-tooltip="GitHub"
+            />
+          </a>
+        </div>
+        <div class="skill">
+          <a
+            href="https://www.11ty.dev"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/11ty.png"
+              height="64"
+              width="64"
+              alt="11ty Logo"
+              class="tooltip"
+              data-tooltip="11ty"
+            />
+          </a>
+        </div>
+
+        <div class="skill wide">
+          <a
+            href="https://alpinejs.dev"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/alpine_long.svg"
+              width="258.58"
+              height="48"
+              alt="Apline.js Logo"
+              class="tooltip"
+              data-tooltip="Alpine.js"
+            />
+          </a>
+        </div>
+        <div class="skill small">
+          <a href="https://www.javascript.com" target="_blank" rel="noreferrer">
+            <svg
+              class="tooltip"
+              data-tooltip="JavaScript"
+              id="icon-javascript"
+              height="64"
+              width="64"
+              viewBox="0 0 32 32"
+            >
+              <title>javascript</title>
+              <path
+                fill="#f7df1e"
+                style="fill: #f7df1e"
+                d="M0 0h32v32h-32zM29.379 24.368c-0.233-1.46-1.184-2.687-4.004-3.831-0.981-0.46-2.072-0.78-2.396-1.52-0.121-0.44-0.14-0.68-0.061-0.94 0.2-0.861 1.22-1.12 2.020-0.88 0.52 0.16 1 0.56 1.301 1.2 1.379-0.901 1.379-0.901 2.34-1.5-0.36-0.56-0.539-0.801-0.781-1.040-0.84-0.94-1.959-1.42-3.779-1.379l-0.94 0.119c-0.901 0.22-1.76 0.7-2.28 1.34-1.52 1.721-1.081 4.721 0.759 5.961 1.82 1.36 4.481 1.659 4.821 2.94 0.32 1.56-1.16 2.060-2.621 1.88-1.081-0.24-1.68-0.781-2.34-1.781l-2.44 1.401c0.28 0.64 0.6 0.919 1.080 1.479 2.32 2.341 8.12 2.221 9.161-1.339 0.039-0.12 0.32-0.94 0.099-2.2zM17.401 14.708h-2.997c0 2.584-0.012 5.152-0.012 7.74 0 1.643 0.084 3.151-0.184 3.615-0.44 0.919-1.573 0.801-2.088 0.64-0.528-0.261-0.796-0.621-1.107-1.14-0.084-0.14-0.147-0.261-0.169-0.261l-2.433 1.5c0.407 0.84 1 1.563 1.765 2.023 1.14 0.68 2.672 0.9 4.276 0.54 1.044-0.301 1.944-0.921 2.415-1.881 0.68-1.24 0.536-2.76 0.529-4.461 0.016-2.739 0-5.479 0-8.239z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <div class="skill wide">
+          <a
+            href="https://squarespace.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img
+              src="/images/squarespace-logo-horizontal-white-mod.svg"
+              width="250"
+              height="128"
+              alt="Squarespace Logo"
+              class="tooltip"
+              data-tooltip="Squarespace"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-section">
+      <div id="contact">&nbsp;</div>
+      <h1>Contact Me</h1>
+      <form
+        method="POST"
+        name="contact-form"
+        id="contact-form"
+        action="/thank-you.html"
+        netlify-honeypot="pulse-check"
+        data-netlify="true"
+        data-netlify-recaptcha="true"
+      >
+        <label class="hidden"
+          >Let's check if you have a pulse: <input name="pulse-check"
+        /></label>
+
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="input-field"
+          id="name"
+          name="name"
+          data-tooltip="Who are you?"
+          placeholder="First and/or last name..."
+          required
+        />
+
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          class="input-field"
+          id="subject"
+          name="subject"
+          data-tooltip="What's this about?"
+          placeholder="What's this about?"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="input-field"
+          id="email"
+          name="email"
+          data-tooltip="What's your email?"
+          placeholder="you@yourhost.com"
+          required
+        />
+
+        <label for="message">Message</label>
+        <textarea
+          name="message"
+          class="input-field"
+          id="message"
+          data-tooltip="What's on your mind?"
+          placeholder="Tell me about your project..."
+          required
+        ></textarea>
+
+        <div
+          class="g-recaptcha"
+          data-sitekey="6Le8k3oaAAAAAGErf-kigmaJRn8wYrjx0jys5ZF3"
+          data-theme="dark"
+          data-size="compact"
+        ></div>
+
+        <input
+          type="submit"
+          value="Send"
+          id="submit-btn"
+          class="btn"
+          data-tooltip="Send it!"
+        />
+      </form>
+    </section>
+
+    <footer id="footer">
+      <a
+        href="https://www.linkedin.com/in/james-heilinger/"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="tooltip linkedin-link"
+        data-tooltip="Find me on LinkedIn"
+        tabindex="0"
+      >
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <title>linkedin</title>
+          <path
+            d="M27.263 27.269h-4.739v-7.425c0-1.771-0.036-4.049-2.469-4.049-2.471 0-2.848 1.927-2.848 3.919v7.556h-4.739v-15.269h4.552v2.081h0.061c0.636-1.2 2.183-2.467 4.493-2.467 4.801 0 5.689 3.16 5.689 7.273zM7.116 9.911c-1.525 0-2.751-1.235-2.751-2.753 0-1.517 1.227-2.751 2.751-2.751 1.52 0 2.752 1.233 2.752 2.751 0 1.519-1.233 2.753-2.752 2.753zM9.492 27.269h-4.752v-15.269h4.752zM29.633 0h-27.272c-1.305 0-2.361 1.032-2.361 2.305v27.389c0 1.275 1.056 2.305 2.361 2.305h27.268c1.304 0 2.371-1.031 2.371-2.305v-27.389c0-1.273-1.067-2.305-2.371-2.305z"
+          ></path>
+        </svg>
       </a>
-
-      <a href="https://inner-city-auto-works.com" target="_blank" rel="noreferrer noopener" class="card">
-        <div class="img-wrapper">
-          <picture>
-            <source srcset="/images/inner-city-auto-works.webp" type="image/webp">
-            <source srcset="/images/inner-city-auto-works.png" type="image/png">
-            <img class="icaw-img" src="/images/inner-city-auto-works.png" alt="Inner City Auto Works website screenshot." width="384" height="180">
-          </picture>
-        </div>
-        <div class="card-info">
-          <h2 class="card-title">Inner City Auto Works</h2>
-          <p class="card-snippet">A website I designed and created for Inner City Auto Works. It has a fun urban/graffiti theme and was a blast to create!</p>
-          <p class="link">Check it out!</p>
-        </div>
+      <a
+        href="https://www.fiverr.com/sunnystrongbear"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="tooltip fiverr-link"
+        data-tooltip="Find me on Fiverr"
+        tabindex="0"
+      >
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <title>fiverr</title>
+          <path
+            d="M18.185 15.904h-1.272c0.080-0.344 0.288-0.656 0.712-0.656 0.328 0 0.56 0.304 0.56 0.656zM32.001 16c0 8.836-7.164 16-16 16s-16-7.164-16-16 7.164-16 16-16 16 7.164 16 16zM8.289 13.040c0 0.397 0.323 0.72 0.72 0.72s0.72-0.323 0.72-0.72-0.323-0.72-0.72-0.72-0.72 0.323-0.72 0.72zM10.313 17.6h-0.56v-3.368h-3.288v-0.216c0-0.424 0.424-0.432 0.64-0.432 0.248 0 0.36 0.024 0.36 0.024v-1.168c0 0-0.224-0.032-0.528-0.032-0.688 0-1.96 0.192-1.96 1.648v0.184h-0.6v1.080h0.6v2.28h-0.56v1.080h2.704v-1.080h-0.656v-2.28h1.8v2.28h-0.56v1.080h2.608zM14.865 15.312h0.496v-1.080h-2.36v1.080h0.4l-0.512 1.6c-0.096 0.264-0.12 0.584-0.12 0.584h-0.032c0 0-0.024-0.32-0.12-0.584l-0.512-1.6h0.4v-1.080h-2.36v1.080h0.496l1.232 3.36h1.76zM19.729 16.272c0-1.232-0.744-2.144-2.064-2.144-1.432 0-2.312 1.016-2.312 2.32 0 1.184 0.856 2.328 2.44 2.328 1.2 0 1.912-0.624 1.912-0.624l-0.544-1.032c0 0-0.592 0.424-1.248 0.424-0.472 0-0.92-0.248-1.032-0.816h2.816c-0.008-0.008 0.032-0.312 0.032-0.456zM23.697 14.176c0 0-0.088-0.016-0.176-0.016-0.68-0.008-1.24 0.488-1.424 1.096v0h-0.016c0 0 0.016-0.088 0.016-0.224v-0.232c0-0.408-0.224-0.568-0.632-0.568h-1.4v1.080h0.416c0.12 0 0.192 0.072 0.192 0.192v2.096h-0.6v1.080h2.696v-1.080h-0.6v-0.648c0-0.808 0.4-1.336 1.224-1.336 0.184 0 0.304 0.024 0.304 0.024zM27.641 15.64v-1.464c0 0-0.088-0.016-0.176-0.016-0.672-0.008-1.232 0.488-1.424 1.096v0h-0.016c0 0 0.016-0.088 0.016-0.224v-0.232c0-0.408-0.224-0.568-0.632-0.568h-1.4v1.080h0.416c0.12 0 0.192 0.072 0.192 0.192v2.096h-0.6v1.080h2.696v-1.080h-0.6v-0.648c0-0.808 0.4-1.336 1.224-1.336 0.184 0 0.304 0.024 0.304 0.024z"
+          ></path>
+        </svg>
       </a>
-
-      <a href="https://sweet-lous.com" target="_blank" rel="noreferrer noopener" class="card">
-        <div class="img-wrapper sweet-lous">
-          <picture>
-            <source srcset="/images/sweet-lous-logo.webp" type="image/webp">
-            <source srcset="/images/sweet-lous-logo.jpg" type="image/jpeg">
-            <img class="sl-img" src="/images/sweet-lous-logo.jpg" alt="Sweet Lou's Auto Repair logo." width="154" height="154">
-          </picture>
-        </div>
-        <div class="card-info">
-          <h2 class="card-title">Sweet Lou's Auto Repair</h2>
-          <p class="card-snippet">Sweet Lou's Auto Repair specializes in classic car repair, maintenance and restoration. This one has a mid-century modern inspired color scheme and theme. Styled using tailwindCSS.</p>
-          <p class="link">Check it out!</p>
-        </div>
+      <a
+        href="https://www.upwork.com/freelancers/~0131f87c96aaed796e"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="tooltip upwork-link"
+        data-tooltip="Find me on Upwork"
+        tabindex="0"
+      >
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <title>upwork</title>
+          <path
+            d="M24.748 17.544c-1.469 0-2.847-0.623-4.099-1.636l0.304-1.435 0.011-0.056c0.276-1.524 1.132-4.080 3.785-4.080 1.989 0 3.604 1.616 3.604 3.604-0.001 1.985-1.616 3.603-3.605 3.603zM24.748 6.691c-3.385 0-6.013 2.199-7.080 5.821-1.627-2.445-2.864-5.381-3.583-7.856h-3.648v9.483c-0.003 1.875-1.521 3.395-3.396 3.397-1.873-0.003-3.391-1.524-3.393-3.397v-9.483h-3.648v9.483c0 3.885 3.16 7.071 7.041 7.071 3.884 0 7.044-3.185 7.044-7.071v-1.587c0.705 1.476 1.576 2.972 2.632 4.295l-2.231 10.497h3.729l1.617-7.613c1.417 0.905 3.047 1.479 4.915 1.479 4 0 7.252-3.269 7.252-7.267 0-4-3.252-7.252-7.252-7.252z"
+          ></path>
+        </svg>
       </a>
-      
-      <a href="https://autoshopgrowth.com" target="_blank" rel="noreferrer noopener" class="card">
-        <div class="img-wrapper auto-shop-growth">
-          <img class="auto-shop-growth-logo" src="/images/auto-shop-growth-logo.svg" alt="Auto Shop Growth logo.">
-        </div>
-        <div class="card-info">
-          <h2 class="card-title">Auto Shop Growth</h2>
-          <p class="card-snippet">This website helps car repair shops that need web development services find me. Created using MaterializeCSS.</p>
-          <p class="link">Check it out!</p>
-        </div>
+      <!-- <a href="https://github.com/SpaceMonkeyLab" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="My GitHub repo!"><i class="fab fa-github-square"></i></a> -->
+      <a
+        href="https://calvarychapelkaneohe.com/abc-of-salvation/"
+        target="_blank"
+        rel="noreferrer noopener"
+        data-tooltip="The ABC's of Salvation"
+        class="tooltip abc-link"
+        tabindex="0"
+      >
+        <svg
+          version="1.1"
+          width="21"
+          height="32"
+          viewBox="0 0 21 32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="7.817"
+            y="3.6011e-6"
+            width="5.3664"
+            height="32"
+            rx="0"
+            ry="0"
+          />
+          <rect
+            transform="rotate(-90)"
+            x="-13.958"
+            y="-1.5259e-7"
+            width="5.2417"
+            height="21"
+            rx="0"
+            ry="0"
+          />
+        </svg>
       </a>
+      <p id="copyright">&copy; 2022 - James Heilinger</p>
+    </footer>
 
-      <a href="how-many-sleeps.html" class="card">
-        <div class="img-wrapper">
-          <svg id="night-time" version="1.1" width="42.098" height="39.995" viewBox="0 0 42.098 39.995" xmlns="http://www.w3.org/2000/svg">
-            <title>night-time</title>
-            <path d="m33.754 0.01018q-2.156-0.094-4.031 0.68t-3.281 2.156-2.203 3.211q-0.797 1.829-0.797 3.938 0 2.063 0.773 3.867t2.156 3.188 3.188 2.156 3.867 0.773q1.875 0 3.516-0.633t2.953-1.758 2.203-2.625q-2.25-0.047-4.102-0.984t-3.164-2.484q-1.312-1.547-1.945-3.469t-0.445-3.984q0.188-2.062 1.313-4.031z"/>
-            <path d="m4 31.995h27c0.547 0 1 0.453 1 1v7h-4v-4h-24v4h-4v-19c0-0.547 0.453-1 1-1h2c0.547 0 1 0.453 1 1zm9-5c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm19 4v-1c0-3.313-2.688-6-6-6h-11c-0.547 0-1 0.453-1 1v6z"/>
-            <path d="m1.7413 8.8166-0.36912-0.44042-0.57207 0.054389 0.3048-0.48715-0.2285-0.52726 0.55749 0.13935 0.43084-0.38025 0.03975 0.57327 0.49478 0.29225-0.53293 0.21495z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m13.837 12.793 0.07561 0.58896 0.52804 0.27161-0.53677 0.25391-0.09514 0.58612-0.40735-0.43204-0.58684 0.09064 0.28502-0.52092-0.26754-0.53011 0.5835 0.11009z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m21.922 5.935-0.52895-0.24844-0.50453 0.29489 0.07282-0.57984-0.43637-0.38871 0.57396-0.10992 0.23484-0.53513 0.2819 0.5119 0.58151 0.05798-0.39974 0.42629z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m19.757 2.2195-0.41645-0.16213-0.36965 0.25115 0.0255-0.44617-0.35308-0.27395 0.43221-0.11362 0.15143-0.42046 0.24162 0.37595 0.44667 0.014093-0.28288 0.34596z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m9.1894 4.1033-0.23725-0.22318-0.31835 0.068919 0.13894-0.2946-0.16392-0.28147 0.32312 0.041102 0.21704-0.24288 0.06076 0.32001 0.29806 0.13136-0.28557 0.15667z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m7.8273 9.5548-0.19219-0.074711-0.1705 0.11597 0.011664-0.20587-0.16298-0.12632 0.1994-0.052524 0.069775-0.19404 0.11157 0.17341 0.2061 0.0064-0.13045 0.1597z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m19.571 13.582 0.0088-0.2795-0.22525-0.1657 0.26854-0.07799 0.08799-0.26543 0.15716 0.23129 0.27963 0.0017-0.17141 0.22094 0.08483 0.26646-0.2631-0.09474z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m15.611 7.6313-0.42923-0.067544-0.29898 0.3153-0.0684-0.42909-0.39225-0.18691 0.38696-0.19765 0.056551-0.43081 0.30755 0.30694 0.4272-0.079345-0.19688 0.38735z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m17.215 18.198-0.03194-0.45974-0.39683-0.23432 0.42736-0.17244 0.10022-0.44982 0.29607 0.35316 0.45877-0.04368-0.24439 0.39071 0.18331 0.42282-0.44711-0.11169z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m6.842 15.066 0.3483-0.1719 0.055853-0.38438 0.27112 0.27814 0.38282-0.06566-0.18074 0.3438 0.18074 0.3438-0.38282-0.06566-0.27112 0.27814-0.055853-0.38438z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m1.739 13.731 0.053262 0.1282 0.13581 0.02881-0.10547 0.09027 0.014571 0.13806-0.11845-0.07241-0.1268 0.05652 0.032267-0.13503-0.092939-0.10313 0.13839-0.01104z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m3.07 2.2613-0.088557-0.3733-0.35772-0.13868 0.32767-0.19958 0.02135-0.38307 0.29107 0.24996 0.37092-0.09807-0.14778 0.35406 0.20789 0.32246-0.3824-0.031134z" stroke-linecap="round" stroke-width="4"/>
-            <path d="m15.236 1.7206-0.31887-0.2166-0.3592 0.13988 0.10746-0.3702-0.24404-0.2984 0.38529-0.012193 0.20838-0.3243 0.13066 0.36266 0.37282 0.097967-0.30454 0.23633z" stroke-linecap="round" stroke-width="4"/>
-          </svg>
-        </div>
-        <div class="card-info">
-          <h2 class="card-title">How many sleeps...</h2>
-          <p class="card-snippet">An app to calculate how long until a certain event for my kids, in terms they can understand. Feel free to use it! You can store dates in the browser on your device to refer back to later.</p>
-          <p class="link card-link">Check it out!</p>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <section id="skills-section">
-    <div id="skills">&nbsp;</div>
-    <h1 id="skills-heading">Skills</h1>
-    <div class="badges">
-      <div class="skill">
-        <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" rel="noreferrer noopener">
-          <img src="images/html5-logo-white-words-min.svg" class="tooltip" width="64" height="64" alt="HTML5 logo" data-tooltip="HTML5">
-        </a>
-      </div>
-      <div class="skill">
-        <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank" rel="noreferrer noopener">
-          <img src="images/css3-logo-white-text.svg" height="64" width="64" alt="CSS3 Logo with white text" class="tooltip" data-tooltip='CSS3'>
-        </a>
-      </div>
-      <div class="skill">
-        <a href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)" target="_blank" rel="noreferrer noopener">
-          <img src="/images/Sass Logo (Color).svg" width="85.38" height="64" alt="Sass Logo (Color)" class="tooltip" data-tooltip="Sass">
-        </a>
-      </div>
-      <div class="skill wide">
-        <a href="https://www.python.org" target="_blank" rel="noreferrer noopener">
-          <img src="/images/Python_Logo.svg" width="197.27" height="48" alt="Python logo generic" class="tooltip" data-tooltip="Python">
-        </a>
-      </div>
-      <div class="skill fixed-2">
-        <a href="https://git-scm.com" target="_blank" rel="noreferrer noopener">
-          <img src="/images/Git-Logo-1788C.svg" width="114.91" height="48" alt="Git Logo" class="tooltip" data-tooltip="git">
-        </a>
-      </div>
-      <div class="skill">
-        <a href="https://materializecss.com" target="_blank" rel="noreferrer noopener">
-          <img src="/images/Materialize-CSS-logo.svg" width="64" height="64" alt="Materialize CSS Logo" class="tooltip" data-tooltip="Materialize CSS">
-        </a>
-      </div>
-      <div class="skill wide">
-        <a href="https://jamstack.org" target="_blank" rel="noreferrer noopener">
-          <img src="/images/Jamstack_Logo.svg" width="258.58" height="48" alt="Jamstack Logo" class="tooltip" data-tooltip="Jamstack">
-        </a>
-      </div>
-      <div class="skill wide">
-        <a href="https://squarespace.com" target="_blank" rel="noreferrer noopener">
-          <img src="/images/squarespace-logo-horizontal-white-mod.svg" width="250" height="128"  alt="Squarespace Logo" class="tooltip" data-tooltip="Squarespace">
-        </a>
-      </div>
-      <div class="skill wide">
-        <a href="https://www.netlify.com" target="_blank" rel="noreferrer noopener">
-          <img src="/images/full-logo-dark.svg" width="176" height="48" alt="Netlify Logo" class="tooltip" data-tooltip="Netlify">
-        </a>
-      </div>
-      <div class="skill">
-        <a href="https://github.com" target="_blank" rel="noreferrer noopener">
-          <img src="/images/GitHub-Mark-Light-64px.png" height="64" width="64" alt="GitHub Logo" class="tooltip" data-tooltip="GitHub">
-        </a>
-      </div>
-      <div class="skill small">
-        <a href="https://www.javascript.com" target="_blank" rel="noreferrer">
-          <svg class="tooltip" data-tooltip='JavaScript' id="icon-javascript" height="64" width="64" viewBox="0 0 32 32">
-            <title>javascript</title>
-            <path fill="#f7df1e" style="fill: #f7df1e" d="M0 0h32v32h-32zM29.379 24.368c-0.233-1.46-1.184-2.687-4.004-3.831-0.981-0.46-2.072-0.78-2.396-1.52-0.121-0.44-0.14-0.68-0.061-0.94 0.2-0.861 1.22-1.12 2.020-0.88 0.52 0.16 1 0.56 1.301 1.2 1.379-0.901 1.379-0.901 2.34-1.5-0.36-0.56-0.539-0.801-0.781-1.040-0.84-0.94-1.959-1.42-3.779-1.379l-0.94 0.119c-0.901 0.22-1.76 0.7-2.28 1.34-1.52 1.721-1.081 4.721 0.759 5.961 1.82 1.36 4.481 1.659 4.821 2.94 0.32 1.56-1.16 2.060-2.621 1.88-1.081-0.24-1.68-0.781-2.34-1.781l-2.44 1.401c0.28 0.64 0.6 0.919 1.080 1.479 2.32 2.341 8.12 2.221 9.161-1.339 0.039-0.12 0.32-0.94 0.099-2.2zM17.401 14.708h-2.997c0 2.584-0.012 5.152-0.012 7.74 0 1.643 0.084 3.151-0.184 3.615-0.44 0.919-1.573 0.801-2.088 0.64-0.528-0.261-0.796-0.621-1.107-1.14-0.084-0.14-0.147-0.261-0.169-0.261l-2.433 1.5c0.407 0.84 1 1.563 1.765 2.023 1.14 0.68 2.672 0.9 4.276 0.54 1.044-0.301 1.944-0.921 2.415-1.881 0.68-1.24 0.536-2.76 0.529-4.461 0.016-2.739 0-5.479 0-8.239z"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="skill extra-wide">
-        <a href="https://tailwindcss.com" target="_blank" rel="noreferrer noopener">
-          <img src="/images/tailwindcss-logotype.svg" height="48" width="250" alt="tailwindCSS Logo" class="tooltip" data-tooltip="tailwindCSS">
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact-section">
-    <div id="contact">&nbsp;</div>
-    <h1>Contact Me</h1>
-    <form method="POST" name="contact-form" id="contact-form" action="/thank-you.html" netlify-honeypot="pulse-check" data-netlify="true" data-netlify-recaptcha="true">
-      <label class="hidden">Let's check if you have a pulse: <input name="pulse-check" /></label>
-
-      <label for="name">Name</label>
-      <input type="text" class="input-field" id="name" name="name" data-tooltip="Who are you?" placeholder="First and/or last name..." required>
-
-      <label for="subject">Subject</label>
-      <input type="text" class="input-field" id="subject" name="subject" data-tooltip="What's this about?" placeholder="What's this about?" required>
-
-      <label for="email">Email</label>
-      <input type="email" class="input-field" id="email" name='email' data-tooltip="What's your email?" placeholder="you@yourhost.com" required>
-
-      <label for="message">Message</label>
-      <textarea name="message" class="input-field" id="message" data-tooltip="What's on your mind?" placeholder="Tell me about your project..." required></textarea>
-
-      <div class="g-recaptcha" data-sitekey="6Le8k3oaAAAAAGErf-kigmaJRn8wYrjx0jys5ZF3" data-theme="dark" data-size="compact"></div>
-
-      <input type="submit" value="Send" id="submit-btn" class="btn" data-tooltip="Send it!">
-    </form>
-  </section>
-
-  <footer id="footer">
-    <a href="https://www.linkedin.com/in/james-heilinger/" target="_blank" rel="noreferrer noopener" class="tooltip linkedin-link" data-tooltip="Find me on LinkedIn">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-        <title>linkedin</title>
-        <path d="M27.263 27.269h-4.739v-7.425c0-1.771-0.036-4.049-2.469-4.049-2.471 0-2.848 1.927-2.848 3.919v7.556h-4.739v-15.269h4.552v2.081h0.061c0.636-1.2 2.183-2.467 4.493-2.467 4.801 0 5.689 3.16 5.689 7.273zM7.116 9.911c-1.525 0-2.751-1.235-2.751-2.753 0-1.517 1.227-2.751 2.751-2.751 1.52 0 2.752 1.233 2.752 2.751 0 1.519-1.233 2.753-2.752 2.753zM9.492 27.269h-4.752v-15.269h4.752zM29.633 0h-27.272c-1.305 0-2.361 1.032-2.361 2.305v27.389c0 1.275 1.056 2.305 2.361 2.305h27.268c1.304 0 2.371-1.031 2.371-2.305v-27.389c0-1.273-1.067-2.305-2.371-2.305z"></path>
-      </svg>
-    </a>
-    <a href="https://www.fiverr.com/sunnystrongbear" target="_blank" rel="noreferrer noopener" class="tooltip fiverr-link" data-tooltip="Find me on Fiverr">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-        <title>fiverr</title>
-        <path d="M18.185 15.904h-1.272c0.080-0.344 0.288-0.656 0.712-0.656 0.328 0 0.56 0.304 0.56 0.656zM32.001 16c0 8.836-7.164 16-16 16s-16-7.164-16-16 7.164-16 16-16 16 7.164 16 16zM8.289 13.040c0 0.397 0.323 0.72 0.72 0.72s0.72-0.323 0.72-0.72-0.323-0.72-0.72-0.72-0.72 0.323-0.72 0.72zM10.313 17.6h-0.56v-3.368h-3.288v-0.216c0-0.424 0.424-0.432 0.64-0.432 0.248 0 0.36 0.024 0.36 0.024v-1.168c0 0-0.224-0.032-0.528-0.032-0.688 0-1.96 0.192-1.96 1.648v0.184h-0.6v1.080h0.6v2.28h-0.56v1.080h2.704v-1.080h-0.656v-2.28h1.8v2.28h-0.56v1.080h2.608zM14.865 15.312h0.496v-1.080h-2.36v1.080h0.4l-0.512 1.6c-0.096 0.264-0.12 0.584-0.12 0.584h-0.032c0 0-0.024-0.32-0.12-0.584l-0.512-1.6h0.4v-1.080h-2.36v1.080h0.496l1.232 3.36h1.76zM19.729 16.272c0-1.232-0.744-2.144-2.064-2.144-1.432 0-2.312 1.016-2.312 2.32 0 1.184 0.856 2.328 2.44 2.328 1.2 0 1.912-0.624 1.912-0.624l-0.544-1.032c0 0-0.592 0.424-1.248 0.424-0.472 0-0.92-0.248-1.032-0.816h2.816c-0.008-0.008 0.032-0.312 0.032-0.456zM23.697 14.176c0 0-0.088-0.016-0.176-0.016-0.68-0.008-1.24 0.488-1.424 1.096v0h-0.016c0 0 0.016-0.088 0.016-0.224v-0.232c0-0.408-0.224-0.568-0.632-0.568h-1.4v1.080h0.416c0.12 0 0.192 0.072 0.192 0.192v2.096h-0.6v1.080h2.696v-1.080h-0.6v-0.648c0-0.808 0.4-1.336 1.224-1.336 0.184 0 0.304 0.024 0.304 0.024zM27.641 15.64v-1.464c0 0-0.088-0.016-0.176-0.016-0.672-0.008-1.232 0.488-1.424 1.096v0h-0.016c0 0 0.016-0.088 0.016-0.224v-0.232c0-0.408-0.224-0.568-0.632-0.568h-1.4v1.080h0.416c0.12 0 0.192 0.072 0.192 0.192v2.096h-0.6v1.080h2.696v-1.080h-0.6v-0.648c0-0.808 0.4-1.336 1.224-1.336 0.184 0 0.304 0.024 0.304 0.024z"></path>
-      </svg>
-    </a>
-    <a href="https://www.upwork.com/freelancers/~0131f87c96aaed796e" target="_blank" rel="noreferrer noopener" class="tooltip upwork-link" data-tooltip="Find me on Upwork">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-        <title>upwork</title>
-        <path d="M24.748 17.544c-1.469 0-2.847-0.623-4.099-1.636l0.304-1.435 0.011-0.056c0.276-1.524 1.132-4.080 3.785-4.080 1.989 0 3.604 1.616 3.604 3.604-0.001 1.985-1.616 3.603-3.605 3.603zM24.748 6.691c-3.385 0-6.013 2.199-7.080 5.821-1.627-2.445-2.864-5.381-3.583-7.856h-3.648v9.483c-0.003 1.875-1.521 3.395-3.396 3.397-1.873-0.003-3.391-1.524-3.393-3.397v-9.483h-3.648v9.483c0 3.885 3.16 7.071 7.041 7.071 3.884 0 7.044-3.185 7.044-7.071v-1.587c0.705 1.476 1.576 2.972 2.632 4.295l-2.231 10.497h3.729l1.617-7.613c1.417 0.905 3.047 1.479 4.915 1.479 4 0 7.252-3.269 7.252-7.267 0-4-3.252-7.252-7.252-7.252z"></path>
-      </svg>
-    </a>
-    <!-- <a href="https://github.com/SpaceMonkeyLab" target="_blank" rel="noreferrer" class="tooltip" data-tooltip="My GitHub repo!"><i class="fab fa-github-square"></i></a> -->
-    <a href="https://calvarychapelkaneohe.com/abc-of-salvation/" target="_blank" rel="noreferrer noopener" data-tooltip="The ABC's of Salvation" class="tooltip abc-link">
-      <svg version="1.1" width="21" height="32" viewBox="0 0 21 32" xmlns="http://www.w3.org/2000/svg">
-        <rect x="7.817" y="3.6011e-6" width="5.3664" height="32" rx="0" ry="0"/>
-        <rect transform="rotate(-90)" x="-13.958" y="-1.5259e-7" width="5.2417" height="21" rx="0" ry="0"/>
-      </svg>
-    </a>
-    <p id="copyright">&copy; 2021 - James Heilinger</p>
-  </footer>
-
-  <script src="/js/webpDetect.js"></script>
-  <script src="/js/tooltips.js"></script>
-</body>
+    <script src="/js/webpDetect.js"></script>
+    <script src="/js/tooltips.js"></script>
+  </body>
 </html>

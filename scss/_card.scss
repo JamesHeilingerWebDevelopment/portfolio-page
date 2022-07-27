@@ -3,12 +3,14 @@
 .card {
   background-color: $bg;
   border: 1px solid $text-light;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     border-color: $color-1;
   }
   margin: 0 1rem;
   width: 100%;
   max-width: 360px;
+  // min-width: 303px;
   text-decoration: none;
   cursor: pointer;
 
@@ -88,13 +90,13 @@
   .link {
     color: $color-2;
   }
-
 }
 
 .teaser-card {
   cursor: default;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     border-color: $text-light;
   }
 }
